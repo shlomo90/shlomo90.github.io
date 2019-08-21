@@ -7,8 +7,10 @@ permalink: /about/
 <img class="col one right" src="/img/lim.jpg">
 
 <br/>
+
 South Korean | 1990 | Programmer | Developer |
 Big | Happy | Coding |
+
 
 세상을 바꿀만한 프로그래머가 되고 싶은 사람.
 그 때가 오기까지 매일 노력을 합니다.
