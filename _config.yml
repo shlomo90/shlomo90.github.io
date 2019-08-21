@@ -10,6 +10,7 @@ github_username:  github_username
 
 # Build settings
 markdown: kramdown
+asset_url: /assets
 
 highlighter: rouge
 
