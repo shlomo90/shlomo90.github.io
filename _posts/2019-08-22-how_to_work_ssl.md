@@ -6,4 +6,4 @@ description: Study of SSL
 ---
 
 내가 정리한  SSL 
-{% include /data/ssl/How_to_SSL_work.md %}
+{% include How_to_SSL_work.md %}
