@@ -5,8 +5,6 @@ date: 2019-08-22 21:09:00
 description: Study of SSL
 ---
 
-<h1 id="sslworksediting">SSL Works? (Editing)</h1>
-
 <h2 id="keyusage">Key Usage</h2>
 
 <p>Key usage extension defines the purpose (e.g., encipherment, signature, certificate signing)
