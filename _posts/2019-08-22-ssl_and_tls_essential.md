@@ -7,6 +7,6 @@ description: Let's dig in SSL
 
 Note taking of ssl and tls essential (1~4 chapters)
 
-<object data="/pdf/ssl_and_tls1.pdf" width="500" height="500" type='application/pdf'/>
+<object data="/pdf/ssl_and_tls1.pdf" width="900" height="500" type='application/pdf'/>
 
 
