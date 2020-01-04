@@ -1,4 +1,4 @@
-![bg](yellow)
+(setq markdown-css-paths '("homepage.css"))
 
 # Hello JH's Webpage
 
