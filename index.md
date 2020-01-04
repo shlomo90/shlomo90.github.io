@@ -1,4 +1,4 @@
-<link href="homepage.css" rel="stylesheet"></link>
+<link href="homepage.css" rel="stylesheet">
 
 # Hello JH's Webpage
 
