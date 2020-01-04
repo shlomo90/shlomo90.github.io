@@ -1,4 +1,4 @@
-<link href="homepage.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" media="all" href="homepage.css" />
 
 # Hello JH's Webpage
 
@@ -14,7 +14,3 @@ Welcome visitors. Have fun!
 ## Me?
 
 I am a Network developer and just a man who is eager to know about New Computer Tech.  
-
-[link]: http://naver.com
-
-</link>
