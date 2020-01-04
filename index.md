@@ -1,4 +1,6 @@
-(setq markdown-css-paths '("homepage.css"))
+---
+css: homepage.css
+---
 
 # Hello JH's Webpage
 
