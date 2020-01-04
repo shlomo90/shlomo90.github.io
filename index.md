@@ -1,6 +1,4 @@
----
-css: homepage.css
----
+<link href="homepage.css" rel="stylesheet"></link>
 
 # Hello JH's Webpage
 
