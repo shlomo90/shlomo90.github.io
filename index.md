@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" media="all" href="homepage.css" />
-
 # Hello JH's Webpage
 
 This Homepage is a Tech Blog. Espectually for Computer Science.  

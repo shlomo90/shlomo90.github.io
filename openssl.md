@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" media="all" href="homepage.css" />
-
 # Openssl
 
 ## Purpose
