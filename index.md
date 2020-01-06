@@ -10,6 +10,8 @@ Welcome visitors. Have fun!
 
 1. [Nginx](nginx.md)
 2. [Openssl](openssl.md)
+3. [Python](python.md)
+
 
 ## Me?
 
