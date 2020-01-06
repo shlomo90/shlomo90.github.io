@@ -9,9 +9,9 @@ Welcome visitors. Have fun!
 ## Index
 
 1. [Nginx](nginx.md)
-2. [Openssl](openssl.md)
-3. :arrows_counterclockwise: [Python](python.md)
-4. :arrows_counterclockwise: [Kernel Study With RaspberryPi](kernel_study.md)
+2. [SSL](ssl.md)
+3. (...){: .red} [Python](python.md)
+4. (...){: .red} [Kernel Study With RaspberryPi](kernel_study.md)
 
 
 ## Me?
