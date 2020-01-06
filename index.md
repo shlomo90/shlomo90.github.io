@@ -10,8 +10,8 @@ Welcome visitors. Have fun!
 
 1. [Nginx](nginx.md)
 2. [SSL](ssl.md)
-3. (...){: .red} [Python](python.md)
-4. (...){: .red} [Kernel Study With RaspberryPi](kernel_study.md)
+3. (...){: style="color: red"} [Python](python.md)
+4. (...){: style="color: red"} [Kernel Study With RaspberryPi](kernel_study.md)
 
 
 ## Me?
