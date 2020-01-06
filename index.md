@@ -10,11 +10,9 @@ Welcome visitors. Have fun!
 
 1. [Nginx](nginx.md)
 2. [SSL](ssl.md)
-3. [Python](python.md)
-    * (working on)
-4. [Kernel Study With RaspberryPi](kernel_study.md)
-    * (working on)
-5. [Useful Tips](tips.md)
+3. [Python](python.md) (working on...)
+4. [Kernel Study With RaspberryPi](kernel_study.md) (working on...)
+5. [Useful Tips](tips.md) (working on...)
 
 
 ## Me?
