@@ -14,6 +14,7 @@ Welcome visitors. Have fun!
     * (working on)
 4. [Kernel Study With RaspberryPi](kernel_study.md)
     * (working on)
+5. [Useful Tips](tips.md)
 
 
 ## Me?
