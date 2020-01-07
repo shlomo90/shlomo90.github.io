@@ -14,7 +14,10 @@
 * Let's be a professional export for Openssl.
 
 
-## Openssl versioning
+---
+
+
+## 1. Openssl versioning
 
 * Versions prior to 0.9.3
 	* 0xMMNNFFRBB (M: Major, N: Minor, F: Fix, R: Final B: beta/patch)
