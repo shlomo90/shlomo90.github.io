@@ -6,3 +6,5 @@
 
 1. Master Python language
 2. Make code more easier
+
+## int(string, base)
