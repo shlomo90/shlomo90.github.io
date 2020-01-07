@@ -1,3 +1,4 @@
+<link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
 <link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
 # Hello JH's Webpage
