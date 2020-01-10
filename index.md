@@ -14,8 +14,14 @@ Welcome visitors. Have fun!
 3. [Python](python.md) (working on...)
 4. [Kernel Study With RaspberryPi](kernel_study.md) (working on...)
 5. [Useful Tips](tips.md) (working on...)
+6. [Network](network.md) (working on...)
 
 ---
+
+## Basic Knowledge
+
+* [Basic Things](basic.md)
+
 
 ## ETC.
 
