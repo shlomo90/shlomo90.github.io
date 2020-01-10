@@ -45,11 +45,18 @@ $ arp -i <interface> -a
 	* Comment
 * operands
 
+* Ref
+	* https://en.wikipedia.org/wiki/X86_assembly_language
+	* https://stackoverflow.com/questions/38751614/what-are-the-return-values-of-system-calls-in-assembly
+	* https://stackoverflow.com/questions/10461798/asm-code-containing-0-what-does-that-mean
+	* https://stackoverflow.com/questions/9342659/assembly-jz-instruction-after-cmp
+	* https://stackoverflow.com/questions/2465232/what-does-subl-do-here
+	* https://docs.oracle.com/cd/E19120-01/open.solaris/817-5477/esqaq/index.html
 
 
-## D. Kernel Debug
+## D. Kernel
 
-### 1. Kernel Panic
+### 1. Kernel Panic Debug
 
 #### Terminology
 
@@ -76,3 +83,18 @@ $ arp -i <interface> -a
 	* the highest level of privilege that can access the resource and is defined
 * Requested Privilege Level
 	* is defined in the Segment Selector, the last two bits
+
+#### See Also
+
+* [perf][1]
+
+
+### 2. Kernel Locking System
+
+* Ref
+	* https://www.linuxjournal.com/article/5833
+
+
+
+
+[1]: http://www.brendangregg.com/perf.html
