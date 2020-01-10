@@ -15,6 +15,11 @@ Welcome visitors. Have fun!
 4. [Kernel Study With RaspberryPi](kernel_study.md) (working on...)
 5. [Useful Tips](tips.md) (working on...)
 
+---
+
+## ETC.
+
+1. [Favorite Music](music.md)
 
 ## Me?
 
