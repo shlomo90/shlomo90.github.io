@@ -6,28 +6,28 @@
 This Homepage is a Tech Blog. Espectually for Computer Science.  
 Welcome visitors. Have fun!
 
+---
 
 ## Index
 
-1. [Nginx](nginx.md)
-2. [SSL](ssl/ssl.md)
-3. [Python](python.md) (working on...)
-4. [Kernel Study With RaspberryPi](kernel_study.md) (working on...)
-5. [Useful Tips](tips.md) (working on...)
-6. [Network](network.md) (working on...)
+* Study
+	1. [Nginx](nginx.md)
+    2. [SSL](ssl/ssl.md)
+    3. [Python](python.md) (working on...)
+    4. [Kernel Study With RaspberryPi](kernel_study.md) (working on...)
+    5. [Network](network.md) (working on...)
+* Language
+	1. English
+
+* Misc
+	1. [Basic Things](basic.md)
+	2. [Useful Tips](tips.md) (working on...)
+	3. [Favorite Music](music.md)
 
 ---
 
-## Basic Knowledge
 
-* [Basic Things](basic.md)
-
-
-## ETC.
-
-1. [Favorite Music](music.md)
-
-## Me?
+## About Me
 
 I am a Network developer and just a man who is eager to know about New Computer Tech.  
 
