@@ -26,8 +26,6 @@ Welcome visitors. Have fun!
 
 ---
 
-![](bensound-buddy.mp3)
-
 ## About Me
 
 I am a Network developer and just a man who is eager to know about New Computer Tech.  
