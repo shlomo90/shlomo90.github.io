@@ -6,6 +6,8 @@
 2. Nocturne in C# minor Opus Posth - Chopin
 3. Sam smith - I am not the only one
 
+<embed name="GoodEnough" src="bensound-buddy.mp3" loop="false" hidden="true" autostart="true">
+
 <audio controls>
 		<source src="bensound-buddy.mp3" type="audio/ogg">
 		<source src="bensound-buddy.mp3" type="audio/mpeg">
