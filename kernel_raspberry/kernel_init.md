@@ -7,6 +7,7 @@
 
 * defined at **init/init_task.c**
 * source code 
+
 ```c
 /*
  * Set up the first task table, touch at your own risk!. Base=0,
@@ -154,3 +155,34 @@ EXPORT_SYMBOL(init_task);
         .addr_limit     = KERNEL_DS,                                    \
 }
 ```
+
+* *KERNEL_DS* : 0x0000000
+
+### *INIT_PREEMPT_COUNT
+
+* 재미있는 코드 구현 발견
+* 순차적으로 비트 할당을 하는 방법
+
+```c
+#define PREEMPT_BITS    8
+#define SOFTIRQ_BITS    8
+#define HARDIRQ_BITS    4
+#define NMI_BITS        1
+
+#define PREEMPT_SHIFT   0
+#define SOFTIRQ_SHIFT   (PREEMPT_SHIFT + PREEMPT_BITS)
+#define HARDIRQ_SHIFT   (SOFTIRQ_SHIFT + SOFTIRQ_BITS)
+#define NMI_SHIFT       (HARDIRQ_SHIFT + HARDIRQ_BITS)
+
+// ... 중략 ...
+
+#define PREEMPT_OFFSET  (1UL << PREEMPT_SHIFT)
+#define SOFTIRQ_OFFSET  (1UL << SOFTIRQ_SHIFT)
+#define HARDIRQ_OFFSET  (1UL << HARDIRQ_SHIFT)
+#define NMI_OFFSET      (1UL << NMI_SHIFT)
+```
+
+* PREEMPT_SHIFT is set 0 (range 0xFF)
+* SOFTIRQ_SHIFT is set 8 (range 0xFF00)
+* HARDIRQ_SHIFT is set 16 (range 0xF0000)
+* NMI_SHIFT is set 20 (range 0xFF00000)
