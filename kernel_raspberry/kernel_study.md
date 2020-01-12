@@ -7,7 +7,11 @@
 1. Kernel Study (focus on Network)
 2. Understand Low Level Programming
 
-## B. Setup Raspberry Pi
+## B. Raspberry Pi Specs
+
+* [Raspberry Pi Spec](raspberry_spec.md)
+
+## C. Setup Raspberry Pi
 
 ### 1. Checking IP in one to one LAN
 
@@ -26,7 +30,7 @@ $ arp -i <interface> -a
 ```
 
 
-## C. Kernel Basic
+## D. Kernel Basic
 
 ### Print Hello World at booting time
 
@@ -66,7 +70,7 @@ sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 * check the kern.log file (/var/log/kern.log)
 
 
-## D. Assemply
+## E. Assemply
 
 ### .rept
 
