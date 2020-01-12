@@ -49,7 +49,8 @@ asmlinkage __visible void __init start_kernel(void)
 }
 ```
 * compile kernel (with install.sh)
-    * execute install.sh file  
+    * execute install.sh file
+
 ```
 KERNEL=kernel7
 
