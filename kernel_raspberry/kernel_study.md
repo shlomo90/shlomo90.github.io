@@ -50,6 +50,7 @@ asmlinkage __visible void __init start_kernel(void)
 ```
 * compile kernel (with install.sh)
     * execute install.sh file  
+
 ```
 KERNEL=kernel7
 
@@ -69,6 +70,14 @@ sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 
 * reboot
 * check the kern.log file (/var/log/kern.log)
+
+### *task_struct* structure
+
+* 
+
+### *task_thread_info* function
+
+
 
 
 ## E. Assemply
