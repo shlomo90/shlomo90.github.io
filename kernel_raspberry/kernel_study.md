@@ -49,7 +49,7 @@ asmlinkage __visible void __init start_kernel(void)
 }
 ```
 * compile kernel (with install.sh)
-    * execute install.sh file
+    * execute install.sh file  
 ```
 KERNEL=kernel7
 
@@ -66,6 +66,7 @@ sudo cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/
 sudo cp arch/arm/boot/dts/overlays/README /boot/overlays/
 sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 ```
+
 * reboot
 * check the kern.log file (/var/log/kern.log)
 
