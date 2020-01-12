@@ -158,7 +158,7 @@ EXPORT_SYMBOL(init_task);
 * .preempt_count = INIT_PREEMPT_COUNT : 0
 * .addr_limit = *KERNEL_DS* : 0x0000000
 
-### *INIT_PREEMPT_COUNT
+### *INIT_PREEMPT_COUNT*
 
 ```c
 #define PREEMPT_BITS    8
