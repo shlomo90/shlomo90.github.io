@@ -184,7 +184,7 @@ EXPORT_SYMBOL(init_task);
 * HARDIRQ_SHIFT is set 16 (range 0xF0000)
 * NMI_SHIFT is set 20 (range 0xFF00000)
 
-## *init_stack
+## *init_stack*
 
 * Ref
     * https://isun2501.tistory.com/17
