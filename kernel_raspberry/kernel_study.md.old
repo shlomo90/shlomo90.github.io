@@ -50,7 +50,6 @@ asmlinkage __visible void __init start_kernel(void)
 ```
 * compile kernel (with install.sh)
     * execute install.sh file
-
 ```
 KERNEL=kernel7
 
@@ -67,19 +66,16 @@ sudo cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/
 sudo cp arch/arm/boot/dts/overlays/README /boot/overlays/
 sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 ```
-
 * reboot
 * check the kern.log file (/var/log/kern.log)
 
-### Magic Number
+### *task_struct* structure
 
-* Memory Protection
-    * Early version of UNIX used the relocatable memory reference model.
-    * 이전 메모리에 할당된 값이 수행될 수 있음으로 이를 체크하기 위함
+* 
 
-### Initialize Kernel
+### *task_thread_info* function
 
-* [kernel_init](kernel_init.md)
+
 
 
 ## E. Assemply
