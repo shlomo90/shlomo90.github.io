@@ -1,7 +1,6 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://shlomo90.github.io/favicon/favicon.ico">
 <link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
-<div style="background-color:yellow">
 
 # Hello JH's Webpage
 
@@ -9,8 +8,6 @@ This Homepage is a Tech Blog. Espectually for Computer Science.
 Welcome visitors. Have fun!
 
 ---
-
-
 
 ## Index
 
@@ -36,4 +33,3 @@ I am a Network developer and just a man who is eager to know about New Computer 
 
 ---
 
-</div>
