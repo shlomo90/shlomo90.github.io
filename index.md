@@ -1,7 +1,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://shlomo90.github.io/favicon/favicon.ico">
 <link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
-<div style="background-color:yello">
+<div style="background-color:yellow">
 
 # Hello JH's Webpage
 
