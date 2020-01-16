@@ -189,6 +189,29 @@ EXPORT_SYMBOL(init_task);
 * Ref
     * https://isun2501.tistory.com/17
 
+## *cpu_init*
+
+* *NR_CPUS*
+	* Maximum supported CPUs (>= 2)
+	* Set in config file (CONFIG_NR_CPUS)
+
+
+
+## *stack_smp_processor_id()*
+
+```c
+#define stack_smp_processor_id()	\
+({                              \
+    struct thread_info *ti;                     \
+    __asm__("andq %%rsp,%0; ":"=r" (ti) : "0" (CURRENT_MASK));  \
+    ti->cpu;                            \
+})
+```
+
+* I don't know what this does but, I guess that it gets the thread_info's cpu.
+
+
+
 
 ## Process Flags
 
@@ -235,3 +258,5 @@ typedef struct cpumask { DECLARE_BITMAP(bits, NR_CPUS); } cpumask_t;
 #define DECLARE_BITMAP(name,bits) \
         unsigned long name[BITS_TO_LONGS(bits)]
 ```
+
+
