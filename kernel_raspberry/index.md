@@ -16,7 +16,8 @@
     1. [Print Hello World at booting time](hello_world.md)
     2. [Magic Number](magic_number.md)
     3. [Kernel Initialize](kernel_init.md)
-    4. [Assembly](
+	5. [Kernel setsockopt](setsockopt_process.md)
+    5. [Assembly](assembly.md)
 
 ### current_therad_info
 
