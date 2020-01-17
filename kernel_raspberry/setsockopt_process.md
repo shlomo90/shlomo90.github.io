@@ -197,7 +197,7 @@ int sock_common_setsockopt(struct socket *sock, int level, int optname,
 
 * 위와 같이 sk_prot 은 raw_prot 을 가지며, raw_prot->setsockopt 는 raw_setsockopt 입니다.
 * raw_setsockopt 는 level (SOL_RAW, 등등) 에 따라 SOL_RAW 가 아니므로, ip_setsockopt 함수를 호출하게 됩니다.
-* ip_setsockopt 함수는 처음 do_ip_setsockopt 함수를 수행하게 되고, 여기서 optname은 우리가 설정한 값(PIOL7_SO_SET_ADD_FILTER) 를 가지지 못함으로 없는 경우에 대비한 nf_setsockopt 함수가 호출
+* ip_setsockopt 함수는 처음 do_ip_setsockopt 함수를 수행하게 되고, 여기서 optname은 우리가 설정한 값을 가지지 못함으로 없는 경우에 대비한 nf_setsockopt 함수가 호출
 
 ```c
 int ip_setsockopt(struct sock *sk, int level,
