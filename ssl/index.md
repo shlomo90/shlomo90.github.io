@@ -5,4 +5,5 @@
 ## Index
 
 1. [Openssl](openssl.md)
-2. [How to work SSL?](how_to_work_ssl.md)
+2. [Openssl Data Structure](openssl_SSL.md)
+3. [How to work SSL?](how_to_work_ssl.md)
