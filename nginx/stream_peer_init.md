@@ -28,80 +28,80 @@
 ngx_stream_upstream_init_round_robin
 
 load uscf->servers
-								+---------------+
-		uscf->servers  ------>  |us1|us2|us3|...|
-								+---------------+
+                                +---------------+
+        uscf->servers  ------>  |us1|us2|us3|...|
+                                +---------------+
 
-alloc	peers (ngx_stream_upstream_rr_peers_t)
-						   +------------------------------+
-		peers  -------->   |ngx_stream_upstream_rr_peers_t|
-						   +------------------------------+
-alloc	peer * n
+alloc    peers (ngx_stream_upstream_rr_peers_t)
+                           +------------------------------+
+        peers  -------->   |ngx_stream_upstream_rr_peers_t|
+                           +------------------------------+
+alloc    peer * n
 
-						   +------------------------------+------------------------------+---+
-		peer   -------->   |ngx_stream_upstream_rr_peer_t |ngx_stream_upstream_rr_peer_t |...|
-						   +------------------------------+------------------------------+---+
-										^
-										| max_conns 복사
-						   +----------------------------+----------------------------+---+
-		uscf->servers  ->  |ngx_stream_upstream_server_t|ngx_stream_upstream_server_t|...|
-						   +----------------------------+----------------------------+---+
-		(uscf == ngx_stream_upstream_srv_conf_t)
-
-
-						   +------------------------------+---+------------------------------+
-		peer   -------->   |ngx_stream_upstream_rr_peer_t |...|ngx_stream_upstream_rr_peer_t |
-						   +------------------------------+---+------------------------------+
-
-						   각 peer 의 next 는 바로 옆의 배열을 가리킴
+                           +------------------------------+------------------------------+---+
+        peer   -------->   |ngx_stream_upstream_rr_peer_t |ngx_stream_upstream_rr_peer_t |...|
+                           +------------------------------+------------------------------+---+
+                                        ^
+                                        | max_conns 복사
+                           +----------------------------+----------------------------+---+
+        uscf->servers  ->  |ngx_stream_upstream_server_t|ngx_stream_upstream_server_t|...|
+                           +----------------------------+----------------------------+---+
+        (uscf == ngx_stream_upstream_srv_conf_t)
 
 
+                           +------------------------------+---+------------------------------+
+        peer   -------->   |ngx_stream_upstream_rr_peer_t |...|ngx_stream_upstream_rr_peer_t |
+                           +------------------------------+---+------------------------------+
 
-						   +------------------------------+
-		peers  -------->   |ngx_stream_upstream_rr_peers_t|
-						   +------------------------------+
-										| peers->next	(backup)
-										V
-						   +------------------------------+
-						   |ngx_stream_upstream_rr_peers_t|
-						   +------------------------------+
+                           각 peer 의 next 는 바로 옆의 배열을 가리킴
+
+
+
+                           +------------------------------+
+        peers  -------->   |ngx_stream_upstream_rr_peers_t|
+                           +------------------------------+
+                                        | peers->next    (backup)
+                                        V
+                           +------------------------------+
+                           |ngx_stream_upstream_rr_peers_t|
+                           +------------------------------+
 
 
 -----------------------------------------------------------------------------------
-		위 복사 작업이 끝나면 아래와 같이 형상이 된다.
-		+-------------------------------+
-		|ngx_stream_upstream_main_conf_t|
-		+-------------------------------+
-						| .upstreams
-						V
-		+------------------------------+---+
-		|ngx_stream_upstream_srv_conf_t|...|		// 해당 변수는 알다시피, 'proxy_pass' 파싱시 생성되고, pscf->upstream 에 저장
-		+------------------------------+---+		// proxy_handler 에서 pscf->upstream 은 running 타임에서 r->upstream->upstream 으로 설정됨
-						| .peer
-						V
-		+------------------------------+   data 는 아래를 포인팅
-		|ngx_stream_upstream_peer_t    |
-		|							   | ----+
-		|							   |     | .init_upstream  (ngx_stream_upstream_init_main_conf 에서 수행)
-		|							   | -----------------------> ngx_stream_upstream_init_persist
-		+------------------------------+     |
-											 |
-											 |	
-											 V
-						   +------------------------------+
-		peers  -------->   |ngx_stream_upstream_rr_peers_t|  새로 생성됨
-						   +------------------------------+
-										| peers->peer
-										V
-						   +------------------------------+---+------------------------------+
-		peer   -------->   |ngx_stream_upstream_rr_peer_t |...|ngx_stream_upstream_rr_peer_t | 새로 생성됨
-						   +------------------------------+---+------------------------------+
-										^
-										| max_conns 복사 (러닝타임에서 복사)
-						   +----------------------------+----------------------------+---+
-		uscf->servers  ->  |ngx_stream_upstream_server_t|ngx_stream_upstream_server_t|...|
-						   +----------------------------+----------------------------+---+
-		(uscf == ngx_stream_upstream_srv_conf_t)  초기 설정타임의 값을 가짐
+        위 복사 작업이 끝나면 아래와 같이 형상이 된다.
+        +-------------------------------+
+        |ngx_stream_upstream_main_conf_t|
+        +-------------------------------+
+                        | .upstreams
+                        V
+        +------------------------------+---+
+        |ngx_stream_upstream_srv_conf_t|...|        // 해당 변수는 알다시피, 'proxy_pass' 파싱시 생성되고, pscf->upstream 에 저장
+        +------------------------------+---+        // proxy_handler 에서 pscf->upstream 은 running 타임에서 r->upstream->upstream 으로 설정됨
+                        | .peer
+                        V
+        +------------------------------+   data 는 아래를 포인팅
+        |ngx_stream_upstream_peer_t    |
+        |                               | ----+
+        |                               |     | .init_upstream  (ngx_stream_upstream_init_main_conf 에서 수행)
+        |                               | -----------------------> ngx_stream_upstream_init_persist
+        +------------------------------+      |
+                                              |
+                                              |    
+                                              V
+                           +------------------------------+
+        peers  -------->   |ngx_stream_upstream_rr_peers_t|  새로 생성됨
+                           +------------------------------+
+                                        | peers->peer
+                                        V
+                           +------------------------------+---+------------------------------+
+        peer   -------->   |ngx_stream_upstream_rr_peer_t |...|ngx_stream_upstream_rr_peer_t | 새로 생성됨
+                           +------------------------------+---+------------------------------+
+                                        ^
+                                        | max_conns 복사 (러닝타임에서 복사)
+                           +----------------------------+----------------------------+---+
+        uscf->servers  ->  |ngx_stream_upstream_server_t|ngx_stream_upstream_server_t|...|
+                           +----------------------------+----------------------------+---+
+        (uscf == ngx_stream_upstream_srv_conf_t)  초기 설정타임의 값을 가짐
 
 -----------------------------------------------------------------------------------
 ```
