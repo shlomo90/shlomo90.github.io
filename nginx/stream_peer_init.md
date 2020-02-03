@@ -2,11 +2,11 @@
 
 # Stream module's peer init
 
-비단, "stream" 모듈만이 아니라 http 모듈에서도 좋은 reference 가 될 수잇음.
+비단, "stream" 모듈만이 아니라 http 모듈에서도 좋은 reference 가 될 수있음.
 
-## Configuration time
+## A. Configuration time
 
-### Directive parsing time
+### 1. Directive parsing time
 
 1. When "upstream" directive meets, Make new upstream block with "ngx_stream_upstream_add" function.
 	- Allocate new memory for upstream `uscf` points to `umcf->upstreams`.
@@ -16,13 +16,12 @@
 3. uscf->peer.init_upstream 에다가는 ngx_stream_upstream_init_persist 로 교체
 
 
-### Configuration Init Time (After Directive parsing time)
+### 2. Configuration Init Time (After Directive parsing time)
 
 1. ngx_stream_upstream_init_main_conf 수행시, `uscf->peer.init_upstream` 을 수행 (ngx_stream_upstream_init_persist)
 2. 기존 저장된 ngx_stream_upstream_persist_srv_conf_t 의 original_init_upstream 에 저장된 함수를 호출
    (original_init_upstream 을 가지고 오기 위해 기존 `uscf->peer.init_upstream` 이 존재하는지 보는데 없음!
 	따라서, 디폴트값인 ngx_stream_upstream_init_round_robin 을 세팅한다.
-
 
 ```
 ngx_stream_upstream_init_round_robin
@@ -67,8 +66,8 @@ alloc    peer * n
                            +------------------------------+
 
 
------------------------------------------------------------------------------------
-        위 복사 작업이 끝나면 아래와 같이 형상이 된다.
+위 복사 작업이 끝나면 아래와 같이 형상이 된다.
+
         +-------------------------------+
         |ngx_stream_upstream_main_conf_t|
         +-------------------------------+
@@ -81,13 +80,13 @@ alloc    peer * n
                         V
         +------------------------------+   data 는 아래를 포인팅
         |ngx_stream_upstream_peer_t    |
-        |                               | ----+
-        |                               |     | .init_upstream  (ngx_stream_upstream_init_main_conf 에서 수행)
-        |                               | -----------------------> ngx_stream_upstream_init_persist
-        +------------------------------+      |
-                                              |
-                                              |    
-                                              V
+        |                              | ----+
+        |                              |     | .init_upstream  (ngx_stream_upstream_init_main_conf 에서 수행)
+        |                              | -----------------------> ngx_stream_upstream_init_persist
+        +------------------------------+     |
+                                             |
+                                             |    
+                                             V
                            +------------------------------+
         peers  -------->   |ngx_stream_upstream_rr_peers_t|  새로 생성됨
                            +------------------------------+
@@ -103,7 +102,6 @@ alloc    peer * n
                            +----------------------------+----------------------------+---+
         (uscf == ngx_stream_upstream_srv_conf_t)  초기 설정타임의 값을 가짐
 
------------------------------------------------------------------------------------
 ```
 
 3. ngx_stream_upstream_init_round_robin 을 수행하면서 us->peer.init 은 ngx_stream_upstream_init_round_robin_peer
@@ -116,18 +114,14 @@ alloc    peer * n
 	- (init_main_conf 는 ngx_stream_block 함수에서 수행됩니다.
 
 
-## Running Time
+## B. Running Time
 
 The "Running Time" means the time when a packet comes from client and nginx processes the request
-
 
 1. peer init 을 먼저 수행한다.
 	- persist 가 존재한다면 persist init 을 수행하는데, 내부적으로 미리 저장된 peer init 을 수행
 	- persist init 에서는 미리저장된 init 을 통해 get, free, data 등등 결정된 거를 persist 가 가지는 구조체에
 	  따로 저장 (오리진 복사)
-
-
----
 
 
 !!!!!!!1 stream 에서의 get 하는 방법 !!!!!!!!!
