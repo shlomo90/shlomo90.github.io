@@ -13,7 +13,7 @@ Welcome visitors. Have fun!
 * Study
 	1. [Nginx](nginx/index.md)
     2. [SSL](ssl/index.md)
-    3. [Python](python/index.md) (working on...)
+    3. [Python](/python/index.md) (working on...)
     4. [Kernel Study With RaspberryPi](/kernel_raspberry/index.md) (working on...)
     5. [Network](network.md) (working on...)
 * Language
