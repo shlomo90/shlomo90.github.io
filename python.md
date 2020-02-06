@@ -2,14 +2,6 @@
 
 # Python
 
-## Purpose
-
-1. Master Python language
-2. Make code more easier
-
-## int(string, base)
-
-
 ## classmethod
 
 * A class method is a method which is bound to the class and not the object of the class.
