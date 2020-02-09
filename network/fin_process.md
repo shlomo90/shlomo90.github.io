@@ -17,9 +17,9 @@
 
 ## 2. Explainations
 
-- 2번째 패킷의 F. 에서 . 은 ACK 인데 이는 첫 패킷에 대한 ACK 을 표현하는 것으로 ACK, FIN 이 Merge 된 것
-- 3번째 패킷의 F. 은 TCP Half Close 와 연관이 되어있는데, 서버입장에서도 더이상 Client 에게 던질 것이 없는 경우 2번 째 Fin 에 대한 ACK 과 나도 더이상 보낼 게 없다는 뜻인
-  Fin 을 합병해서 전달하기에 나타나는 것
+- 2번째 패킷의 `F.` 에서 `.` 은 ACK 인데 이는 첫 패킷에 대한 ACK 을 표현하는 것으로 ACK, FIN 이 Merge 된 것
+- 3번째 패킷의 `F.` 은 TCP Half Close 와 연관이 되어있는데, 서버입장에서도 더이상 Client 에게 던질 것이 없는 경우 2번 째 Fin 에 대한 ACK 과 나도 더이상 보낼 게 없다는 뜻인
+  Fin 을 합병해서 전달하기에 나타나는 것.
 
 # Ref
 
