@@ -1,13 +1,13 @@
 <link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
-# Fin Process (Delayed ACK)
+# Fin Process (Merged ACK)
 
 간혹, 패킷 분석을 하다보면, close 4-way handshake 를 할 것으로 생각되는데 정작 실제 날라가는 패킷은 더 적은 것에 대해 의문을 품을 수 있다.
 여기 아래 해당 상황에 대해서 분석을 해본다.
 
-## A. Understanding Delayed ACK
+## A. Understanding Merged ACK
 
-### 1. TCPDUMP Captures for Delayed ACK
+### 1. TCPDUMP Captures for Merged ACK
 ```
 02:46:22.548341 IP 172.31.0.100.1344 > 172.31.0.1.11674: Flags [P.], seq 309:407, ack 351, win 508, options [nop,nop,TS val 884878429 ecr 1436], length 98
 02:46:22.548458 IP 172.31.0.1.11674 > 172.31.0.100.1344: Flags [F.], seq 351, ack 407, win 27, options [nop,nop,TS val 143676 ecr 884878429], ngth 0
