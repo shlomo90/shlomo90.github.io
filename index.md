@@ -15,8 +15,8 @@ Welcome visitors. Have fun!
     2. [SSL](ssl/index.md)
     3. [Python](/python_study/index.md)
     4. [Programming](programming/index.md)
-    4. [Kernel Study With RaspberryPi](/kernel_raspberry/index.md)
-    5. [Network](network.md) (working on...)
+    5. [Kernel Study With RaspberryPi](/kernel_raspberry/index.md)
+    6. [Network](/network/index.md)
 * Language
 	1. English
 
