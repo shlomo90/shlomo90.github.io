@@ -24,6 +24,7 @@ Welcome visitors. Have fun!
 	1. [Basic Things](basic.md)
 	2. [Useful Tips](tips.md) (working on...)
 	3. [Favorite Music](music.md)
+	4. [Terminology](terminology.md)
 
 ---
 
