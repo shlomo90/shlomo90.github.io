@@ -25,6 +25,7 @@ Welcome visitors. Have fun!
 	2. [Useful Tips](tips.md) (working on...)
 	3. [Favorite Music](music.md)
 	4. [Terminology](terminology.md)
+	5. [English Vocabulary](vocabulary.md)
 
 ---
 
