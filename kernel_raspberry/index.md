@@ -17,7 +17,8 @@
     2. [Magic Number](magic_number.md)
     3. [Kernel Initialize](kernel_init.md)
 	5. [Kernel setsockopt](setsockopt_process.md)
-    5. [Assembly](assembly.md)
+    6. [Assembly](assembly.md)
+    7. [AF_PACKET, SOCK_RAW Kernel call](af_packet_sock_raw.md)
 
 ### current_therad_info
 
