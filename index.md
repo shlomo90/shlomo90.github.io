@@ -22,7 +22,7 @@ Welcome visitors. Have fun!
 
 * Misc
 	1. [Basic Things](basic.md)
-	2. [Useful Tips](tips.md) (working on...)
+	2. [Useful Tips](tips/index.md) (working on...)
 	3. [Favorite Music](music.md)
 	4. [Terminology](terminology.md)
 	5. [English Vocabulary](vocabulary.md)
