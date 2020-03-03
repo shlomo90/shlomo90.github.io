@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
 # Nginx Content Phase
 
@@ -137,6 +138,11 @@ ngx_http_process_request_headers
 ```
 
 * When it reaches to *ngx_http_core_run_phases* function, Run *ph's checker*.
+	* examples checkers = `ngx_stream_core_preread_phase` for NGX_STREAM_PREREAD_PHASE
+	* examples checkers = `ngx_stream_core_content_phase` for NGX_STREAM_CONTENT_PHASE
+	* examples checkers = `ngx_stream_core_gerneric_phase` for default
+	* NOTICE!
+		* Only If handlers are, it's added in `ph`.
 * *r->phase_handler is assigned before call *ngx_http_core_run_phases*. (See the below code.)
 	* if request 'r' is internal, *r->phase_handler* is *cmcf->phase_engine.server_rewrite_index*.
 	* otherwise, *r->phase_handler* is 0.
@@ -195,3 +201,22 @@ ngx_http_core_rewrite_phase(ngx_http_request_t *r, ngx_http_phase_handler_t *ph)
 ```
 
 * As you can see this code, After one phase handler finished, do next phase handler.
+
+## Extra
+
+### Usage of Each PHASE
+
+* NGX_STREAM_POST_ACCEPT_PHASE
+	* ngx_stream_realip_module.c
+* NGX_STREAM_PREACCESS_PHASE
+	* ngx_stream_limit_conn_module.c
+* NGX_STREAM_ACCESS_PHASE
+	* ngx_stream_access_module.c
+* NGX_STREAM_SSL_PHASE
+	* ngx_stream_ssl_module.c
+* NGX_STREAM_PREREAD_PHASE
+	* ngx_stream_ssl_preread_module.c
+* NGX_STREAM_CONTENT_PHASE
+	* default....
+* NGX_STREAM_LOG_PHASE
+	* ngx_stream_log_module.c
