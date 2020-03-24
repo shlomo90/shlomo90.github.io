@@ -67,4 +67,12 @@
 * **manifest something (in something)** to show something clearly, especially a feeling, an attitude or quality
     * *Social tensions were manifested in the recent political crisis.*
 * **manifest itself (in something)** to appear or become easy to notice
-    * *The symptoms of the disease manifested themselves ten days later
+    * *The symptoms of the disease manifested themselves ten days later*
+
+### be supposed to do/be something () idioms
+
+* to be expected or required to do/be something according to a rule, a custom, an arrangement, etc.
+    * *What am I supposed to do?*
+    * *You're supposed to buy a ticket, but not many people do*
+    * *Oops-that wasn't supposed to happen.*
+    * *How was I supposed to know you were waiting for me?*
