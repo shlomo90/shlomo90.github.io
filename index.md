@@ -34,7 +34,7 @@ Welcome visitors. Have fun!
 
 ## About Me
 
-I am a Network developer and just a man who is eager to know about New Computer Tech.  
+I am a Network developer and just a man who is craving to know about New Computer Tech.  
 
 ---
 
