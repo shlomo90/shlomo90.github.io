@@ -19,7 +19,7 @@
 
 ### beard (/bɪrd/) n
 
-* hair that grows on the chin and sides of a main's face;
+* hair that grows on the chin and sides of a man's face;
     * *He has decided to grow a beard and a moustache.*
     * *a week's growth of beard*
 
