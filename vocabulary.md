@@ -33,31 +33,38 @@
 * **tally (with something)** to be the same as or to match another person's account of something, another set of figures, etc.
     * *Her report of wath happened tallied exactly with the story of another withness.
 
-### infect () v
+### infect (/ɪnˈfekt/) v
 
 * to make a disease or an illness spread to a person, an animal or a plant
     * *It is not possible to infect another person through kissing.*
     * *people infected with HIV*
 
-### volatility ( ) n
+### volatility (/ˌvɑːləˈtɪləti/) n
 
-* **(often disapproving)*** the quality in a person of changing easily from one moood to another
+* **(often disapproving)** the quality in a person of changing easily from one mood to another
     * *There was concern about the father's volatility.*
 * the quality in a situation of being likely to change suddenly
     * *The economy is set to recover, despite recent stock market volatility.*
 * **(specialist)** the quality in a substance of changing easily into a gas
     * *The cold reduces the volatility of the substance.*
 
-### perilously ()  adv
+### perilously (/ˈperələsli/)  adv
 
 * in a very dangerous way
     * *We came perilously close to disaster.*
     * *Supplies are perilously low.*
 
-### amid () preposition
+### amid (/əˈmɪd/) preposition
 
 * in the middle of or during something, especially something that causes excitement or fear
     * *He finished his speech amid tremendous applause.*
     * *The firm collapsed amid allegations of fraud.*
 * surrounded by soomething
     * *The hotel was in a beautiful position amid lemon groves.*
+
+### manifest (/ˈmænɪfest/) v
+
+* **manifest something (in something)** to show something clearly, especially a feeling, an attitude or quality
+    * *Social tensions were manifested in the recent political crisis.*
+* **manifest itself (in something)** to appear or become easy to notice
+    * *The symptoms of the disease manifested themselves ten days later
