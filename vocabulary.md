@@ -11,7 +11,7 @@
 * as a response or reaction to something
 	* *I asked her opinion, but she just asked me a question in return.*
 
-### sports (/spɔːrt/)
+### sport (/spɔːrt/) v
 
 * **sport something** to have or wear something in a proud way
     * *to sport a beard*
