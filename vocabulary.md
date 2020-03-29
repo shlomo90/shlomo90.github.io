@@ -139,3 +139,7 @@ what's the opposite of disparity?
 
 * to surprise someone, esp. in a way that makes the person feel confused or uncertain
     * *The news caught her completely off grard - she didn't know what to say.*
+
+2020.03.29
+
+---
