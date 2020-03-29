@@ -76,3 +76,20 @@
     * *You're supposed to buy a ticket, but not many people do*
     * *Oops-that wasn't supposed to happen.*
     * *How was I supposed to know you were waiting for me?*
+
+
+### brokerage (/ˈbrəʊkərɪdʒ/) n
+
+* A broker is a person or firm who arranges transactions between a buyer and a seller for a commission when the deal is executed.
+    * *a brokerage firm/house*
+
+
+### broker (/ˈbrəʊkər/) n
+
+* a person who buys and sells things for other people
+    * *Ask advice from an insurance broker.*
+
+> it's not agent - one who acts on behalf of a principal party in a deal.
+> Brokers are always necessary for the purchase and sale of financial instruments
+> They screen these potential buyers or sellers for the perfect match
+> The word "broker" derives from Old French broceur
