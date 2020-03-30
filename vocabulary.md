@@ -143,3 +143,104 @@ what's the opposite of disparity?
 2020.03.29
 
 ---
+
+### ground (/ɡraʊnd/) verb
+
+* **ground (something)** when a boat grouds or something grounds it, it touches the ground in
+  shallow water and is unable to move
+    * *The fishing boad had been grounded on rocks off the coast of Cornwall*
+* (aircraft) to prevent an aircraft from taking off
+    * *All planes out of Heathrow have been grounded by the strikes*
+* (child) to punish a child or young person by not allowing them to go out with their friends for a
+  period of time.
+    * *You're grounded for a week!*
+
+### fleet (/fliːt/) noun
+
+* **fleet (of something)** a group of planes, buses, taxis, etc. travelling together or owned by
+  the same organization
+    * *the company's new fleet of vans*
+
+### repatriate 
+
+### come as () idiom
+
+* used to describe the effect that something has when people first learn about it.
+    * *Their decision came as a surprise (to me)*
+    * *It should come as no surprise that many people oppose the plan.*
+
+### bailout (/ˈbeɪlaʊt/) noun
+
+* an act of giving money to a company, a foreign country, etc. that has very serious financial
+  problems.
+    * *The airline was saved by a government bailout*
+
+### move (/muːv/) noun
+
+* (action) an action that you do or need to do to achieve something
+    * *Getting a job in marketing was a good career move.
+
+### as () preposition
+
+* used to describe somebody/something appearing to be somebody/something else
+    * *They were all dressed as clowns.*
+* used to describe the fact that somebody has a particular job or function
+    * *I respect him as a doctor.*
+
+### as () adverb
+
+* **as...as...** used when you are comparing two people or things, or two situations.
+    * *You're as tall as your father.*
+* used to say that something happens in a same way
+    * *As always, he said little.*
+    * *The 'h'in honest is silent, as in 'hour'
+* **as...as...** used to emphasize an amount
+    * *As many as 2 million people could be affected.*
+
+### as () conjunction
+
+* while something else is happening
+    * *He sat watching her as she got ready.*
+* in the way in which
+    * *She lost it, just as I said she would*
+* used to state the reason for something
+    * *As you were out, I left a message.*
+    * *She may need some help as she's new*
+    * *The move came as regional airline Loganair said airlines were unlikely to survive without
+      a government bailout*
+* used to make a comment or to add information about what you have just said
+    * *As you know, Julia is leaving soon*
+
+### furlough (/ˈfɜːrləʊ/) verb
+
+* **furlough somebody** to give somebody permission to leave their duties for a period of time,
+  especially soldiers workingin a foreign country.
+    * *EasyJet said its cabin crew would be furloughed, with staff paid 80$% of their wage from 1
+      April through the government's job retention scheme.*
+
+### retention (/rɪˈtenʃn/) noun
+
+* the action of keeping something rather than losing it or stopping it.
+    * *The company needs to improve its training and retention of staff.*
+
+### tirelessly (/ˈtaɪərləs/) adjective
+
+* putting a lot of hard work and energy into something over a long period of time.
+    * *a tireless campaigner for human rights.*
+    * *to have tireless energy*
+
+### chancellor (/ˈtʃænsələr/) noun
+
+* the head of government in Germany or Austria
+    * *Chancellor Merkel*
+
+### weather () verb
+
+* **weather something** to come safely through a difficult period or experience
+    * *The company just managed to weather the recession.*
+    * She refuses to resign, intending to weather the storm (= wait until the situation improves
+      again).
+
+2020.03.30
+---
+
