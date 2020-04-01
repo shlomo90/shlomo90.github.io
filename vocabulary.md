@@ -31,7 +31,7 @@
 ### tally (/ˈtæli/) v
 
 * **tally (with something)** to be the same as or to match another person's account of something, another set of figures, etc.
-    * *Her report of wath happened tallied exactly with the story of another withness.
+    * *Her report of what happened tallied exactly with the story of another withness.
 
 ### infect (/ɪnˈfekt/) v
 
