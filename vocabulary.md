@@ -167,7 +167,12 @@ what's the opposite of disparity?
   the same organization
     * *the company's new fleet of vans*
 
-### repatriate 
+### repatriate (/ˌriːˈpeɪtrieɪt/) verb
+
+* **repatriate somebody** to send or bring somebody back to their own country.
+    * *The refugees were forcibly repatriated*
+    * *The insurance will cover the costs of repatriating you and your family in the case of an
+       accident*.
 
 ### come as () idiom
 
@@ -271,3 +276,14 @@ what's the opposite of disparity?
 2020.04.01
 
 ---
+
+### drained (/dreɪnd/) adj
+
+* very tired and without energy
+    * *I was emotionally drained*.
+    * *The experience left her emotionally drained*
+
+2020.04.02
+
+---
+
