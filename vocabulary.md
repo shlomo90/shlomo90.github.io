@@ -31,7 +31,7 @@
 ### tally (/ˈtæli/) v
 
 * **tally (with something)** to be the same as or to match another person's account of something, another set of figures, etc.
-    * *Her report of what happened tallied exactly with the story of another withness.
+    * *Her report of what happened tallied exactly with the story of another withness.*
 
 ### infect (/ɪnˈfekt/) v
 
@@ -238,10 +238,26 @@ what's the opposite of disparity?
 
 * **weather something** to come safely through a difficult period or experience
     * *The company just managed to weather the recession.*
-    * She refuses to resign, intending to weather the storm (= wait until the situation improves
-      again).
+    * *She refuses to resign, intending to weather the storm (= wait until the situation improves
+      again).*
 
 2020.03.30
 
 ---
 
+### retention (/rɪˈtenʃn/) n
+
+* the action of keeping something rather than losing it or stopping it
+    * *The company needs to improve its training and retention of staff.*
+
+* the action of keepling liquid, heat, etc. inside something rather than letting it escape
+    * *Eating too much salt can cause fluid retention.*
+    * *the importance of energy conservation and heat retention*
+* the ability to remember things
+    * *Visual material aids the retention of information.*
+
+### notorious (/nəʊˈtɔːriəs/) adj
+
+* well known for being bad
+    * *a notorious criminal*
+    * **notorious as something** *The bar has become notorious as a meeting-place for drug dealers.*
