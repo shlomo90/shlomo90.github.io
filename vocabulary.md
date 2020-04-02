@@ -33,6 +33,12 @@
 * **tally (with something)** to be the same as or to match another person's account of something, another set of figures, etc.
     * *Her report of what happened tallied exactly with the story of another withness.*
 
+### tally (/ˈtæli/) n
+
+* a record of the number or amount of something, especially one that you can keep adding to
+    * *He hopes to improve on his tally of three goals in the past nine games.*
+    * *Keep a tally of how much you spend while you're away.*
+
 ### infect (/ɪnˈfekt/) v
 
 * to make a disease or an illness spread to a person, an animal or a plant
@@ -261,3 +267,7 @@ what's the opposite of disparity?
 * well known for being bad
     * *a notorious criminal*
     * **notorious as something** *The bar has become notorious as a meeting-place for drug dealers.*
+
+2020.04.01
+
+---
