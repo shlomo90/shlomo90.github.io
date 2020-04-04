@@ -287,3 +287,27 @@ what's the opposite of disparity?
 
 ---
 
+### frankly (/ˈfræŋkli/) adv
+
+* in an honest and direct way that people might not like
+    * *He spoke frankly about the ordeal.*
+* used to show that you are being honest about something, even through people might not like what
+  you are saying
+    * *Frankly, I couldn't care less what happens to him.*
+
+### firmly (/ˈfɜːrmli/) adv
+
+* in a strong or definite way
+    * *'I can manage,' she said firmly.*
+    * *It is now firmly established as one of the leading brands in the country.*
+
+### committed (/kəˈmɪtɪd/) adj
+
+* willing to work hard and give our time and energy to something; believing strongly in something
+    * *a committed member of the team.*
+    * *They are committed socialists.*
+    * **committed to (doing) something** *The president is personally committed to this legislation*
+
+2020.04.04
+
+---
