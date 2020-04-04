@@ -308,6 +308,50 @@ what's the opposite of disparity?
     * *They are committed socialists.*
     * **committed to (doing) something** *The president is personally committed to this legislation*
 
+### bang (/bæŋ/) verb
+
+* (intransitive, transitive) to hit something in a way that makes a loud noise.
+    * **bang on something** *She banged on the door angrily.*
+* (intransitive, transitive) to close something or to be closed with a loud noise
+    * *A window was baning somewhere (= opening and closing noisily)*
+    * *The door banged shut behind her*
+
+### solidarity (/ˌsɑːlɪˈdærəti/) noun
+
+* support by one person or group of people for another because they share feelings, opinions, aims,
+  etc.
+    * community solidarity
+
+### pot (/pɑːt/) noun
+
+* [countable] a deep round container used for cooking things in.
+  (deeper than pans and wider)
+    * *pots and pans*
+    * *You'll need a large cooking pot with a tight-fitting lid.*
+
+### pan (/pæn/) noun
+
+* a container, usually made of metal, with a handle or handles, used for cooking food in
+
+### half-staff (/ˌhæf ˈstæf/) noun
+
+* (of a flag) flown at the middle of the mast as a sign of respect for a person or people who have
+  just died
+    * *Flags at state buildings were flown at half-staff.*
+
+### perish (/ˈperɪʃ/) verb
+
+* [intransitive] (formal or literary) (of people or animals) to die, especially in a sudden violent
+  way
+    * *A family of four perished in the fire.*
+    * *Thousands perished at the hands of the invading forces.*
+* [intransitive] (formal) to be lost or destroyed
+    * *Early buildings were made of wood and have perished.*
+* **perish the thought** used to say that you find a suggestion unacceptable or that you hope that
+  something will never happen
+    * *Me get married? Perish the thought!*
+
 2020.04.04
 
 ---
+
