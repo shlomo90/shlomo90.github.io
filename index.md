@@ -1,40 +1,42 @@
 <link rel="shortcut icon" href="favicon/favicon.ico">
 <link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
-# Hello JH's Webpage
+# JH's Homepage
 
-This Homepage is a Tech Blog. Espectually for Computer Science.  
-Welcome visitors. Have fun!
+Hello! Everyone. My name is JaeHwan Lim. I am maintaining this ugly blog for organizing my knowledge and writing down what I am digging into.  
+You may feel strange when you read my items written in English. To be honest, I am not good at English but I wanna spread knowledge as possible as I can with using English.  
+I hope all people who visit my blog would be helpful.
 
 ---
 
 ## Index
 
-### 1. Computer Science Study
+### 1. Network Study
 
-1. [Nginx](nginx/index.md)
-2. [SSL](ssl/index.md)
-3. [Python](/python_study/index.md)
-4. [Programming](programming/index.md)
-5. [Kernel Study With RaspberryPi](/kernel_raspberry/index.md)
-6. [Network](/network/index.md)
-7. [Basic Things](basic.md)
-8. [Useful Tips](tips/index.md) (working on...)
+1. [Network](/network/index.md)
+2. [Nginx](nginx/index.md)
+3. [SSL](ssl/index.md)
 
-### 2. Language
+### 2. Kernel OS Study
 
-1. [English Vocabulary](vocabulary.md)
+1. [Kernel Study With RaspberryPi](/kernel_raspberry/index.md)
 
-### 3. Misc
+### 3. Computer Language Study
 
+1. [Python](/python_study/index.md)
+
+### 4. Programming Study
+
+1. [Programming](programming/index.md)
+
+### 5. Miscellaneous
+
+1. [Basic Things](basic.md)
+2. [Useful Tips](tips/index.md)
 3. [Favorite Music](music.md)
 4. [Terminology](terminology.md)
+5. [English Vocabulary](vocabulary.md)
 
 ---
 
-## About Me
-
-I am a Network developer and just a man who is craving to know about New Computer Tech.  
-
----
-
+If you want to contact to me, Email me (shlomolim90@gmail.com)
