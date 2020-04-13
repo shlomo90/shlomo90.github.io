@@ -355,3 +355,7 @@ what's the opposite of disparity?
 
 ---
 
+The name-value-pair string consists of the characters up to, but not including, the first ';'
+';' 을 포함하지 않는 바로 전까지 name-value-pair 이고
+
+';' 가 없다면, 전체가 name-value-pair 이다.
