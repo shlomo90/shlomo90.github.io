@@ -2,6 +2,7 @@
 
 # Vocabulary
 
+* List the meaning of the words that I didn't know.
 
 ### in return (for something)
 
@@ -355,7 +356,34 @@ what's the opposite of disparity?
 
 ---
 
-The name-value-pair string consists of the characters up to, but not including, the first ';'
-';' 을 포함하지 않는 바로 전까지 name-value-pair 이고
+### parlour (/ˈpɑːrlər/) noun
 
-';' 가 없다면, 전체가 name-value-pair 이다.
+* (old-fashioned) a room in a private house for sitting in, entertaining visitors, etc.
+* (in compounds) a shop that provides particular goods or services
+    * *a beauty/an ice-cream parlour*
+
+### devour (/dɪˈvaʊər/) verb
+
+* **devour something** to eat all of something quickly, especially because you are very hungry
+    * *He devoured half of his burger in one bite.*
+    * *The animal quickly devoured its prey.*
+* to read or look at something with great interest and enthusiasm.
+    * *She devoured everything she could lay her hands on: books, magazines and newspapers.*
+* to destroy
+    * *Flames devoured the house.*
+
+### wash down () phrasal verb
+
+* to clean something large or a surface with a lot of water
+    * *Wash down the walls before painting them.*
+* to drink something after, or at the same time as, eating something
+    * *For lunch we had bread and cheese, washed down with beer.*
+    * *I washed pizza down with pop.*
+
+### pop (/pɑːp/) noun
+
+* popular music of the sort that has been popular sinse the 1950s,...
+    * *rock, pop and soul*
+* a short, sharp, explosive sound
+    * *The cork came out of the bottle with a loud pop.*
+* [uncountable] a sweet fizzy drink (= with bubbles) that is not alcoholic
