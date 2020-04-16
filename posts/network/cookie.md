@@ -19,7 +19,6 @@ This is a summary of RFCs about Cookie
 
 ## 3. Restrictions
 
-
 * There are some cases that are not fit into syntax and semantic in use today, Should document the
   different things.
 
@@ -55,8 +54,7 @@ This is a summary of RFCs about Cookie
     * "Path=" path-value
 * secure-av
     * "Secure"
-    * The secure attribute limits the score of the cookie to "secure" channels (where "secure" is defined by the user agent).
-      When a cookie has the Secure attribute, the user agent will include the cookie in an HTTP request **only if the request is transmitted over a secure channel**
+    * The secure attribute limits the score of the cookie to "secure" channels (where "secure" is defined by the user agent). When a cookie has the Secure attribute, the user agent will include the cookie in an HTTP request **only if the request is transmitted over a secure channel**
 * httponly-av
     * "HttpOnly"
 * extension-av
