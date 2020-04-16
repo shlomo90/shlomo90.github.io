@@ -387,3 +387,27 @@ what's the opposite of disparity?
 * a short, sharp, explosive sound
     * *The cork came out of the bottle with a loud pop.*
 * [uncountable] a sweet fizzy drink (= with bubbles) that is not alcoholic
+
+---
+
+### demise (/dɪˈmaɪz/) noun
+
+* the end or failure of an institution, an idea, a company, etc.
+* Death
+* a cessation of existence or activity
+    * *I considered the demising return aspect*
+* a lossof position or status
+* the conveyance of an estate
+
+### babble (/ˈbæbl/) noun
+
+* the sound of many people speaking at the same time
+    * *a babble of voices*
+* talking that is confused or silly and is difficult to understand
+    * *I can't listen to his constant babble.*
+
+### babble (/ˈbæbl/) verb
+
+* [intransitive, transitive] babble (away/on)(something) to talk quickly in a way that is difficult
+  to understand
+    * *They were all babbling away in a foreign language*
