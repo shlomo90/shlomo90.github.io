@@ -15,29 +15,29 @@ I hope all people who visit my blog would be helpful.
 
 ### 1. Network Study
 
-1. [Network](/posts/network/index.md)
-2. [Nginx](/posts/nginx/index.md)
-3. [SSL](/posts/ssl/index.md)
+* [Network](/posts/network/index.md)
+* [Nginx](/posts/nginx/index.md)
+* [SSL](/posts/ssl/index.md)
 
 ### 2. Kernel OS Study
 
-1. [Kernel Study With RaspberryPi](/posts/kernel_raspberry/index.md)
+* [Kernel Study With RaspberryPi](/posts/kernel_raspberry/index.md)
 
 ### 3. Computer Language Study
 
-1. [Python](/posts/python_study/index.md)
+* [Python](/posts/python_study/index.md)
 
 ### 4. Programming Study
 
-1. [Programming](/posts/programming/index.md)
+* [Programming](/posts/programming/index.md)
 
 ### 5. Miscellaneous
 
-1. [Basic Things](/posts/basic.md)
-2. [Useful Tips](/posts/tips/index.md)
-3. [Favorite Music](/posts/music.md)
-4. [Terminology](/posts/terminology.md)
-5. [English Vocabulary](/posts/vocabulary.md)
+* [Basic Things](/posts/basic.md)
+* [Useful Tips](/posts/tips/index.md)
+* [Favorite Music](/posts/music.md)
+* [Terminology](/posts/terminology.md)
+* [English Vocabulary](/posts/vocabulary.md)
 
 ---
 
