@@ -411,3 +411,9 @@ what's the opposite of disparity?
 * [intransitive, transitive] babble (away/on)(something) to talk quickly in a way that is difficult
   to understand
     * *They were all babbling away in a foreign language*
+
+### whatsoever (/ˌwʌtsəʊˈevər/) adverb
+
+* not at all; not of any kind
+    * *They received no help whatsoever*
+    * *'Is there any doubt about it?' 'None whatsoever'*
