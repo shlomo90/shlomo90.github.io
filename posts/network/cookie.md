@@ -2,47 +2,36 @@
 
 # Cookie HTTP
 
----
-
-* This is a summary of RFCs about Cookie
+This is a summary of RFCs about Cookie
 
 
-## Cookie Header fields
-
----
+## 1. Cookie Header fields
 
 * *Cookie*
 * *Set-Cookie*
 
-## Purpose
-
----
+## 2. Purpose
 
 * Historically, it contains a number of security and privacy infelicities.
 * Letting the servers **maintain a stateful session** over the mostly stateless HTTP protocol.
     * origin server sends cookie to user agent. (Use *Set-Cookie* header)
     * user agent sends back to origin server. (Use *Cookie* header)
 
-## Restrictions
+## 3. Restrictions
 
----
 
 * There are some cases that are not fit into syntax and semantic in use today, Should document the
   different things.
 
-## Terminology
-
----
+## 4. Terminology
 
 * *request-host* is the name of the host
 * *string* means a sequence of non-NUL octets.
 
 
-## Server Requirements
+## 5. Server Requirements
 
-### Set-Cookie Syntax
-
----
+### [Set-Cookie Syntax]
 
 * Set-Cookie
     * It has one "cookie-pair" and multiple "cookie-av".
@@ -66,18 +55,17 @@
     * "Path=" path-value
 * secure-av
     * "Secure"
-    * The secure attribute limits the score of the cookie to "secure" channels (where "secure" is defined by the user agent). When a cookie has the Secure attribute, the user agent will include the cookie in an HTTP request **only if the request is transmitted over a secure channel**
+    * The secure attribute limits the score of the cookie to "secure" channels (where "secure" is defined by the user agent).
+      When a cookie has the Secure attribute, the user agent will include the cookie in an HTTP request **only if the request is transmitted over a secure channel**
 * httponly-av
     * "HttpOnly"
 * extension-av
     * Anything server requirement.
 
 
-## User Agent Requirements
+## 6. User Agent Requirements
 
-### Cookie Syntax
-
----
+### [Cookie Syntax]
 
 * The user agent includes stored cookies in the Cookie HTTP request header.
 * When the user agent generates an HTTP request, the user agent MUST NOT attach more than one Cookie header field.
@@ -88,31 +76,23 @@
   To convert the cookie-string into a sequence of characters, the user agent might wish to try using the UTF-8 character encoding.
 
 
-### Handling Set-Cookie Header in response
-
----
+### [Handling Set-Cookie Header in response]
 
 * First, a user agent MAY ignore the entire "Set-Cookie" header or MUST parse the Set-Cookie Header.
-
 * If Set-Cookie header has the cookie pair like `test name = google`. it goes `test name=google`.
     * And some cases have leading and tailing whitespace from cookie name or value.
     * But, I am not sure maintaing the internal whitespace `test name`.
-
 * After the user agent finished parsing the set-cookie-string, the user agent is said to "receive a cookie" from the request-uri with name cookie-name, value cookie-value, etc.
 * Store the cookies parsed.
     * I am not interested in the store model. Let's skip!
 
-## Limits
-
----
+## 7. Limits
 
 * At least 4096 bytes per cookie (as measured by the sum of the length of the cookie's name, value, and attributes)
 * At least 50 cookies per domain.
 * At least 3000 cookies total.
 
-## Third-Party Cookies
-
----
+## 8. Third-Party Cookies
 
 * A user agent often requests resources from other servers (such as advertising networks).
 * The Pros and Cons
@@ -121,24 +101,17 @@
     * (pros) Easy to track the state of users, event at multi servers.
 
 
-## References
-
----
+## 9. References
 
 * 2109 -> 2965 -> 6265
     * [RFC6265](https://tools.ietf.org/html/rfc6265)
     * [RFC2109](https://tools.ietf.org/html/rfc2109)
     * [RFC2965](https://tools.ietf.org/html/rfc2965)
 
-## See also
-
----
+## 10. See also
 
 * [ABNF](https://tools.ietf.org/html/rfc5234)
 
+## 11. Some issues about cookies
 
-## Some issues about cookies
-
----
-
-* Verizon was found guilty of tracking users without their consent, and sharing their information with advertisers.j
+* Verizon was found guilty of tracking users without their consent, and sharing their information with advertisers.
