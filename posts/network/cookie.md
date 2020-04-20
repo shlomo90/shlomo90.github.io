@@ -2,14 +2,21 @@
 
 # Cookie HTTP
 
+---
+
 * This is a summary of RFCs about Cookie
 
+
 ## Cookie Header fields
+
+---
 
 * *Cookie*
 * *Set-Cookie*
 
 ## Purpose
+
+---
 
 * Historically, it contains a number of security and privacy infelicities.
 * Letting the servers **maintain a stateful session** over the mostly stateless HTTP protocol.
@@ -18,10 +25,14 @@
 
 ## Restrictions
 
+---
+
 * There are some cases that are not fit into syntax and semantic in use today, Should document the
   different things.
 
 ## Terminology
+
+---
 
 * *request-host* is the name of the host
 * *string* means a sequence of non-NUL octets.
@@ -30,6 +41,8 @@
 ## Server Requirements
 
 ### Set-Cookie Syntax
+
+---
 
 * Set-Cookie
     * It has one "cookie-pair" and multiple "cookie-av".
@@ -64,6 +77,8 @@
 
 ### Cookie Syntax
 
+---
+
 * The user agent includes stored cookies in the Cookie HTTP request header.
 * When the user agent generates an HTTP request, the user agent MUST NOT attach more than one Cookie header field.
 * The user agent SHOULD sort the cookie-list in the following order
@@ -74,6 +89,8 @@
 
 
 ### Handling Set-Cookie Header in response
+
+---
 
 * First, a user agent MAY ignore the entire "Set-Cookie" header or MUST parse the Set-Cookie Header.
 
@@ -87,11 +104,15 @@
 
 ## Limits
 
+---
+
 * At least 4096 bytes per cookie (as measured by the sum of the length of the cookie's name, value, and attributes)
 * At least 50 cookies per domain.
 * At least 3000 cookies total.
 
 ## Third-Party Cookies
+
+---
 
 * A user agent often requests resources from other servers (such as advertising networks).
 * The Pros and Cons
@@ -102,6 +123,8 @@
 
 ## References
 
+---
+
 * 2109 -> 2965 -> 6265
     * [RFC6265](https://tools.ietf.org/html/rfc6265)
     * [RFC2109](https://tools.ietf.org/html/rfc2109)
@@ -109,9 +132,13 @@
 
 ## See also
 
+---
+
 * [ABNF](https://tools.ietf.org/html/rfc5234)
 
 
 ## Some issues about cookies
+
+---
 
 * Verizon was found guilty of tracking users without their consent, and sharing their information with advertisers.j
