@@ -10,5 +10,6 @@
 ## B. Index
 
 1. [classmethod and staticmethod](python_method.md)
+2. [functools](functools.md)
 
 
