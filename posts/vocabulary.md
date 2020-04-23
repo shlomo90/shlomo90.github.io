@@ -420,10 +420,43 @@ what's the opposite of disparity?
 
 ### hassle (/ˈhæsl/) noun
 
-* a situation that is annoying because it involves doing something difficult or complicated
-  that needs a lot of effort
+* a situation that is annoying because it involves doing something difficult or complicated that needs a lot of effort
     * *It's a hassle having to travel with so many bags.*
-    * *Send them an email - it's a lot less hassle than phoning
+    * *Send them an email - it's a lot less hassle than phoning*
     * *Camping isn't really worth all the hassle.*
 * a situation in which people disagree, argue or annoy you
     * *Do as you're told and don't give me any hassle!*
+
+### cascade (/kæˈskeɪd/) noun
+
+* a small waterfall, especially one of several falling down a steep slope with rocks
+* a large amount of water falling or pouring down
+    * *a cascade of rainwater*
+* a large amount of something hanging down
+    * *Her hair tumbled in a cascade down her back.
+* a large number of things falling or coming quickly at the same time
+    * *He crashed to the ground in a cascade of oil cans.*
+
+### hypermobility
+
+* it is the term used to describe the ablity to move joints beyond the normal range of movement
+
+
+### maneuver (/məˈnuːvər/) noun
+
+* a movement performed with care and skill
+    * *You will be asked to perform some standard maneuvers during your driving test*
+* a clever plan, action or movement that is used to give somebody an advantage
+    * *diplomatic maneuvers
+
+### bilateral (/ˌbaɪˈlætərəl/) adjective
+
+* involving two groups of people or two countries
+    * *Both nations have signed bilateral treaties with the United States*
+* involving both of two parts or sides of the body or brain
+* on both sides
+
+### Metacarpophalangeal joint
+
+![alt text][MCP.png]
+
