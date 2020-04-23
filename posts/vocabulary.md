@@ -458,5 +458,10 @@ what's the opposite of disparity?
 
 ### Metacarpophalangeal joint
 
-![alt text][MCP.png]
+* ![Alt text](/posts/MCP.png)
+
+### flexion and extension
+
+* ![Alt text](/posts/flexion_extension.jpeg)
+
 
