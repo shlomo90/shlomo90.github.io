@@ -417,3 +417,13 @@ what's the opposite of disparity?
 * not at all; not of any kind
     * *They received no help whatsoever*
     * *'Is there any doubt about it?' 'None whatsoever'*
+
+### hassle (/ˈhæsl/) noun
+
+* a situation that is annoying because it involves doing something difficult or complicated
+  that needs a lot of effort
+    * *It's a hassle having to travel with so many bags.*
+    * *Send them an email - it's a lot less hassle than phoning
+    * *Camping isn't really worth all the hassle.*
+* a situation in which people disagree, argue or annoy you
+    * *Do as you're told and don't give me any hassle!*
