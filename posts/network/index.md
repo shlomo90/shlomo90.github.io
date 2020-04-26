@@ -10,3 +10,4 @@
 * [ICMP](icmp.md)
 * [Cookie](cookie.md)
 * [SMTP](smtp.md)
+* [Terminology](terminology.md)
