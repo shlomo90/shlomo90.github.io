@@ -12,5 +12,3 @@
 1. [classmethod and staticmethod](python_method.md)
 2. [functools](python_functools.md)
 3. [built-ins](python_builtin.md)
-
-

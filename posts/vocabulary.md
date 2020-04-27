@@ -465,3 +465,7 @@ what's the opposite of disparity?
 * ![Alt text](/posts/flexion_extension.jpeg)
 
 
+### outward
+### concavity
+### pervls
+### in a brace

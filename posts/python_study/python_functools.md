@@ -80,3 +80,40 @@ if __name__ == "__main__":
 
 ```
     * Simply, run this code and check the elapsed time.
+
+## cmp_to_key
+
+* A comparision function is any callable that accept two arguments, compares them, and returns a negative number for less-than, zero for equality, or a positive number for greater than.
+
+## total_ordering
+
+* The class must define one of `__it__()`, `__le__()`, `__gt__()`, `__ge__()`
+* `total_ordering` simplifies the effort involved in specifying all of the possible rich comparison operations.
+
+* examples
+
+```python
+from functools import total_ordering
+
+@total_ordering
+class Student:
+    def __init__(self, data):
+        self.data = data
+
+    def _is_valid_operand(self, other):
+        return 1
+
+    def __eq__(self, other):
+        return self.data == other.data
+
+    def __lt__(self, other):
+        return self.data < other.data
+
+
+s1 = Student(10)
+s2 = Student(20)
+
+print(s1 > s2)
+```
+
+* You don't have to implement all of things like `__le__`, `__lt__`...
