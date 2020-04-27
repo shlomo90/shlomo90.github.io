@@ -464,6 +464,12 @@ what's the opposite of disparity?
 
 * ![Alt text](/posts/flexion_extension.jpeg)
 
+### fuzzing or fuzz testing
+
+* It is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program.
+* The program is then monitored for exceptions such as crashes, or potential memory leaks.
+
+https://en.wikipedia.org/wiki/Fuzzing
 
 ### outward
 ### concavity
