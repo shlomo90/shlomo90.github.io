@@ -31,7 +31,11 @@ I hope all people who visit my blog would be helpful.
 
 * [Programming](/posts/programming/index.md)
 
-### 5. Miscellaneous
+### 5. Books
+
+* [Books](/books/index.md)
+
+### 6. Miscellaneous
 
 * [Basic Things](/posts/basic.md)
 * [Useful Tips](/posts/tips/index.md)
