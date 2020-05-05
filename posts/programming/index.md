@@ -13,3 +13,4 @@
 2. [libssl 의존성 관련](libssl.md)
 3. [Fiber](fiber.md)
 4. [Builtin Expect](builtin_expect.md)
+5. [Awk](awk.md)
