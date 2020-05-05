@@ -471,7 +471,22 @@ what's the opposite of disparity?
 
 https://en.wikipedia.org/wiki/Fuzzing
 
-### outward
-### concavity
-### pervls
-### in a brace
+### preliminary /prɪˈlɪmɪneri/ noun
+
+* happening before a more important action or event
+    * *After a few preliminary remarks he announced the winners.*
+    * *preliminary results/findings/enquiries*
+
+### concavity /kɑːnˈkævəti/ noun
+
+* the quality of being concave
+    * *Rocks exposed to wind often show some degree of concavity*
+* a shape or place that curves in
+    * *a deep concavity in the side of the hill.*
+
+### outward /ˈaʊtwərd/ adj?
+
+* connected with the way people or things seem to be rather than with what is actually true
+    * *Mark showed no outward signs of ditress.*
+    * *She simply observes the outward forms of religion.*
+    * *There were no outward signs that the house was inhabited.*
