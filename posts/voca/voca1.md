@@ -463,11 +463,11 @@ what's the opposite of disparity?
 
 ### Metacarpophalangeal joint
 
-* ![Alt text](/posts/MCP.png)
+* ![Alt text](/posts/pics/MCP.png)
 
 ### flexion and extension
 
-* ![Alt text](/posts/flexion_extension.jpeg)
+* ![Alt text](/posts/pics/flexion_extension.jpeg)
 
 ### fuzzing or fuzz testing
 
