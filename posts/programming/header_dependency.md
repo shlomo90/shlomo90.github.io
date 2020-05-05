@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
+
 # Header Issue
 
 ## socket 에서의 writable/readable 의 뜻은?
