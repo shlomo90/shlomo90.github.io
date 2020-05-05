@@ -41,7 +41,7 @@ I hope all people who visit my blog would be helpful.
 * [Useful Tips](/posts/tips/index.md)
 * [Favorite Music](/posts/music.md)
 * [Terminology](/posts/terminology.md)
-* [English Vocabulary](/posts/vocabulary.md)
+* [English Vocabulary](/posts/voca/voca1.md)
 
 ---
 

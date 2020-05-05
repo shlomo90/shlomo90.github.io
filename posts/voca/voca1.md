@@ -4,6 +4,11 @@
 
 * List the meaning of the words that I didn't know.
 
+## index
+
+* [phase 1](./voca1.md)
+* [phase 2](./voca2.md)
+
 ### in return (for something)
 
 * as a way of thanking somebody or paying them for something they have done
@@ -490,3 +495,14 @@ https://en.wikipedia.org/wiki/Fuzzing
     * *Mark showed no outward signs of ditress.*
     * *She simply observes the outward forms of religion.*
     * *There were no outward signs that the house was inhabited.*
+
+
+### account /əˈkaʊnt/ noun
+
+* a written or spoken description of something that has happened
+    * *a first-hand/personal/first-person account*
+* an arrangement with a shop or business to pay bills for goods or services at a later time, for example in regular amounts every month
+    * *Put it on my account please.* (외상달아주세요?)
+    * *We have accounts with most of our suppliers.*
+* a written record of money that is owed to a business and of money that has been paid by it
+    * *to do the accounts* (외상 달아주세요?)
