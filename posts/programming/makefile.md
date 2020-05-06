@@ -35,3 +35,110 @@
 
 * 위를 보면, test.o 를 만드는데 있어서 test.c 와 def.h 가 설정된다. 이 뜻은 def.h 이 수정되면 test.o 도 다시 빌드되어야 한다는 뜻이다. 실제 빌드에서는 cc -c test.c 만 필요할 것이다. 왜냐하면 test.c 에 #include "def.h" 가 정의되어있을 것이니까
 * 앞서 <TAB> 은 상황에 따라 개발자가 다르게 설정할 수 있다. .RECIPEPREFIX 를 확인해보자
+
+
+## Make File process
+
+Makefile 은 make 명령을 수행 시 가장 첫번째 rule 을 수행한다. (.으로 시작하는 룰은 제외됨 .PHONY
+
+* 실행 순서
+    0. make 의 파라미터가 있는지 확인하여 있으면 해당 룰을 찾아서 수행한다. 그렇지 않으면,
+    1. 첫 rule 을 읽는다.
+    2. rule 의 dependency 를 체크한다.
+    3. dependency 중 이를 target 으로하는 다른 룰이 있으면 그 룰을 먼저 수행한다.
+    4. dependency 룰이 완료되면 본래 룰로 돌아가 수행한다.
+
+
+* 소스파일 업데이트 확인 후 빌드 시스템
+    * make 는 dependency 의 .c .h 파일의 업데이트 유무를 검사합니다. .c .f 파일의 수정여부에 따라 이를 dependency 로 가지는 룰들이 수행될 것이고, 각 target 을 dependency 로 가지는 룰들이 다시 링킹, 컴파일 됩니다.
+
+
+## Make file Variable
+
+* 목적
+    * 새로운 파일이 추가되었을 경우 관리측면 에러 발생을 줄임
+    * 중복을 줄임
+
+* 예제
+
+```
+objects = main.o kbd.o command.o \
+          insert.o search.o files.o utils.o
+
+target : $(objects)
+<TAB> Recipe ...
+```
+
+
+## implicit rule makefile
+
+* 목적
+    * target 의 이름만 다르지 동일하게 빌드되는 상황이 많이 발생
+
+Type 1 example
+
+```
+main.o : defs.h
+kbd.o : defs.h
+```
+
+이거는 아래와 같다
+
+```
+main.o : main.c defs.h
+<TAB> cc -c main.c
+
+kbd.o : kbd.c defs.h
+<TAB> cc -c kbd.c
+```
+
+즉, Target 의 이름과 소스파일이 동일한 경우 cc -c 와 함께 암묵적으로 처리가 될 수 있다.
+
+* Type 2 example
+
+```
+kbd.o command.o files.o : command.h
+display.o insert.o search.o files.o : buffer.h
+```
+
+만약 type 1 과 같이 implicit 하게만 씌여졌다면, 이렇게 의존관계만 표시하도록 수정할 수 있다.
+
+
+## clean rule
+
+* 목적
+    * rm 으로 인한 실수를 방지해준다.
+
+* Example
+
+```
+.PHONY : clean
+clean :
+<TAB> -rm edit $(objects)
+```
+
+## makefile naming
+
+기본적으로 Makefile, makefile 이름을 사용하지만, 아래와 같은 옵션으로 다른 이름으로 명명된 Makefile 을 수행할 수 있다.
+
+```
+make -f another_make_file
+make --file another_make_file
+
+```
+
+## include directive
+
+* 목적
+    * 독립적인 Makefile 을 수행하고자 할 때
+    * 공통적인 변수 셋을 사용하고자 할 때
+
+* example
+
+```
+include indep.mk
+include common.mk
+```
+
+* 수행 절차
+    1. include 지시자를 만나면, 해당 make 파일을 먼저 수행하고 본래 makefile 을 수행한다.
