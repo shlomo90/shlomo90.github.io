@@ -1,3 +1,6 @@
 markdown: CommonMarkGhPages
-disqus:
-    shortname: shlomolim90
+
+comments:
+    provider: disqus
+    disqus:
+        short_name: shlomolim90
