@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
-# SSL structure
+# SSL Structure
 
-## SSL 구조체의 statem
+## SSL statem
 
 <details><summary>State of Message</summary>
 <p>

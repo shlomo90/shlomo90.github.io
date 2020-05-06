@@ -1,6 +1,6 @@
+<link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
 
-
-# openssl init
+# OPENSSL Init
 
 * process
     1. *SSL_CTX_new*
