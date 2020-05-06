@@ -17,3 +17,14 @@
 * to tell somebody that you have received something that they sent to you
     * *All applications will be acknowledged*
     * *Plz acknowledge receipt of this letter.*
+
+
+### severity /sɪˈverəti/ noun
+
+* the fact of condition of something being extremely bad or serious
+    * *A prison sentence should match the severity of the crime.*
+    * *the severity of the problem*
+* the fact of not being kind and not showing sympathy or approval
+    * *He frowned with mock severity*
+* the fact of being extremely difficult and requiring a lot of skill or ability
+    * *The severity of the task ahead became apparent.*
