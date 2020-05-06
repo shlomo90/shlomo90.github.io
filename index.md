@@ -1,5 +1,7 @@
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
+---
+layout: default
+title: JH's Hompage
+---
 
 # JH's Homepage
 
