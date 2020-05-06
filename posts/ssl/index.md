@@ -8,3 +8,4 @@
 2. [Openssl Data Structure](openssl_SSL.md)
 3. [How to work SSL?](how_to_work_ssl.md)
 4. [Openssl Issues](openssl_issues.md)
+5. [Openssl Init](openssl_init.md)
