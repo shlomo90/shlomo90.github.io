@@ -1,3 +1,7 @@
+---
+layout: post
+comments: true
+---
 
 # Openssl Issues
 
