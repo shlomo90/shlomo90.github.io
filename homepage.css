@@ -1,6 +1,7 @@
 body {
-  padding:10px 50px 0 0;
+  padding:10px 50px 10px 50px;
 	font-size: 14px;
     background-color: #ffd;
+    overflow: auto;
 	margin: 0;
 }
