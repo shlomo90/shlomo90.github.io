@@ -1,3 +1,8 @@
+---
+layout: post
+comments: true
+---
+
 # Shared Memory
 
 ## Init process
