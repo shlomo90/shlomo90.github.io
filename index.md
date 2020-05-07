@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JH's Hompage
+comments: false
 ---
 
 # JH's Homepage
