@@ -38,3 +38,9 @@ See the below link.
 
 ---
 
+SSL Handshake Protocol
+SSL Record Layer Protocol
+    Breaking Down the data from application layers, with fixed length
+    Compression Data
+    Add Message Authentication Code, which is calculated with the help of integrity Key.
+    Encrypt the packets(which was broken down with fixed length)
