@@ -1,4 +1,7 @@
-<link rel="stylesheet" type="text/css" media="all" href="https://shlomo90.github.io/homepage.css" />
+---
+layout: post
+comments: true
+---
 
 
 ## 1. Initialize Module Steps
