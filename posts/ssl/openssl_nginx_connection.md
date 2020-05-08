@@ -20,6 +20,7 @@ ngx_connection_t
                                 last
                                 ...
 ```
+
 * `ngx_ssl_connection_t`'s `connection` value is assigned by `SSL_new` Openssl Function.
     * And then, Save the Nginx Connection `c` to `connection`'s ex_data `ngx_ssl_connection_index`. 
     * This means `connection` can access to `c` (nginx connection).

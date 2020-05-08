@@ -51,8 +51,8 @@ const SSL_METHOD *func_name(void)  \
         }; \
         return &func_name##_data; \
         }
-
 ```
+
 * `func_name` is the method name (ex:SSLv23_method, SSLv23_server_method, ...)
     * TLS_method is the same with SSLv23_method.
 * So, the `func_name` is defined at compile time and this function return `func_name##_data` value.
