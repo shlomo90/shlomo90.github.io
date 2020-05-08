@@ -13,7 +13,7 @@ comments: true
 * First, it is defined `ssl/ssl_locl.h` file.
 * This function get `version`, `flags`, `mask`, `func_name`, `s_accept`, `s_connect`, `enc_data`
 
-```c
+~~~ c
 # define IMPLEMENT_tls_meth_func(version, flags, mask, func_name, s_accept, \
                                  s_connect, enc_data) \
 const SSL_METHOD *func_name(void)  \
@@ -51,7 +51,7 @@ const SSL_METHOD *func_name(void)  \
         }; \
         return &func_name##_data; \
         }
-```
+~~~
 
 * `func_name` is the method name (ex:SSLv23_method, SSLv23_server_method, ...)
     * TLS_method is the same with SSLv23_method.
