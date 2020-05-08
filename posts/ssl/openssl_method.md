@@ -22,14 +22,14 @@ const SSL_METHOD *func_name(void)  \
                 version, \
                 flags, \
                 mask, \
-                tls1_new, \
-                tls1_clear, \
-                tls1_free, \
-                s_accept, \
-                s_connect, \
-                ssl3_read, \
-                ssl3_peek, \
-                ssl3_write, \
+                tls1_new, /*ssl_new*/\
+                tls1_clear, /*ssl_clear*/\
+                tls1_free, /*ssl_free*/\
+                s_accept, /*ssl_accept*/ /*usually ossl_statem_accept*/\
+                s_connect, /*ssl_connect*/ /*usually ossl_statem_connect*/\
+                ssl3_read, /*ssl_read*/\
+                ssl3_peek, /*ssl_peek*/\
+                ssl3_write, /*ssl_write*/\
                 ssl3_shutdown, \
                 ssl3_renegotiate, \
                 ssl3_renegotiate_check, \
@@ -38,14 +38,14 @@ const SSL_METHOD *func_name(void)  \
                 ssl3_dispatch_alert, \
                 ssl3_ctrl, \
                 ssl3_ctx_ctrl, \
-                ssl3_get_cipher_by_char, \
-                ssl3_put_cipher_by_char, \
+                ssl3_get_cipher_by_char, /*get_cipher_by_char*/ \
+                ssl3_put_cipher_by_char, /*put_cipher_by_char*/\
                 ssl3_pending, \
-                ssl3_num_ciphers, \
-                ssl3_get_cipher, \
-                tls1_default_timeout, \
-                &enc_data, \
-                ssl_undefined_void_function, \
+                ssl3_num_ciphers, /*num_ciphers*/\
+                ssl3_get_cipher, /*get_cipher*/\
+                tls1_default_timeout, /*get_timeout*/\
+                &enc_data, /*ssl3_enc*/\
+                ssl_undefined_void_function, /*ssl_version*/\
                 ssl3_callback_ctrl, \
                 ssl3_ctx_callback_ctrl, \
         }; \
