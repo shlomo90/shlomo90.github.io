@@ -1,3 +1,4 @@
-markdown: CommonMarkGhPages
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown
 disqus:
     shortname: shlomolim90
