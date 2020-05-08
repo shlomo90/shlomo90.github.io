@@ -38,9 +38,9 @@ SSL_CTX->cert_store 는 SSL_CTX_new 함수 내에서 X509_STORE_new() 에 의해
     - store 는 SSL_CTX 에 있는 X509_STORE 타입의 변수이며 이는 SSL_CTX 초기 생성시 할당됨
     - X509_STORE_CTX_init 함수에서 ctx->verify_cb 에 store 에 있는 verify_cb 를 할당해준다. (여기 상속됨)
 
+그러면, nginx 에서는 콜백 함수 `int (*verify_cb) (int ok, X509_STORE_CTX *ctx)` 형식으로 생성하고,
+crl 조건결과는 파라미터 ctx->err 여부로 확인할 수 있음
 
 
-
-    
 
 
