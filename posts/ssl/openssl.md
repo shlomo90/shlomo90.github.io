@@ -5,6 +5,8 @@ comments: true
 
 # Openssl
 
+* Perform an analysis of openssl code and how to work.
+
 ## Purpose
 
 1. Understand OPENSSL Structure

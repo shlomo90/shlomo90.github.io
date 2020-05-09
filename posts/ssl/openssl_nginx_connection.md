@@ -11,7 +11,7 @@ comments: true
 * This function is called at the first SSL init connection.
     * `ngx_http_upstream_ssl_init_connection` function.
 
-```
+~~~ c
 ngx_connection_t
 
     ssl      -------------> ngx_ssl_connection_t
@@ -19,7 +19,7 @@ ngx_connection_t
                                 session_ctx
                                 last
                                 ...
-```
+~~~
 
 * `ngx_ssl_connection_t`'s `connection` value is assigned by `SSL_new` Openssl Function.
     * And then, Save the Nginx Connection `c` to `connection`'s ex_data `ngx_ssl_connection_index`. 
