@@ -21,7 +21,7 @@ comments: true
 * Explanation
     * `:help non-greedy`
 
-```
+~~~
        non-greedy
 
        If a "-" appears immediately after the "{", then a shortest match
@@ -44,7 +44,7 @@ comments: true
        a[bc]*[cd]              "abcd" in "abcd"
 
        The } may optionally be preceded with a backslash: \{n,m\}.
-```
+~~~
 
 * ref
     * https://stackoverflow.com/questions/1305853/how-can-i-make-my-match-non-greedy-in-vim
@@ -52,9 +52,9 @@ comments: true
 
 ### Remove whitespaces at the end of the line
 
-```
+~~~
 :%s/\s\+$//gc
-```
+~~~
 
 * `\s` stands for "whitespace character".
     * it includes `[ \t\r\n\f]`

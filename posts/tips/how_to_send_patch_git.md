@@ -23,18 +23,18 @@ Simply, you can make patch files by using a 'git-format-patch' command.
 3. Make a commit
 4. Make a patch file with git-format-patch
 
-``` bash
+~~~ bash
 #First, check the base point.
 git format-patch <base point>
 
 # After that, it generates patch files.
-```
+~~~
 
 ## Send email the patch file
 
 * Before send email, We need to set .gitconfig file
 
-```
+~~~
 ...
 
 [sendemail]
@@ -44,11 +44,11 @@ git format-patch <base point>
     smtpserverport = 465                 #<-- ssl use the port 465
 
 ...
-```
+~~~
 
 * And, We don't check the ssl verify param so, Let's edit the `/usr/libexec/git-core/git-send-email` file
 
-```perl
+~~~perl
 1500         if ($smtp_encryption eq 'ssl') {                   #<--- we use the 'ssl'
 1501             $smtp_server_port ||= 465; # ssmtp
 1502             require IO::Socket::SSL;
@@ -78,12 +78,12 @@ git format-patch <base point>
 1526                              SSL => 1);
 1527             }
 1528         }
-```
+~~~
 
 * Now, We are ready to send patch files. Run the command below.
 
-```
+~~~
 sudo git send-email /path/to/patch/file --to=[dest email address]
-```
+~~~
 
 * Done!

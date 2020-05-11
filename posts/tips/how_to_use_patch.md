@@ -9,16 +9,16 @@ comments: true
 
 * You can simply generate a patch file with git.
 
-```
+~~~
 git diff > test.patch
-```
+~~~
 
 ## Add comments on the patch file
 
 * Surprisingly, You can make a comment each diff file lines with a character '#'.
 * See this example.
 
-```diff
+~~~diff
 diff --git a/vocabulary.md b/vocabulary.md
 index f7db1c0..0ef2a41 100644
 --- a/vocabulary.md
@@ -33,7 +33,7 @@ index f7db1c0..0ef2a41 100644
 +';' 가 없다면, 전체가 name-value-pair 이다.
 # I am the comment!!!!!!!!!!!!!!!!!!!!!
 
-```
+~~~
 
 ## Apply the patch file with 'patch' command
 
@@ -41,9 +41,9 @@ index f7db1c0..0ef2a41 100644
 * First, Locate your patch file at the root of the repository.
 * Second, Command this.
 
-```bash
+~~~bash
 patch -p1 < test.patch
-```
+~~~
 
 * Third, Check your diff with 'git diff'
 
