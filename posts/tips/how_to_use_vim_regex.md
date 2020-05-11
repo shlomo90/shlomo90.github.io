@@ -1,7 +1,16 @@
+---
+layout: post
+comments: true
+---
 
 # vim regex
 
-## Non greedy match
+## Purpose
+
+* Summarize something to make smart coding with vim regex
+* Little bit study about regex
+
+### Non greedy match
 
 * Purpose
     * I want to capture the first parameter in strings.
@@ -13,12 +22,16 @@
     * `:help non-greedy`
 
 ```
-                                                               non-greedy
+       non-greedy
+
        If a "-" appears immediately after the "{", then a shortest match
        first algorithm is used (see example below).  In particular, "\{-}" is
        the same as "*" but uses the shortest match first algorithm.  BUT: A
        match that starts earlier is preferred over a shorter match: "a\{-}b"
        matches "aaab" in "xaaab".
+
+       \{}	Matches 0 or more of the preceding atom, as many as possible (like *)
+       \{-}	matches 0 or more of the preceding atom, as few as possible
 
        Example                 matches
        ab\{2,3}c               "abbc" or "abbbc"
@@ -35,3 +48,14 @@
 
 * ref
     * https://stackoverflow.com/questions/1305853/how-can-i-make-my-match-non-greedy-in-vim
+
+
+### Remove whitespaces at the end of the line
+
+```
+:%s/\s\+$//gc
+```
+
+* `\s` stands for "whitespace character".
+    * it includes `[ \t\r\n\f]`
+* it dedpens on the **regex** flavor.
