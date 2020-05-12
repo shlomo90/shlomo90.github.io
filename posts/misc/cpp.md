@@ -179,3 +179,23 @@ String::~String()
     * using-directives for namespaces and using-declarations for namespace members
     * example `using namespace std;`
 
+
+## virtual directive
+
+* The `virtual` specifier specifies that a non-static member function is virtual and supports dynamic dispatch.
+
+
+## & and * operators
+
+* The meaning of '&' between variable type and name is a "reference to".
+
+``` cpp
+int main()
+{
+    int a {4};
+    int& ra = a;    // ra refers to 'a' variable
+
+    cout << ra << endl; // it's same with a
+}
+```
+
