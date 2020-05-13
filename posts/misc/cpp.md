@@ -183,6 +183,7 @@ String::~String()
 ## virtual directive
 
 * The `virtual` specifier specifies that a non-static member function is virtual and supports dynamic dispatch.
+* Virtual functions are member functions whose behavior can be overridden in derived classes.
 
 
 ## & and * operators
