@@ -52,3 +52,27 @@ comments: true
     * *After graduating she opted for a career in music.*
     * *After a lot of thought, I opted against buying a motobike.*
     * **opt to do something** *Many workers opted to leave their jobs rather than take a pay cut.*
+
+
+### delve /delv/ verb
+
+* [+adv./prep.] to reach inside a bag, container, etc. to search for something
+    * *She delved in her handbag for a pen.*
+* **delve into**: to try hard to find out more information about something
+    * *She had started to delve into her father's distant past.*
+
+
+### repudiation /rɪˌpjuːdiˈeɪʃn/ noun
+
+* the act of refusing to accept something (= rejection)
+    * *the world-wide repudiation of slavery in the nineteenth century*
+    * *Non-repudiation is the assurance that someone cannot deny the validity of something.*
+* the act of saying officially and/or publicly that something is not true
+    * *the repudiation of a claim*
+
+
+### Proof of delivery (POD)
+
+* is a method to establish the fact that a recipient received contents sent by a sender.
+* Proof of delivery becomes very important when legal and financial documents are to be exchanged between two parties
+
