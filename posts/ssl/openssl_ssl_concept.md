@@ -194,3 +194,14 @@ master_secret =
     2. Server sends a FINISHED message to the client. (This message is cryptographically protected under the
        **new cipher spec**.
 * Handshake completed
+
+
+
+
+Additionally, the use of ephemeral RSA key exchange is only allowed in the TLS standard,
+https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html
+Good reason for the ephemeral RSA.
+https://groups.google.com/forum/#!topic/sci.crypt/BPBi_MVbfTc
+
+keyUsage for openssl
+https://www.phildev.net/ssl/opensslconf.html
