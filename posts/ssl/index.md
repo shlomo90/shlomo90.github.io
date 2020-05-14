@@ -14,3 +14,4 @@ comments: true
 5. [How to work SSL?](how_to_work_ssl.md)
 6. [OPENSSL Method](openssl_method.md)
 7. [OPENSSL Nginx Connection](openssl_nginx_connection.md)
+8. [OPENSSL Concept](openssl_ssl_concept.md)
