@@ -7,22 +7,25 @@ comments: true
 
 ## SSL Protocol
 
-* It is sockets-oriented
-    * all or none of the data that is sent to or received from a socket are cryptographically
-      protected in exactly the same way.
-    * It fragments the data into manageable pieces (called fragments), and processes each fragment
-      individually.
-    * each fragment is optionally compressed, authenticated with a MAC, encrypted, prepended with
-      a header, and transmitted to the recipient
-    * Each fragment that is treated and prepared this way is called **an SSL record**.
-    * On the recipient's side, the SSL records must be decrypted, verified (with regard to their
-      MACs), decompressed, and reassembled, before the data can be delivered to the respective
-      higher-layer.
-    * **SSL record** consists of four field
-        1. type field
-        2. version field
-        3. length field
-        4. fragment field
+It is sockets-oriented. All or none of the data that is sent to or received from a socket are
+cryptographically protected in exactly the same way.  
+
+### **SSL Record**
+
+It fragments the data into manageable pieces (called fragments), and processes each fragment
+individually.  
+Each fragment is optionally compressed, authenticated with a MAC, encrypted, prepended with a 
+header, and transmitted to the recipient.  
+Each fragment that is treated and prepared this way is called an **SSL record**.  
+On the recipient's side, the SSL records must be decrypted, verified (with regard to their
+ MACs), decompressed, and reassembled, before the data can be delivered to the respective
+higher-layer.
+
+* **SSL record** consists of four field
+    1. type field
+    2. version field
+    3. length field
+    4. fragment field
 
 ![Alt text](/posts/ssl/pics/ssl_protocol.png)
 
