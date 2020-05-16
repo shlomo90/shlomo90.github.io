@@ -5,3 +5,9 @@ body {
     overflow: auto;
 	margin: 0;
 }
+
+pre{
+    background-color: #E6E6FA;
+    overflow: auto;
+}   
+
