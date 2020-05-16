@@ -17,8 +17,6 @@ footer_url: "https://github.com/shlomo90/shlomo90.github.io"
 footer_text: "Page design by JaeHwan Lim"
 
 nav:
- - name: "Main"
-   link: "/"
  - name: "Study"
    link: "study"
  - name: "Todo"
