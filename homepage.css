@@ -1,7 +1,17 @@
 body {
-  padding:10px 40px 10px 40px;
+  padding:10px 10px 10px 10px;
 	font-size: 1.6rem;
     background-color: #ffd;
     overflow: auto;
 	margin: 0;
+}
+
+pre{
+    background-color: #E6E6FA;
+    overflow: auto;
+}   
+
+img {
+    max-width: 100%;
+    max-height: auto;
 }

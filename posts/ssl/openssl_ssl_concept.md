@@ -198,3 +198,12 @@ master_secret =
 
 keyUsage for openssl
 <https://www.phildev.net/ssl/opensslconf.html>l>
+
+
+Additionally, the use of ephemeral RSA key exchange is only allowed in the TLS standard,
+[Link1](https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html)
+Good reason for the ephemeral RSA.
+[Link2](https://groups.google.com/forum/#!topic/sci.crypt/BPBi_MVbfTc)
+
+keyUsage for openssl
+[Link3](https://www.phildev.net/ssl/opensslconf.html)
