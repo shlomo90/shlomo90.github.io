@@ -1,3 +1,5 @@
+$max-width: 700px;
+
 html {
     height: 100%;
     margin: 0;
@@ -6,7 +8,7 @@ html {
 
 body {
     padding:10px 10px 10px 10px;
-	font-size: 1.6rem;
+	//font-size: 1.6rem;
     font-family: "Inconsolata";
     background-color: #ffd;
     overflow: auto;
@@ -26,7 +28,7 @@ img {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: bold;
     display: inline;
-    font-size: 2.0rem;
+    //font-size: 2.0rem;
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
@@ -35,7 +37,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 h1, .h1 {
     font-weight: bold;
     display: inline;
-    font-size: 3.0rem;
+    //font-size: 3.0rem;
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
@@ -43,7 +45,7 @@ h1, .h1 {
 
 a {
     text-decoration: none;
-    color: #FF0FF0;
+    color: #ff330f;
 }
 a:hover {
     text-decoration: underline;
@@ -94,7 +96,7 @@ ol > ul { <-- means that it is used to select the element with a specific parent
     display: inline-block;
 }
 .navbar {
-    padding: 50px 0 50px 0;
+    padding: 20px 0 20px 0;
 }
 .navbar-ul {
     display: inline-block;
