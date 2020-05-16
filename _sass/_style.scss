@@ -1,0 +1,129 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding:10px 10px 10px 10px;
+	font-size: 1.6rem;
+    font-family: "Inconsolata";
+    background-color: #ffd;
+    overflow: auto;
+	margin: 0;
+}
+
+pre{
+    background-color: #E6E6FA;
+    overflow: auto;
+}   
+
+img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: bold;
+    display: inline;
+    font-size: 2.0rem;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h1, .h1 {
+    font-weight: bold;
+    display: inline;
+    font-size: 3.0rem;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #FF0FF0;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+// 'a' is  the hyperlink tag.
+//a:link {color: blue;}  방문하기 전 링크
+//a:visited {color: red;} 방문한 링크
+//a:hover {color: green;} 링크에 마우스 포인터를 올려 놓았을 때
+//a:active {color: black;} 링크를 마우스로 클릭한 순간
+a:hover {
+    text-decoration: underline;
+}
+
+// 'hr' is horizontal line.
+
+// .some_word is CSS selector. ex: (div class="some_word">Page title</div)
+
+.content {
+    .profile-picture {
+        ...
+    }
+}
+It means profile-picture class in content (e.g. the post written markdown.)
+
+*/
+/*
+'ol' tag is ordered list.
+    1. ...
+    2. ...
+    3. ...
+
+ol > ul { <-- means that it is used to select the element with a specific parent.
+    <ol>
+        <ul>
+            it is subject to the css setting.
+}
+*/
+
+/*
+ * Navbar
+ */
+
+#author-name {
+    font-size: 30px;
+    color: #272727;
+    display: inline-block;
+}
+.navbar {
+    padding: 50px 0 50px 0;
+}
+.navbar-ul {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 0 5px 0;
+    margin-left: 20px;
+}
+.nav-list {
+    list-style-type: none;
+    margin: 0 5px 0 10px;
+}
+.alignable {
+    display: inline-block;
+}
+.pull-left {
+    @extend .alignable;
+    float: left;
+}
+.pull-right {
+    @extend .alignable;
+    float: right;
+}
+
+/* Divs */
+
+.container {
+    max-width: $max-width;
+    margin: auto;
+}
+.wrapper {
+    min-height: 100%;
+}
