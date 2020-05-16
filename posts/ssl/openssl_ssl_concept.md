@@ -202,9 +202,9 @@ master_secret =
 
 
 Additionally, the use of ephemeral RSA key exchange is only allowed in the TLS standard,
-https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html
+[Link1](https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html)
 Good reason for the ephemeral RSA.
-https://groups.google.com/forum/#!topic/sci.crypt/BPBi_MVbfTc
+[Link2](https://groups.google.com/forum/#!topic/sci.crypt/BPBi_MVbfTc)
 
 keyUsage for openssl
-https://www.phildev.net/ssl/opensslconf.html
+[Link3](https://www.phildev.net/ssl/opensslconf.html)
