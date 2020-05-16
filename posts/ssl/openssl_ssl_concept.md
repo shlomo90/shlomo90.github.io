@@ -14,7 +14,7 @@ cryptographically protected in exactly the same way.
 
 It fragments the data into manageable pieces (called fragments), and processes each fragment
 individually.  
-Each fragment is optionally compressed, authenticated with a MAC, encrypted, prepended with a 
+Each fragment is optionally compressed, authenticated with a MAC, encrypted, prepended with a
 header, and transmitted to the recipient.  
 Each fragment that is treated and prepared this way is called an **SSL record**.  
 On the recipient's side, the SSL records must be decrypted, verified (with regard to their
@@ -33,14 +33,12 @@ higher-layer.
 
 * encapsulation of higher-layer protocol data.
 
-
 ### SSL Handshake protocol
 
 * communicating peers to authenticate each other and to negotiate a cipher suite and a compression
   method used for the communications.
 * **cipher suite** is used to cryptographically protect data.
 * See below `SSL Handshake Protocol Detail`
-
 
 ### SSL Change Spec Protocol
 
@@ -50,7 +48,6 @@ higher-layer.
 ### SSL Alert Protocol
 
 * communicating peers to signal indicator of potential problems
-
 
 ### SSL Aplication Data Protocol
 
@@ -73,35 +70,34 @@ higher-layer.
 ## SSL Port Strategy
 
 * Separate port strategy
-    * 80 for HTTP
+  * 80 for HTTP
     * 443 for HTTPS
 * upward negotiation strategy
-    * Detect SSL and upgrade to SSL
+  * Detect SSL and upgrade to SSL
     * Ref to RFC2817
 
 ## SSL Session
 
 * SSL sessions and connections are **stateful**
-    * SSL protocol state machines on either side to operate consistently
-        * current state
+  SSL protocol state machines on either side to operate consistently
+        *current state
         * pending state
-        * read state
+        *read state
         * write state
 
 ### SSL Session State Elements
 
 * `session id`
 * `peer certificate`
-    * X.509v3 certificate of the peer
+  * X.509v3 certificate of the peer
 * `compression method`
-    * Data compression algo used (prior to encryption)
+  * Data compression algo used (prior to encryption)
 * `cipher spec`
-    * Data encryption and MAC algo used
+  * Data encryption and MAC algo used
 * `master secret`
-    * 48-byte secret that is shared between the client and the server
+  * 48-byte secret that is shared between the client and the server
 * `is resumable`
-    * Flag whether the SSL session is resumable
-
+  * Flag whether the SSL session is resumable
 
 #### premaster secret
 
@@ -115,26 +111,26 @@ higher-layer.
     4. Server decrypts the ciphertext with server's private key
 
 * `DHE`
-    * the DH parameters are not fixed and are not part of public key certificate
+  the DH parameters are not fixed and are not part of public key certificate
     1. DH parameters are dynamically generated
     2. They are authenticated in some way
         * the parameters are digitally signed with the sender's private signing key (Maybe Client's)
     3. The recipient can then use the sender's public key to verify the signature
         * Authenticity of the public key is guaranteed
-    * how to generate premaster?
+  * how to generate premaster?
         * 클라이언트는 certificate와 DH parameter의 signature를 검증 한 뒤, 클라이언트의
           DH parameter를 보냅니다. 이후 클라이언트와 서버는 각각 주고받은 DH parameter를
           이용해 premaster secret을 유도한 뒤, premaster secret과 client random, server random을
           조합하여 session key를 유도합니다.
 * `DH`
-    * keying material generated is always the same for two participating entities
+  * keying material generated is always the same for two participating entities
 * `DH_anon`
-    * it is vunerable for Man in the middle attack.
+  * it is vunerable for Man in the middle attack.
 
 #### master secret
 
 ```
-master_secret = 
+master_secret =
     MD5(pre_master_secret
         + SHA(’A’ + pre_master_secret + ClientHello.random + ServerHello.random)) +
     MD5(pre_master_secret
@@ -142,16 +138,14 @@ master_secret =
     MD5(pre_master_secret
         + SHA(’CCC’ + pre_master_secret + ClientHello.random + ServerHello.random))
 ```
-* MD5 hash value is 16 bytes long
+
 * master secret value is 3 * 16 bytes
 * master secret is part of the session state of the cryptographic parameters (e.g., cryptographic keys and IVs)
 * After generating master secret, `pre_master_secret` should be deleted from memory.
 
-
 #### anonymous key exchange
 
 * a key exchange without peer entity authentication.
-
 
 ## SSL Handshake Protocol Detail
 
@@ -162,13 +156,12 @@ master_secret =
 * `FINISHED` message is the first SSL handshake message that is protected according to these new
   parameters.
 
-
 ### SSL Handshake
 
 ![Alt text](/posts/ssl/pics/ssl_handshake.png)
 
 * This is the basic SSL Handshake.
-    * Something wrapped '[]' is optional.
+  * Something wrapped '[]' is optional.
 * HELLOREQUEST message may be sent from the server to clinet. but it is seldom used in practice.
 * After having exchanged CLIENTHELLO and SERVERHELLO messages, the client and server have negotiated a protocol
   version, a session identifier, a cipher suite, and a compression method. **Furthermore, two random values
@@ -198,13 +191,10 @@ master_secret =
        **new cipher spec**.
 * Handshake completed
 
-
-
-
-Additionally, the use of ephemeral RSA key exchange is only allowed in the TLS standard,
-https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html
-Good reason for the ephemeral RSA.
-https://groups.google.com/forum/#!topic/sci.crypt/BPBi_MVbfTc
+<https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html>LS standard,
+<https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html>l>
+<https://www.openssl.org/docs/man1.0.2/man3/SSL_CTX_set_tmp_rsa_callback.html>
+<https://groups.google.com/forum/#!topic/sci.crypt/BPBi_MVbfTc>c>
 
 keyUsage for openssl
-https://www.phildev.net/ssl/opensslconf.html
+<https://www.phildev.net/ssl/opensslconf.html>l>
