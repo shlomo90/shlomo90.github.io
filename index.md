@@ -6,6 +6,8 @@ comments: false
 
 # JH's Homepage
 
+---
+
 Hello! Everyone?  
 My name is JaeHwan Lim. I am maintaining this ugly blog for organizing my knowledge.  
 This blog focuses on Computer Network and Linux Kernel that I am digging into.  
@@ -13,9 +15,10 @@ You may feel strange when you read my items written in English. To be honest,
 I am not good at English but I wanna use English for anyone to be able to read and little bit improving my English.  
 I hope all people who visit my blog would be helpful.
 
----
 
 ## Index
+
+---
 
 ### 1. Network Study
 
@@ -47,8 +50,9 @@ I hope all people who visit my blog would be helpful.
 * [Terminology](/posts/terminology.md)
 * [English Vocabulary](/posts/voca/voca1.md)
 
----
 
 ## Contact
+
+---
 
 If you want to contact to me, Email me (shlomolim90@gmail.com)
