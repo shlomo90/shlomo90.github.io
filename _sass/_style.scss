@@ -31,13 +31,15 @@ p {
 pre{
     background-color: #000000;
     overflow: auto;
-    border: 0.5px solid #aaa;
-    padding: 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
 
     // I want it to have indent more than paragraph.
     margin-left: 20px;
     margin-right: 20px;
-}   
+}
 
 /* Solarized Dark 
 
