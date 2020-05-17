@@ -3,9 +3,7 @@ layout: post
 comments: true
 ---
 
-# SSL
-
-  
+# SSL 
 
 ## SSL Protocol
 
