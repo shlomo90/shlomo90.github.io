@@ -41,6 +41,11 @@ pre{
     margin-right: 20px;
 }
 
+// In bullet, numbering, bullet order, the third indent is too much.
+// It adjusts the indent size (-20px means more left moved.)
+ol li ul {
+    margin-left: -20px;
+}
 /* Solarized Dark 
 
 For use with Jekyll and Pygments
