@@ -15,7 +15,7 @@ body {
 	margin: 0;
 }
 
-p code {
+p code, il code, ul code {
     color: #84011D;
     /*
     margin-left: 20px;
@@ -160,6 +160,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/*
 // First unordered list indent
 ul {
     margin-left: 10px;
@@ -174,6 +175,7 @@ ul ul {
 ul ul ul {
     margin-left: 14px;
 }
+*/
 
 /*
 // 'a' is  the hyperlink tag.
