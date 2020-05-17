@@ -160,6 +160,21 @@ a:hover {
     text-decoration: underline;
 }
 
+// First unordered list indent
+ul {
+    margin-left: 10px;
+}
+
+// Second unordered list indent
+ul ul {
+    margin-left: 15px;
+}
+
+// Third unordered list indent
+ul ul ul {
+    margin-left: 20px;
+}
+
 /*
 // 'a' is  the hyperlink tag.
 //a:link {color: blue;}  방문하기 전 링크
