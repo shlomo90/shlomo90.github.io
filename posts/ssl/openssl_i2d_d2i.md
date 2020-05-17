@@ -1,3 +1,11 @@
+---
+layout: post
+comments: false
+---
+
+# i2d and d2i
+
+---
 
 * **d2i_TYPE()** attempts to decode len bytes at *ppin.
 * **i2d_TYPE()** encodes the structure pointed to by a into DER format.

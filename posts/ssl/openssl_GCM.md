@@ -5,6 +5,8 @@ comments: true
 
 # GCM (Galois/Counter Mode)
 
+---
+
 * Before understanding the GCM, we need to know about many terminologie.
 
 ## Block cipher

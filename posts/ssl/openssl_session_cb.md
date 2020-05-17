@@ -1,4 +1,9 @@
+---
+layout: post
+comments: false
+---
 
+# session callback
 
 Openssl library supports the session ticket for TLS1.3.
 

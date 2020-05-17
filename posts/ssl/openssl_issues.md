@@ -5,6 +5,8 @@ comments: true
 
 # Openssl Issues
 
+---
+
 Segmentation fault in SSL_check_chain (CVE-2020-1967)
 
 ```
