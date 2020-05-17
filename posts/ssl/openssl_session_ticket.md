@@ -5,7 +5,12 @@ comments: true
 
 # Session Resumption
 
+---
+
 ## Purpose
+
+1. Understanding the Session Resumption
+2. Understanding between Session ID reuse and Ticket
 
 ## Session Ticket
 
