@@ -44,7 +44,11 @@ pre{
 // In bullet, numbering, bullet order, the third indent is too much.
 // It adjusts the indent size (-20px means more left moved.)
 li ul {
-    margin-left: -20px;
+    margin-left: -25px;
+}
+
+li ol {
+    margin-left: -10px;
 }
 
 li p {
