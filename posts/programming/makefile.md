@@ -155,7 +155,7 @@ include common.mk
 
 Here is the make file example code.
 
-```Make
+```
 build:  test/good.o
     gcc test/good.c
 
