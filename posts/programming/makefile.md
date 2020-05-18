@@ -145,3 +145,34 @@ include common.mk
 
 * 수행 절차
     1. include 지시자를 만나면, 해당 make 파일을 먼저 수행하고 본래 makefile 을 수행한다.
+
+
+## Automatic Variables
+
+---
+
+### Makefile Variable Test
+
+```Make
+build:  test/good.o
+    gcc test/good.c
+
+test/%.o:   test/%.c
+    @echo "The dollar-asterisk    '$*'"
+    @echo "The dollar-percent     '$%'"
+    @echo "The dollar-circumflex  '$^'"
+    @echo "The dollar-question    '$?'"
+    @echo "The dollar-plus        '$?'"
+    gcc -c $^ -o $*.o
+```
+
+You can easily check what the variables have with `echo`.
+
+### `%` and `$*`
+
+The stem with which an implicit rule matches. If the target is `dir/a.foo.b` and the target pattern is `a.%.b`
+then the stem is `
+In an explicit rule, there is no stem; so `$*` cannot be determined in that way. For example, if the target
+is `foo.c`. then `$*` is set to `foo`.  
+
+You should generally avoid using `$*` except in implicit rules or static pattern rules.
