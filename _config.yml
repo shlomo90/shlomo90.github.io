@@ -23,3 +23,5 @@ nav:
    link: "todo"
  - name: "Contact"
    link: "contact"
+ - name: "Code"
+   link: "code"
