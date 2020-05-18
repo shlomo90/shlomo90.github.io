@@ -5,6 +5,8 @@ comments: true
 
 # How to use patch and patch files
 
+---
+
 ## Create patch file
 
 * You can simply generate a patch file with git.

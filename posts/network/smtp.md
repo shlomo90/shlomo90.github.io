@@ -5,6 +5,8 @@ comments: true
 
 # smtp (secure mail transfer protocol)
 
+---
+
 * smtp is defined at rfc821.
 * extended smtp is defined rfc5321.
 * commonly use the Transmission Control Protocol on port number 25.

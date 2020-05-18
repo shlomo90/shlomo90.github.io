@@ -5,6 +5,8 @@ comments: true
 
 # Network Understanding
 
+---
+
 ## A. HTTP
 
 * [Headers](headers.md)

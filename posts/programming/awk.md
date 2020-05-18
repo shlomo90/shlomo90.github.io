@@ -5,6 +5,8 @@ comments: true
 
 # Awk
 
+---
+
 ## Purpose
 
 * is to search files for lines.

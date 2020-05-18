@@ -5,6 +5,8 @@ comments: true
 
 # Fin Process (Merged ACK)
 
+---
+
 간혹, 패킷 분석을 하다보면, close 4-way handshake 를 할 것으로 생각되는데 정작 실제 날라가는 패킷은 더 적은 것에 대해 의문을 품을 수 있다.
 여기 아래 해당 상황에 대해서 분석을 해본다.
 

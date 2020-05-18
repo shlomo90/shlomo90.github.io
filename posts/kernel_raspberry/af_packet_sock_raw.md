@@ -5,6 +5,8 @@ comments: true
 
 # kernel socket for AF_PACKET family and SOCK_RAW type 
 
+---
+
 아래 예시는 AF_PACKET family 와 SOCK_RAW type 을 사용하는 경우입니다.
 
 ## Creat socket

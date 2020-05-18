@@ -5,6 +5,8 @@ comments: true
 
 # signal
 
+---
+
 * signal flags
     * sa_flags specifies a set of flags which modify the behavior of the signal.  It is formed by the bitwise OR of zero or more of the following:
     * SA_NOCLDSTOP

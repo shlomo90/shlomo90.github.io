@@ -5,6 +5,8 @@ comments: true
 
 # How to dump the Memory in Linux
 
+---
+
 ## Purpose
 
 * To detect a memory leak

@@ -5,6 +5,8 @@ comments: true
 
 # Terminology
 
+---
+
 ## RX/TX
 
 * RX

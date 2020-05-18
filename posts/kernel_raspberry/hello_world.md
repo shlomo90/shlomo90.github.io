@@ -5,6 +5,8 @@ comments: true
 
 # Print Hello World at booting time
 
+---
+
 ## Steps
 
 <aside class="notice">

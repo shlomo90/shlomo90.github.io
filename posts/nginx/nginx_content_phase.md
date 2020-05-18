@@ -5,6 +5,8 @@ comments: true
 
 # Nginx Content Phase
 
+---
+
 ## HTTP Phases
 
 * 12 types http content phases

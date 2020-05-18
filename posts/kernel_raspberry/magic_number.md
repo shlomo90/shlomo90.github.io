@@ -5,6 +5,8 @@ comments: true
 
 # Magic Number
 
+---
+
 ##  Memory Protection
 
 * Early version of UNIX used the relocatable memory reference model.

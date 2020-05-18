@@ -5,6 +5,8 @@ comments: true
 
 # Raspberry pi Specs
 
+---
+
 - CPU: Broadcom BCM2836 900MHz quad-core ARM Cortex-A7 processor
 - RAM: 1 GB SDRAM
 - USB Ports: 4 USB 2.0 ports  (same as Raspberry Pi B+)

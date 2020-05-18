@@ -5,6 +5,8 @@ comments: true
 
 # Basic Knowledge
 
+---
+
 ## MSB, LSB
 
 * Ref

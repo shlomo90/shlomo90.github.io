@@ -5,6 +5,8 @@ comments: true
 
 # Fiber (computer science)
 
+---
+
 * a particularly lightweight thread of execution.
 * fibers use cooperative multitasking while threads use preemptive multitasking.
 * Threads often depend on the kernel's thread scheduler to preempt a busy thread and resume another thread

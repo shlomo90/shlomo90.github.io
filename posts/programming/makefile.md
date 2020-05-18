@@ -5,6 +5,8 @@ comments: true
 
 # Makefile
 
+---
+
 * Makefile 을 작성하면, program build 시간을 무척이나 줄일 수 있지만, 개발자들(나를 포함해서)은 Makefile 작성에 조금
 힘들어하는 경향이 있다. 따라서, 작성하는 방법을 간략히 핵심적인 내용만 기술해보도록 한다.
 

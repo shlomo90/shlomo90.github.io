@@ -5,6 +5,8 @@ comments: true
 
 # header dependency issues
 
+---
+
 * how to solve the dependency issues?
     1. use forwward declare
     2. self-sufficient

@@ -2,6 +2,8 @@
 
 # Python
 
+---
+
 ## classmethod
 
 * A class method is a method which is bound to the class and not the object of the class.

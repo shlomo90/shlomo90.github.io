@@ -5,6 +5,8 @@ comments: true
 
 # Kernel Study With RaspberryPi
 
+---
+
 ## A. Purpose
 
 1. Kernel Study (focus on Network)

@@ -5,6 +5,8 @@ comments: true
 
 # *setsockopt* in kernel
 
+---
+
 ## setsockopt 시 Kernel 에 정보가 들어가게 되는 과정
 
 다음은 아래 파이썬 코드에서 setsockopt 를 하면, 아래와 같이 동작으로 추정 (검증 필요)  

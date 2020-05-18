@@ -5,6 +5,8 @@ comments: true
 
 # Headers
 
+---
+
 ## A. *hop-by-hop* headers
 
 - the headers which are meaningful only for a single transport-lavel connection, and not stored by caches or forwarded by proxies.

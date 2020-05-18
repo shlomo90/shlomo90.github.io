@@ -2,6 +2,8 @@
 
 # Python
 
+---
+
 ## A. Purpose
 
 1. Arrange python acknowledge I missed.

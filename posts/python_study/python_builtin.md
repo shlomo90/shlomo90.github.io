@@ -2,6 +2,8 @@
 
 # Python built-in function
 
+---
+
 ## property
 
 https://www.tutorialsteacher.com/python/property-function

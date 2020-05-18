@@ -5,6 +5,8 @@ comments: true
 
 # Setup Raspberry Pi
 
+---
+
 ## 1. Checking IP in one to one LAN
 
 ### ifconfig

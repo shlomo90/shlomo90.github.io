@@ -2,6 +2,8 @@
 
 # functools
 
+---
+
 ## wraps
 
 * It's a decorator to wrap the specific function.

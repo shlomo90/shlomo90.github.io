@@ -5,6 +5,8 @@ comments: true
 
 # GCC builtin expect
 
+---
+
 ## __builtin_expect (long exp, long c)
 
 * to provide the compiler with branch prediction information.

@@ -5,6 +5,8 @@ comments: true
 
 # Send Patch With Git-Email
 
+---
+
 * Let's figure out how to send your friends patch files with git-send-email.
 
 ## Things you need to prepare

@@ -5,6 +5,8 @@ comments: true
 
 # libssl-dev 의존성
 
+---
+
 ## A. 개요
 
 - openssl 관련하여 개발하다보면, libssl-dev (ubuntu 버전) 또는 openssl-devel (Fedora 버전) 을 많이 경험하게  된다. 여기서보면, libssl-dev 은 흔히, `#include <openssl/xxx.h>` 해더파일을 사용할 수 있게 해주는 고마운 존재다. 

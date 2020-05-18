@@ -5,6 +5,8 @@ comments: true
 
 # Header Issue
 
+---
+
 ## socket 에서의 writable/readable 의 뜻은?
 
 Under What Conditions Is a Descriptor Ready?

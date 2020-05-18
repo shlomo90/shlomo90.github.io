@@ -5,6 +5,8 @@ comments: true
 
 # Stream module's peer init
 
+---
+
 비단, "stream" 모듈만이 아니라 http 모듈에서도 좋은 reference 가 될 수있음.
 
 ## A. Configuration time

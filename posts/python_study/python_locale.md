@@ -2,6 +2,8 @@
 
 # Python locale
 
+---
+
 * The local module opens access to the POSIX locale database and functionality.
 
 ## locale wiki
