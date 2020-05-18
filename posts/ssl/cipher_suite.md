@@ -43,18 +43,29 @@ Each cipher string can be optionally preceded by the characters `!`, `-`, `+`.
 
 `+` means combined in a single cipher string (logical AND operation). This example is already showed
 above.  
+
 `!` means the cipher permanently deleted from the cipher list. Even though you explicitly use the
-cipher string already marked `!`, It's not taken.
+cipher string already marked `!`, It's not taken.  
+
 `-` means the cipher are deleted from the list, but different to `!` it's not permanently deleted.
-The ciphers marked `-` can be add again by later options.
+The ciphers marked `-` can be add again by later options.  
+
 `+` means the cipher are moved to **the end of the list**. It seems like *cipher list* has the
 priority.  
 
-_ALL_ : all ciphers suites except the eNULL ciphers which must be explicitly enabled.  
-_HIGH_ : "high" encryption cipher suites. This currently means those with key lengths larger than 128  
-_MEDIUM_ : cipher suites currently thoes using 128 bit encryption  
-_LOW_ : cipher suites currently thoes using 64 or 56 bit but EXCLUDING export cipher  
-_RSA_ : cipher suites using RSA key exchange  
+## Cipher Strings
+
+Below the list is permitted cipher string.
+
+`ALL` : all ciphers suites except the eNULL ciphers which must be explicitly enabled.  
+
+`HIGH` : "high" encryption cipher suites. This currently means those with key lengths larger than 128  
+
+`MEDIUM` : cipher suites currently thoes using 128 bit encryption  
+
+`LOW` : cipher suites currently thoes using 64 or 56 bit but EXCLUDING export cipher  
+
+`RSA` : cipher suites using RSA key exchange  
 
 ---
 
