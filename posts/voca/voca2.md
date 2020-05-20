@@ -76,3 +76,42 @@ comments: true
 * is a method to establish the fact that a recipient received contents sent by a sender.
 * Proof of delivery becomes very important when legal and financial documents are to be exchanged between two parties
 
+### precede /prɪˈsiːd/ verb
+
+* **precede somebody/something** to happend before something or come before something/somebody in
+order.
+    * *His resignation was preceded by weeks of speculation.*
+    * *She preceded me in the job. (그녀는 그 일에 내 전임자였다.)*
+* to go in front of somebody
+    * *She preceded him out of the room. (그녀는 그보다 앞서 방을 나갔다)*
+
+### follow /ˈfɑːləʊ/ verb
+
+* [transitive, intransitive] to come or go after or behind somebody/something
+    * *Follow me please.*
+    * *He followed her into the house*
+* [transitive] to come or go after or beind somebody in order to watch where they go and what they do
+    * *I think we're being followed*
+* [transitive, intransitive] to come after something/somebody else in time or order; to happen as a
+result of something else
+    * *The main course was followed by fresh fruit.*
+* [transitive] to do something after
+    * **follow something up with** *They follow up their March show ith four UK dates next month*
+    * *I will follow up this issue.
+    
+
+
+### out /aʊt/ noun
+
+* a way of avoiding having to do something
+    * She was desperately looking for an out.
+* **the ins and outs (of something)** all the details, especially the complicated or difficult ones
+    * *the ins and outs of the problem*
+
+### out /aʊt/ adverb, preposition
+
+* away from the inside of a place or thing
+    * *She ran out into the corridor*
+    * **out of something** *I got out of bed*
+* (of people) away from or not at home or their place of work
+    * *I called Liz but she was out.*
