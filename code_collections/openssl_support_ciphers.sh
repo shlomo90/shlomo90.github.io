@@ -4,6 +4,8 @@ num_success=0
 num_fail=0
 openssl='openssl'
 selective=0  # 0 is print all, 1 is print only fail, 2 is print only success
+default_proto="tls1_0 tls1_1 tls1_2 tls1_3"
+proto=${proto:-$default_proto}
 
 if [ $# == 2 ]; then
     server=$1
@@ -28,7 +30,7 @@ $openssl version
 
 sleep 3
 
-for v in ssl2 ssl3 tls1 tls1_1 tls1_2; do
+for v in $proto; do
  for c in $(openssl ciphers 'ALL:eNULL' | tr ':' ' '); do
     $openssl s_client -connect ${server}:${port} -cipher $c -$v < /dev/null > /dev/null 2>&1
     if [ $? -gt 0 ]
