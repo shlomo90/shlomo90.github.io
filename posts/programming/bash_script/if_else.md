@@ -42,45 +42,45 @@ I am gonna arrange the file operators that I usually frequently use.
 
 `-a FILE` or `-e FILE`
 * True if file exists.
->```
->[hwan@jh bash_script]$ ls
->if_else.md
->[hwan@jh bash_script]$ [ -a "./if_else.md" ] && echo "True"
->True
->[hwan@jh bash_script]$
->```
+```
+[hwan@jh bash_script]$ ls
+if_else.md
+[hwan@jh bash_script]$ [ -a "./if_else.md" ] && echo "True"
+True
+[hwan@jh bash_script]$
+```
 
 `-f FILE`
 * True if file exists and is a regular file.
->```
->[hwan@jh bash_script]$ [ -f "./if_else.md" ] && echo "True"
->True
->[hwan@jh bash_script]$ 
->```
+```
+[hwan@jh bash_script]$ [ -f "./if_else.md" ] && echo "True"
+True
+[hwan@jh bash_script]$ 
+```
 
 `-d FILE`
 * True if file is a directory.
->```[hwan@jh bash_script]$ ll
->total 28
->drwxrwxr-x.  3 hwan hwan  4096 May 21 12:35 ./
->drwxrwxr-x. 13 hwan hwan  4096 May 20 14:54 ../
->-rw-rw-r--.  1 hwan hwan  1417 May 21 12:35 if_else.md
->-rw-r--r--.  1 hwan hwan 12288 May 21 12:35 .if_else.md.swp
->drwxrwxr-x.  2 hwan hwan  4096 May 21 12:35 test/
->[hwan@jh bash_script]$ [ -d "./test" ] && echo "True"
->True
->```
+```[hwan@jh bash_script]$ ll
+total 28
+drwxrwxr-x.  3 hwan hwan  4096 May 21 12:35 ./
+drwxrwxr-x. 13 hwan hwan  4096 May 20 14:54 ../
+-rw-rw-r--.  1 hwan hwan  1417 May 21 12:35 if_else.md
+-rw-r--r--.  1 hwan hwan 12288 May 21 12:35 .if_else.md.swp
+drwxrwxr-x.  2 hwan hwan  4096 May 21 12:35 test/
+[hwan@jh bash_script]$ [ -d "./test" ] && echo "True"
+True
+```
 
 #### String compare
 
 `-z STRING`
 * True if string is empty.
->```
->[hwan@jh bash_script]$ [ -z "" ] && echo "True"
->True
->[hwan@jh bash_script]$ [ -z "s" ] && echo "True"
->[hwan@jh bash_script]$ 
->```
+```
+[hwan@jh bash_script]$ [ -z "" ] && echo "True"
+True
+[hwan@jh bash_script]$ [ -z "s" ] && echo "True"
+[hwan@jh bash_script]$ 
+```
 * `-n` is the opposite command.
 
 `STRING1 = STRING2`
