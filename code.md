@@ -10,6 +10,6 @@ comments: false
 
 Welcome to my code Collection. Here is the code below.
 
-* [OPENSSL Support Ciphers](openssl_support_ciphers.md)
-* [Bash Environment Parameter](bash_env_parameter.md)
-* [Restarting nginx and php process(sh)](./restart_nginx_php.md)
+* [OPENSSL Support Ciphers](./code_collections/openssl_support_ciphers.md)
+* [Bash Environment Parameter](./code_collections/bash_env_parameter.md)
+* [Restarting nginx and php process(sh)](./code_collections/restart_nginx_php.md)
