@@ -18,6 +18,7 @@ comments: true
 1. [stream module's "peer" init](stream_peer_init.md)
 2. [How to work phase?](nginx_content_phase.md)
 3. [Install Nginx](install_nginx.md)
+4. [Third Party Modules](./third_party_modules/index.md)
 
 
 ## Introduction
