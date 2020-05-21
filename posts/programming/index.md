@@ -23,3 +23,4 @@ comments: true
 7. [signal](signal.md)
 8. [header dependency issue](header_dependency_issue.md)
 9. [Makefile](makefile.md)
+10. [Bash Scripts](./bash_script/index.md)
