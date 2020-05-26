@@ -1,6 +1,6 @@
 <div class="navbar container">
     <a href="{{ site.baseurl }}/">
-        <img src="{{ site.baseurl }}/home.png" alt="Home" width="50" height="50">
+        <img src="{{ site.image_baseurl }}/home.png" alt="Home" width="50" height="50">
     </a>
     <!--
     <a id="author-name" class="alignable pull-left" href="{{ site.baseurl }}">
@@ -11,7 +11,7 @@
         {% for x in site.nav %}
             <li class="alignable pull-left nav-list">
                 <a href="{{ site.baseurl }}/{{ x.link }}">
-                    <img src="{{ site.baseurl}}/{{ x.name }}.png" alt="{{ x.name }}" width="50" height="50">
+                    <img src="{{ site.image_baseurl }}/{{ x.name }}.png" alt="{{ x.name }}" width="50" height="50">
                 </a>
                 {% if forloop.last == false %}
                       

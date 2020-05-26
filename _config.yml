@@ -1,6 +1,7 @@
 title: JH Home
 url: "https://shlomo90.github.io"
 baseurl: ""
+image_baseurl: /images
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
