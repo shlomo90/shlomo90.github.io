@@ -151,6 +151,8 @@ master_secret =
 
 ## SSL Handshake Protocol Detail
 
+.
+
 ### SSL handshake negotiation
 
 * it's done when the client and server have exchanged `ChangeCipherSpec` messages
