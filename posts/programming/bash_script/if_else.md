@@ -42,6 +42,7 @@ I am gonna arrange the file operators that I usually frequently use.
 
 `-a FILE` or `-e FILE`
 * True if file exists.
+
 ```
 [hwan@jh bash_script]$ ls
 if_else.md
@@ -52,6 +53,7 @@ True
 
 `-f FILE`
 * True if file exists and is a regular file.
+
 ```
 [hwan@jh bash_script]$ [ -f "./if_else.md" ] && echo "True"
 True
@@ -60,6 +62,7 @@ True
 
 `-d FILE`
 * True if file is a directory.
+
 ```[hwan@jh bash_script]$ ll
 total 28
 drwxrwxr-x.  3 hwan hwan  4096 May 21 12:35 ./
@@ -75,6 +78,7 @@ True
 
 `-z STRING`
 * True if string is empty.
+
 ```
 [hwan@jh bash_script]$ [ -z "" ] && echo "True"
 True
