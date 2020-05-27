@@ -57,32 +57,27 @@ But, First of all, You need to install php server.
 ```
 $ tar -xvf php-7.4.6.tar.gz
 ```
-
 3. Configure it
 
 ```
 $ ./configure
 ```
-
 4. Make and Install
 
 ```
 $ make
 $ make install
 ```
-
 5. Check it's installed well
 
 ```
 $ php -v
 ```
-
 6. Open server background
 
 ```
 $ _SERVER=/workspace/html && php -S 127.0.0.1:9000 &
 ```
-
 `_SERVER` is an environment variable having php server root path. Make sure the root directory path should be 
 same with nginx root directory path.
 
