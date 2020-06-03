@@ -115,3 +115,13 @@ result of something else
     * **out of something** *I got out of bed*
 * (of people) away from or not at home or their place of work
     * *I called Liz but she was out.*
+
+
+### On-premises software
+
+* On-premises software is installed and runs on computers on the premises of the person or organization using
+the software, rather than at a remote facility such as a server farm or cloud. off-premises software is commonly
+called *software as a service (SaaS)* or *cloud computing*
+* 한국어로 의미를 파악하자면, 남에게 제공하기위한 소프트웨어가 아닌 나 또는 기관에서 사용을 위한 소프트웨어.
+* on-premises is the software and technology that is **located within the physical confines of an enterprise**
+often in the company's data center, as opposed to running remotely on hosted servers or in the cloud.
