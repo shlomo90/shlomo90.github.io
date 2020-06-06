@@ -125,3 +125,19 @@ called *software as a service (SaaS)* or *cloud computing*
 * 한국어로 의미를 파악하자면, 남에게 제공하기위한 소프트웨어가 아닌 나 또는 기관에서 사용을 위한 소프트웨어.
 * on-premises is the software and technology that is **located within the physical confines of an enterprise**
 often in the company's data center, as opposed to running remotely on hosted servers or in the cloud.
+
+### noteworty /ˈnəʊtwɜːrði/ adj.
+
+* deserving to be noticed or to receive attention because it is unusual, important or interesting.
+    * *a noteworthy feature*
+    * *It is noteworthy that only 15% of senior managers are women.*
+
+
+### derive /dɪˈraɪv/ verb
+
+* **derive from something**: to come or develop from something
+    * *The word 'politics' is derived from a Greek word meaning 'city'.
+* **derive something from something**: to get something from something
+    * *He derived greate pleasure from painting.*
+* **derive something from something**: to obtain a substance from something
+    * *The new drug is derived from fish oil.*
