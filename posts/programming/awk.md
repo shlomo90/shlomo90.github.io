@@ -96,3 +96,40 @@ chmod 755 ./advice_exec.awk
 ### Terminology
 
 * 'null string' it has no characters. it's the same term with 'empty string'.
+
+
+### BEGIN, END, NR
+
+* They are awk special variables.
+* **BEGIN**
+  * It is an action statement before any input lines read.
+* **END**
+  * It is an action statement after all input lines read.
+* **NR**
+  * It's a variable for current read line number.
+* **NF**
+  * It's a variable for total number of the field.
+
+Here is the example.
+
+```
+ll | awk '{print NR}'
+```
+
+* The input is current paths' files and directories list.
+* _awk_ read each input line and print the line number.
+
+```
+ll | awk 'END {print NR}'
+```
+* It's the same with the above but, it prints the total line of the input.
+
+```
+ll | awk '{ if (NF == 2) print "Its first line"; else printf "this line field %d\n", NF; } \
+          BEGIN { printf "This program starts\n" } \
+          END { printf "This program done\n" } '
+```
+
+* This program will print "This program starts" at the first line because of the "BEGIN".
+* and Each line will process the if conditionals and print the results.
+* Finally, after read all input lines, print "This program done".
