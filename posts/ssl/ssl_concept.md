@@ -197,7 +197,18 @@ server_write_IV = MD5(ServerHello.random + ClientHello.random);
 
 * Compression
   * The compression method specified in the SSL session state
+  * No compression is identical to SSL Plain text
+* Cryptographic protection
+  * *cipher spec*
+    * message authentication
+    * a data encryption algorithm
+    * is complemented with a key exchange algorithm
+  * includes
+    * Message authentication and encryption
 
+##### Message authentication
+
+HMACk (m) = h(k ⊕ opad || h(k ⊕ ipad || m))
 
 #### anonymous key exchange
 
