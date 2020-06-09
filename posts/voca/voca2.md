@@ -141,3 +141,36 @@ often in the company's data center, as opposed to running remotely on hosted ser
     * *He derived greate pleasure from painting.*
 * **derive something from something**: to obtain a substance from something
     * *The new drug is derived from fish oil.*
+
+
+### redundancy /rɪˈdʌndənsi/ noun
+
+* the situation when somebody has to leave their job because there is no more work available for them.
+  * *Thousands of factory workers are facing redundancy.*
+  * *to accept/take voluntary redundancy (=to offer to leave your job)*
+  * *All members of staff are entitled to redundancy payments.*
+* the state of not being necessary or useful.
+  * *Natural language is characterized by redundancy*
+  * *encrypted data cannot be distinguished from random data, and hence there is hardly any redundancy that can be removed with data compression)*
+
+
+### pops up
+
+* Suddenly appears in front of me? It can have more abstract meaning like.
+  * *The first question that pops up is ...*
+
+
+### predecessor /ˈpredəsesər/ noun
+
+* a person who did a job before somebody else
+  * *The new president reversed many of the policies of his predecessor.*
+* a thing, such as a machine, that has been followed or replaced by something else
+
+
+### speculation /ˌspekjuˈleɪʃn/ noun
+
+* the act of forming opinions about what has happened or what might happen without knowing all the
+  facts
+  * *His private life is the subject of much speculation*.
+  * *There was widespread speculation that she was going to resign*.
+  * *Today's announcement ends months of speculation about the company's future*.

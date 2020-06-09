@@ -145,6 +145,60 @@ master_secret =
 * master secret is part of the session state of the cryptographic parameters (e.g., cryptographic keys and IVs)
 * After generating master secret, `pre_master_secret` should be deleted from memory.
 
+
+#### MAC_secret
+
+* message authentication keys
+
+
+#### IV
+
+* It's needed if a block cipher in CBC mode is used
+
+* Client Write IV:
+
+```
+client_write_IV = MD5(ClientHello.random + ServerHello.random);
+```
+
+* Server Write IV:
+
+```
+server_write_IV = MD5(ServerHello.random + ClientHello.random);
+```
+
+#### SSL Record Protocol
+
+```
+---------|------|-----------
+   Plain Text Data ....
+---------|------|-----------
+            |Fragmentation
+            v
+         +------+
+         |      |
+         +------+
+            | Compression
+            v
+          +----+---+
+          |    |MAC|
+          +----+---+
+              | Cryptographic protection
+              v
+          +--------+
+          |        | SSLCipherText
+          +--------+
+              |
+              v
+   +------+--------+
+   |header|        | SSLRecord
+   +------+--------+
+```
+
+* Compression
+  * The compression method specified in the SSL session state
+
+
 #### anonymous key exchange
 
 * a key exchange without peer entity authentication.
