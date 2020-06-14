@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: categories
 title: Study
 comments: false
 ---
