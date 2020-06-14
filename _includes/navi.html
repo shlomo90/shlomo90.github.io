@@ -2,12 +2,13 @@
   <button class="dropbtn">MENU</button>
   <div class="dropup-content">
         <a href="{{ site.baseurl }}/">
-            <img src="{{ site.image_baseurl }}/home.png" alt="Home" width="50" height="50">
+            <img src="{{ site.image_baseurl }}/home.png" alt="Home" width="60" height="40">
         </a>
     {% for x in site.nav %}
         <a href="{{ site.baseurl }}/{{ x.link }}">
-            <img src="{{ site.image_baseurl }}/{{ x.name }}.png" alt="{{ x.name }}" width="50" height="50">
+            <img src="{{ site.image_baseurl }}/{{ x.name }}.png" alt="{{ x.name }}" width="60" height="40">
         </a>
     {% endfor %}
+    <a href="#">TOP</a>
   </div>
 </div>
