@@ -7,9 +7,8 @@ html {
 }
 
 body {
-    padding:10px 10px 10px 10px;
-	//font-size: 1.6rem;
-    font-family: "Inconsolata";
+    padding:5px 5px 5px 5px;
+    font-family: 'Source Code Pro', monospace;
     background-color: #ffd;
     overflow: auto;
 	margin: 0;
@@ -232,6 +231,23 @@ ol > ul { <-- means that it is used to select the element with a specific parent
  * Navbar
  */
 
+/*
+selector {
+    property: value;
+    property: value;
+}
+The kinds of selector
+  - element selector
+    - elem {}
+  - id selector
+    - #elem {}
+  - class selector
+    - .elem {} 
+    - p.elem {}  // <-- p element's class "elem"
+  - universal selector
+    - * {}
+*/
+
 #author-name {
     font-size: 30px;
     color: #272727;
@@ -273,3 +289,56 @@ ol > ul { <-- means that it is used to select the element with a specific parent
 }
 
 @import "table";
+
+
+/* Dropup Button */
+.dropbtn {
+  background-color: #415868;
+  opacity: 0.8;
+  color: white;
+  padding: 16px;
+  font-size: 12px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 4px 3px 3px black;
+}
+
+/* The container <div> - needed to position the dropup content */
+.dropup {
+  position: fixed;
+  display: inline-block;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Dropup content (Hidden by Default) */
+.dropup-content {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropup */
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropup links on hover */
+.dropup-content a:hover {background-color: #ddd}
+
+/* Show the dropup menu on hover */
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+/* Change the background color of the dropup button when the dropup content is shown */
+.dropup:hover .dropbtn {
+  background-color: #415868;
+}

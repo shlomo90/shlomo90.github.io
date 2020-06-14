@@ -1,22 +1,22 @@
 <div class="navbar container">
-    <a href="{{ site.baseurl }}/">
-        <img src="{{ site.image_baseurl }}/home.png" alt="Home" width="50" height="50">
-    </a>
+    <!-- Search bar -->
     <!--
     <a id="author-name" class="alignable pull-left" href="{{ site.baseurl }}">
         {{ site.title }}
     </a>
     -->
-    <ul id="navlist" class="alignable pull-right navbar-ul">
-        {% for x in site.nav %}
-            <li class="alignable pull-left nav-list">
-                <a href="{{ site.baseurl }}/{{ x.link }}">
-                    <img src="{{ site.image_baseurl }}/{{ x.name }}.png" alt="{{ x.name }}" width="50" height="50">
-                </a>
-                {% if forloop.last == false %}
-                      
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+</div>
+
+<div class="dropup">
+  <button class="dropbtn">MENU</button>
+  <div class="dropup-content">
+        <a href="{{ site.baseurl }}/">
+            <img src="{{ site.image_baseurl }}/home.png" alt="Home" width="50" height="50">
+        </a>
+    {% for x in site.nav %}
+        <a href="{{ site.baseurl }}/{{ x.link }}">
+            <img src="{{ site.image_baseurl }}/{{ x.name }}.png" alt="{{ x.name }}" width="50" height="50">
+        </a>
+    {% endfor %}
+  </div>
 </div>
