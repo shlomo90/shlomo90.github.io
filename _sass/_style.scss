@@ -290,7 +290,6 @@ The kinds of selector
 
 @import "table";
 
-
 /* Dropup Button */
 .dropbtn {
   background-color: #415868;
@@ -319,6 +318,7 @@ The kinds of selector
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 12px;
   z-index: 1;
 }
 
