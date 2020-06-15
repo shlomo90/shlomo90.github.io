@@ -1,0 +1,51 @@
+
+
+
+Let's figure out how the lua determine the location/
+
+Flow:
+
+clcf->handler (ngx_http_lua_content_handler)
+        |
+        | * Do llcf->content_handler(r)
+        |   - this is assign at the "ngx_http_lua_content_by_lua" function (configuration time)
+        |   - it is "cmd->post" which function is "ngx_http_lua_content_handler_inline" 
+        |     (See ngx_http_lua_module.c)
+        V
+    
+ngx_http_lua_content_handler_inline
+        |
+        | * Do ngx_http_lua_content_by_chunk
+        V
+
+ngx_http_lua_content_by_chunk
+        |
+        |
+        | * Do ngx_http_lua_run_thread()
+        V
+
+ngx_http_lua_run_thread
+        |
+        |
+        * * Do lua_resume
+        |\  - I dont' know what it does..
+        | \              [LUA_YIELD]
+        |  +-----------------------------------+
+        |                                      | * check ctx->exec_uri.len and do ngx_http_lua_handle_exec
+        |...                                   |
+                                               V
+
+ngx_http_lua_handle_exec
+        |
+        |
+        | * check the ctx->exec_uri.data[0] == "@" or something else... 
+        | * if it is, Do ngx_http_named_location
+        |   - This function finds the matched location with "exec_uri".
+        |   - and change the "r->loc_conf" to the matched one.
+        |   - and Do "ngx_http_update_location_config"
+        |
+        V
+
+After that the "r" (ngx_http_request_t structure will have the matched loc_conf.
+So, when the function "ngx_http_get_module_loc_conf" does with "r" already changed, The new location conf
+will come out.
