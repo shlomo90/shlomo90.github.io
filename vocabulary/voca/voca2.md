@@ -186,3 +186,9 @@ often in the company's data center, as opposed to running remotely on hosted ser
 
 * in a pile
   * *We stacked the crates one on top of the other.*
+
+### recap /ˈriːkæp/ verb
+
+* to repeat or give a summary of what has already been said, decided, etc.
+  * *Let me just recap*
+  * *Let me just recap on what we've decided so far*

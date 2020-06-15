@@ -1,0 +1,60 @@
+
+
+
+Browser APIs
+  - DOM (Document Object Model) API
+    - It allows you to manipulate HTML and CSS, creating, removing and changing HTML,
+      dynamically applying new styles to your page.
+  - Geolocation API
+    - It retrieves geographical information.
+  - Canvas/WebGL
+  - Audio and Video APIs
+
+A very common use of JavaScript is to dynamically modify HTML and CSS to update a user
+interface, via the Document Object Model API. 
+
+There is a JavaScript loading strategies section.
+
+JavaScript running order
+The code generally runs it in order, from top to bottom.
+
+```
+const para = document.querySelector('p');
+
+para.addEventListener('click', updateName); // when the para is clicked, the updateName code block
+                                            // run
+function updateName() {
+  let name = prompt('Enter a new name');
+  para.textContent = 'Player 1: ' + name;
+}
+```
+
+JavaScript could be Interpreted or Compiled Code.
+
+
+How do you add JavaScript to your page?
+You need the block "<script>" or external JavaScript file.
+1. <script> ... </script>
+2. <script src="script.js" defer></script>
+3. inline JavaScript handler
+
+```
+function createParagraph() {
+    let para = document.createElement('p');
+    para.textContent = 'You clicked the button!';
+    document.body.appendChild(para);
+}
+<button onclick="createParagraph()">Click me!</button>
+```
+
+But the above code is not efficient. Check the below code.
+
+```
+const buttons = document.querySelectorAll('button');
+
+for(let i = 0; i < buttons.length ; i++) {
+  buttons[i].addEventListener('click', createParagraph);
+}
+```
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript
