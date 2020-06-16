@@ -4,17 +4,17 @@ title: JH's Hompage
 comments: false
 ---
 
-# JH's Homepage
+# JH's Page
 
 ---
 
-Hello Every visitors? This is my personal blog that has organized studies, some code analysis of
-Kernel, Nginx, OPENSSL (Maybe more...).  
+Hello visitors? This is my first CS technical blog. This blog may have some network things and
+code analysis of Nginx, OPENSSL etc.
 
 
-Warning! some posts in this blog are written in English and it's maybe hard to understand because of
-My pool English Skill...
+This blog has also a special purpose that is quick searching what I've done before and refreshing.
+It's kind of my small library. Plus, I am trying to write posts in English because many people can access it.
+(Sadly, I am not good at English though)
 
 
-Anyway, Welcome!  
-If anyone wants to contact me, Please email me and you can find my email address at "Contact" bar.
+Anyway, Welcome Everyone!
