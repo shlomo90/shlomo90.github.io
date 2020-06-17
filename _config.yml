@@ -22,3 +22,5 @@ nav:
    link: "study"
  - name: "Code"
    link: "code"
+ - name: "Finder"
+   link: "finder"
