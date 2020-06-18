@@ -15,6 +15,7 @@ layout: default
   window.addEventListener('DOMContentLoaded', (event) => {
       console.log('DOM fully loaded and parsed');
       var input = document.getElementById('search-input');
+      input.setSelectionRange(0, 9999);
       input.focus();
       input.select();
   });
