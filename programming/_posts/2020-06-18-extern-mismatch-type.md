@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: programming c
+tags: programming c issue
 comments: true
 ---
 
