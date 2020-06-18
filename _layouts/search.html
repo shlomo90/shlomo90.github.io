@@ -47,8 +47,9 @@
 <!-- HTML elements for search -->
 <div class="container content">
 
-<input type="text" id="search-input" placeholder="Search blog posts.." size=50
-       isSearchable={ false }>
+<form>
+<input type="text" id="search-input" placeholder="Search blog posts.." size=20>
+</form>
 <ul id="results-container"></ul>
 
 <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
@@ -74,6 +75,13 @@
   })
 </script>
 </div>
+
+
+
+
+
+
+
                 {% if site.footer == true %}
                     <hr />
                     <!-- p tag defines a paragraph.-->
