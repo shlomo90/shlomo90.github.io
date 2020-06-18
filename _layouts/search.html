@@ -45,12 +45,10 @@
         {% endif %}
 
 <!-- HTML elements for search -->
-<div class="container content">
 
-<form>
-<input type="text" id="search-input" placeholder="Search blog posts.." size=20>
-</form>
-<ul id="results-container"></ul>
+<div class="form__group field">
+<input name="input" type="text" class="form__field" id="search-input" placeholder="Search blog posts.." size=100>
+<ul class="result-style" id="results-container"></ul>
 
 <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
 
@@ -71,7 +69,7 @@
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '{{ site.baseurl }}/search.json',
-    searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+    searchResultTemplate: '<li><a class="result-style" href="{url}?query={query}" title="{desc}">{title}</a></li>',
     noResultsText: 'No results found',
     limit: 10,
     fuzzy: true,
@@ -81,20 +79,6 @@
 </div>
 
 
-
-
-
-
-
-                {% if site.footer == true %}
-                    <hr />
-                    <!-- p tag defines a paragraph.-->
-                    <p style="text-align: center; margin-bottom: 10px">
-                        <a href="{{ site.footer_url }}" style="color: black">
-                            <small>{{ site.footer_text }}</small>
-                        </a>
-                    </p>
-                {% endif %}
             </div>
         </div>
     </body>
