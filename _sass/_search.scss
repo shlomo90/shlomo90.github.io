@@ -63,7 +63,7 @@ $yellow: #EEE8AA;
   &:required,&:invalid { box-shadow:none; }
 }
 /* demo */
-body {
+.body-search{
   font-family: 'Poppins', sans-serif; 
   display: flex;
   flex-direction: column;
