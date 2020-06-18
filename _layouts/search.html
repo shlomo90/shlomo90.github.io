@@ -55,13 +55,17 @@
 <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-      console.log('DOM fully loaded and parsed');
-      var input = document.getElementById('search-input');
-      input.setSelectionRange(0, 9999);
-      input.focus();
-      input.select();
-  });
+   window.addEventListener('DOMContentLoaded', (event) => {
+     console.log('DOM fully loaded and parsed');
+     var input = document.getElementById('search-input');
+     input.focus();
+     input.select();
+   });
+
+  document.body.ontouchend = function() {
+      document.getElementById('search-input').focus();
+      document.getElementById('search-input').select();
+  }
 
   window.simpleJekyllSearch = new SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
