@@ -16,19 +16,13 @@ ngx_stream_init_connection (ls->handler)
             | * Do ngx_stream_session_handler
             V
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ngx_stream_core_content_phase
+            |
+            |
+            |
+            |
+            | * cscf->handler (ngx_stream_proxy_handler)
+            V
 
 ngx_stream_proxy_handler (cscf->handler)
             |
@@ -124,4 +118,16 @@ ngx_stream_proxy_ssl_handshake
             V
                 
 ngx_stream_proxy_init_upstream
+            |
+            |
+            |
+            |
+            |
+            |
+            | * handler changes
+            |   - pc->read->handler = ngx_stream_proxy_upstream_handler
+            |   - pc->write->handler = ngx_stream_proxy_upstream_handler
+            |
+            | * Do ngx_stream_proxy_process 
+            V
 ```
