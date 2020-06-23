@@ -13,6 +13,8 @@ sass:
     style: compressed
     sass_dir: _sass
 
+google_analytics: 'UA-170482767-1'
+
 footer: yes
 footer_url: "https://github.com/shlomo90/shlomo90.github.io"
 footer_text: "Page design by JaeHwan Lim"
