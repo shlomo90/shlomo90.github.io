@@ -1,5 +1,7 @@
 ---
 layout: post
+tags: openssl code init
+title: OPENSSL Init
 comments: true
 ---
 
@@ -8,14 +10,14 @@ comments: true
 ---
 
 * process
-    1. *SSL_CTX_new*
-        * Create SSL_CTX structure (It's base)
-    2. *SSL_CTX_**
-        * Some callback functions
-        * Set the ex data.
-            * Call *CRYPTO_set_ex_data*
+  1. `SSL_CTX_new`
+    * Create SSL_CTX structure (It's base)
+  2. `SSL_CTX_*`
+    * Some callback functions
+    * Set the ex data.
+      * Call `CRYPTO_set_ex_data`
 
-## STACK_OF
+## `STACK_OF`
 
 * file : `include/openssl/safestack.h`
 * define
@@ -33,10 +35,11 @@ struct crypto_ex_data_st {
 DEFINE_STACK_OF(void)
 ```
 
-### DEFINE_STACK_OF(t1)
+### `DEFINE_STACK_OF(t1)`
 
 * It generates below functions and function pointers
-```
+
+```c
 STACK_OF(t1); \
 typedef int (*sk_##t1##_compfunc)(const t1 * const *a, const t1 *const *b); \
 typedef void (*sk_##t1##_freefunc)(t1 *a); \
@@ -151,24 +154,24 @@ static ossl_unused ossl_inline sk_##t1##_compfunc sk_##t1##_set_cmp_func(STACK_O
     * etc. 
 
 
-### sk_reserve(OPENSSL_STACK *st, int n, int exact)
+### `sk_reserve(OPENSSL_STACK *st, int n, int exact)`
 
 * internal STACK storage allocation (`st->data`)
 * return value
-    * `0`: Allocation fail or not match st->data and st->num_alloc.
+    * `0`: Allocation fail or not match `st->data` and `st->num_alloc`.
     * `1`: It is reserved. You can do insert or append whatever. it has area to save something.
-* reserve (allocate) nth (void *) memory at `st->data`
-* update `st->num_alloc` (= st->num + n)
+* reserve (allocate) nth `(void *)` memory at `st->data`
+* update `st->num_alloc` (= `st->num + n`)
 * exact set 1, return `1` only required the number of alloc memory matches exactly `st->num_alloc`. otherwise realloc.
 * exact set 0, return `1` only required the number of alloc memory equal or less than `st->num_alloc`. otherwise realloc.
 
 
-### OPENSSL_sk_*
+### `OPENSSL_sk_*`
 
 * file : `crypto/stack/stack.c`
 
 
-#### OPENSSL_sk_new_reserve
+#### `OPENSSL_sk_new_reserve`
 
 * Alloc *stack_st* structure with `sk_reserve`, initialize and return it.
 
@@ -182,12 +185,12 @@ struct stack_st {
 };
 ```
 
-### OPENSSL_sk_reserve
+### `OPENSSL_sk_reserve`
 
 * Check `st` is not NULL.
 * call `sk_reserve(st, n, 1)`
 
-### OPENSSL_sk_insert(OPENSSL_STACK *st, const void *data, int loc)
+### `OPENSSL_sk_insert(OPENSSL_STACK *st, const void *data, int loc)`
 
 * check the `st` is available (`st->data` has empty space)
 * return `st->num` after updated.
