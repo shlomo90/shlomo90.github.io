@@ -8,26 +8,28 @@ comments: true
 
 ---
 
-비단, "stream" 모듈만이 아니라 http 모듈에서도 좋은 reference 가 될 수있음.
 
 ## A. Configuration time
 
+Nginx's configuration time has two periods (Directive parsing time, Initialization time)
+
 ### 1. Directive parsing time
 
-1. When "upstream" directive meets, Make new upstream block with "ngx_stream_upstream_add" function.
-	- Allocate new memory for upstream `uscf` points to `umcf->upstreams`.
-	- setting flags from uscf.
-2. upstream 블럭에 'persist' directive 가 있으면, ngx_stream_upstream_persist_srv_conf_t 의 original_init_upstream
+1. When a nginx parser meets "upstream" directive, it makes a new upstream block by running `ngx_stream_upstream_add` function.
+  * `ngx_stream_upstream_add` does:
+	* Allocate new memory space for an upstream variable `uscf` pointing to `umcf->upstreams`.
+	* Set flags for `uscf` variable.
+2. upstream 블럭에 'persist' directive 가 있으면, `ngx_stream_upstream_persist_srv_conf_t` 의 `original_init_upstream`
    에다가 기존 `uscf->peer.init_upstream` 을 저장
-3. uscf->peer.init_upstream 에다가는 ngx_stream_upstream_init_persist 로 교체
+3. `uscf->peer.init_upstream` 에다가는 `ngx_stream_upstream_init_persist` 로 교체
 
 
-### 2. Configuration Init Time (After Directive parsing time)
+### 2. Initialization Time (After Directive parsing time)
 
-1. ngx_stream_upstream_init_main_conf 수행시, `uscf->peer.init_upstream` 을 수행 (ngx_stream_upstream_init_persist)
-2. 기존 저장된 ngx_stream_upstream_persist_srv_conf_t 의 original_init_upstream 에 저장된 함수를 호출
-   (original_init_upstream 을 가지고 오기 위해 기존 `uscf->peer.init_upstream` 이 존재하는지 보는데 없음!
-	따라서, 디폴트값인 ngx_stream_upstream_init_round_robin 을 세팅한다.
+1. `ngx_stream_upstream_init_main_conf` 수행시, `uscf->peer.init_upstream` 을 수행 (`ngx_stream_upstream_init_persist`)
+2. 기존 저장된 `ngx_stream_upstream_persist_srv_conf_t` 의 `original_init_upstream` 에 저장된 함수를 호출
+   (`original_init_upstream` 을 가지고 오기 위해 기존 `uscf->peer.init_upstream` 이 존재하는지 보는데 없음!
+	따라서, 디폴트값인 `ngx_stream_upstream_init_round_robin` 을 세팅한다.
 
 ```
 ngx_stream_upstream_init_round_robin
