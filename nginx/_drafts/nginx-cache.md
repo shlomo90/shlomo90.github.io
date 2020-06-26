@@ -110,3 +110,13 @@ variant mismatch:   (check previous fcn's variant that was from response's vary 
     - ngx_http_file_cache_reopen
 
 
+
+
+---
+
+
+ref
+
+https://www.smashingmagazine.com/2017/11/understanding-vary-header/
+https://www.fastly.com/blog/best-practices-using-vary-header
+https://www.nginx.com/blog/nginx-caching-guide/
