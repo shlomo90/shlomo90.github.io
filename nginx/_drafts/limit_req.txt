@@ -1,0 +1,121 @@
+
+ngx_http_limit_req_handler
+    - jobs
+        - iterate each limit zones and in the loop, lookup the limit zone that requests are excessed.
+          (ngx_http_limit_req_lookup)
+        - return of ngx_http_limit_req_lookup
+            - NGX_BUSY
+                - NGX_BUSY, didn't iterate all the limits array. lr->excess just updated.
+                - other nodes before the "lr", decrease count and each limit's ctx->node = NULL
+            - NGX_AGAIN and NGX_OK
+                - the excess is zero if NGX_AGAIN. NGX_OK keeps it.
+
+        - looping until the last limit (every limit zone the 'lr' is created and the last limit's lr-count is
+          zero. and lr->last = now
+        - no limits return NGX_DECLINED
+
+        - if NGX_BUSY (means that excess > lrcf->burst), NGX_ERROR
+            - NGX_BUSY, didn't iterate all the limits array. lr->excess just updated.
+            - other nodes before the "lr", decrease count and each limit's ctx->node = NULL
+            -  return NGX_DECLINED (dryrun) or Error code (user setting)
+
+        - if NGX_AGAIN or NGX_OK
+            - do ngx_http_limit_req_account for calculate delay time.
+            - if no delay, return NGX_DECLINED
+            - if delay but dry_run, return NGX_DECLINED
+
+
+ngx_http_limit_req_lookup (limit, hash, key, excess, account)
+    - limit     : each limit zones (set by  ngx_http_limit_req, [limit_req])
+    - hash      : md5sum of key.
+    - key       : limit_req_zone's key
+    - excess    : the number of excess request
+    - account   : 0 means not last limit zone. 1 means this is last limit zone.
+
+    - jobs
+        1. find rbtree node with hash and key
+            - found:
+                - lr queue is put in queue's head.
+                - check excess is over than burst
+                    - yes: return NGX_BUSY (excess updated)
+                    - no :
+                        - it's last limit lr->excess, lr->last
+                        - it's not last limit (ngx_http_limit_req_node_t) lr->count++, ctx->node = lr
+                            (ctx = ngx_http_limit_req_ctx_t)
+
+            - not found: (There is no node in limit's rbtree)
+                - check expire limit_req node (try to drop 1)
+                    - get the last node from ctx->sh->queue. and check lr->count. (0: deleted)
+                - alloc 'lr' and insert rbtree and queue, lr->excess = 0
+                - if it's last limit zone, lr->count = 0; and lr->last = now, return NGX_OK
+                - otherwise, lr->last = 0, lr->count = 1, ctx->node = lr, return NGX_AGAIN
+
+    return NGX_BUSY
+        - excess > limit->burst
+    return NGX_OK
+        - excess <= limit->burst and last limits. lrcf->limits.nelts -1 == n
+            - lrcf->limits.nelts -1 == n notices this loop is the last one.
+            - otherwise, "lr->count++"
+    return NGX_AGAIN
+        - found     : it's not excess > burst and during limit looping (not the end of the limit zone)
+                      lr->count++, ctx->node = lr
+        - not found : new lr, lr->last = 0, lr->count = 1, ctx->node = lr
+    return NGX_ERROR
+
+
+
+ngx_http_limit_req_account
+    - limits
+        - total limit zones
+    - n
+        - index of limit after looking up
+    - excess
+        - the limit's excess
+    - limit
+        - limit.
+
+    - jobs
+        - calculate delay time from multiple limit zones for waiting next request to be processed.
+    - return
+        - delay : the time to wait for the next request can be processed.
+
+    - processes
+        - loop the limits backward and check there is excesses more than current limit.
+        - limit's lr->count decreased
+
+
+---
+
+limit_req_dry_run   on/off
+
+    lrcf->limit_log_level
+
+    limiting requests, dry run, excess: [excess/1000, excess%1000] by zone [zone name]
+        ngx_http_limit_req_lookup 함수에서 NGX_BUSY 인 경우
+
+
+    phases NGX_HTTP_PREACCESS_PHASE 에서 동작
+    해당 phase 의 handler ngx_http_limit_req_handler
+
+    excess limit->burst
+
+    burst: 초과를 허용하는 request 갯수
+
+    dry_run:
+        limited 되지 않고, 패킷을 전달. 하지만, logging!
+
+
+
+   such that : ~할 정도까지 
+
+
+   ngx_http_limit_req_handler 에서 request 에 대해서 limit 값을 조사
+     초과된 request (excess) 값이 lrcf->bursts 보다 큰 경우 NGX_BUSY 리턴
+
+   NGX_BUSY 인 경우, log 를 남기고 NGX_DECLINED 수행
+     NGX_DECLINED 인 경우 다른 phase 를 수행합니다. (r->phases_handler++)
+     만약, dry_run 이 설정되어있지 않으면, lrcf->status_code (사용자가 설정한 request 거절시 error code)가 리턴 
+
+  
+
+
