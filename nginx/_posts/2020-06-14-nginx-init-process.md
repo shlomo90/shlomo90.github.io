@@ -9,7 +9,7 @@ comments: true
 
 ---
 
-## 1. Core Module Initialization Steps
+## Core Module Initialization Steps
 
 1. _ngx_preinit_modules_: update each `ngx_modules[i]`.
   - `ngx_modules[i]->index = i`
@@ -49,7 +49,7 @@ Actually before step 5, `ngx_conf_parse` is run and parses the nginx config. May
 `http` or `stream` block and handles each module. See more.
 
 
-## 2. HTTP Module Initialization Steps
+## HTTP Module Initialization Steps
 
 This starts from `ngx_conf_parse` in _ngx_init_cycle_. when parser meets 'http {', `ngx_conf_read_token(cf)`
 returns `NGX_CONF_BLOCK_START` and no `cf->handler`. So, `ngx_conf_handler` is called.
@@ -78,11 +78,145 @@ returns `NGX_CONF_BLOCK_START` and no `cf->handler`. So, `ngx_conf_handler` is c
   - `ctx->srv_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
   - `ctx->loc_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
 5. _ngx_http_block_: iterate http module and create main_conf, srv_conf, loc_conf.
-  - `module = cf->cycle->modules[m]->ctx`
-  - `mi = cf->cycle->modules[m]->ctx_index`
-  - `ctx->main_conf[mi] = module->create_main_conf(cf)`
-    - if `module->create_main_conf` is not NULL.
-  - `ctx->srv_conf[mi] = module->create_srv_conf(cf)`
-    - if `module->create_srv_conf` is not NULL.
-  - `ctx->loc_conf[mi] = module->create_loc_conf(cf)`
-    - if `module->create_loc_conf` is not NULL.
+  - Allocate confs (main, srv, loc)
+    - `module = cf->cycle->modules[m]->ctx`
+      - 'm' is module index.
+    - `mi = cf->cycle->modules[m]->ctx_index`
+    - `ctx->main_conf[mi] = module->create_main_conf(cf)`
+      - if `module->create_main_conf` is not NULL.
+      - It also creates http core module's main conf `cmcf`.
+        - In `ngx_http_core_create_main_conf`, Allocate `cmcf->servers`
+    - `ctx->srv_conf[mi] = module->create_srv_conf(cf)`
+      - if `module->create_srv_conf` is not NULL.
+    - `ctx->loc_conf[mi] = module->create_loc_conf(cf)`
+      - if `module->create_loc_conf` is not NULL.
+  - Run preconfiguration
+    - call each module's `preconfiguration` fuction.
+  - Do `ngx_conf_parse`.
+    - Find http directives in HTTP block and handle them.
+    - HTTP core must have `server` directive. when parser meets it, add cmcf->servers
+  - Run module's **init_main_conf** and **ngx_http_merge_servers()**.
+    - 
+
+
+```
+
++----+----+----+----+----+----+----+----+
+| M1 | M2 | M3 | M4 | M5 | M6 | .. | MN |
++----+----+----+----+----+----+----+----+
+
++-------------------------------+
+|   ctx (ngx_http_conf_ctx_t)  ----+  (http block)
++-------------------------------+  |
+|           ...                 |  |
++-------------------------------+<-+
+|   main_conf                  ----+  <-------------+
++-------------------------------+  |                |
+|   srv_conf                   ----|--+             |
++-------------------------------+  |  |             |
+|   loc_conf                   ----|--|--+          |
++-------------------------------+  |  |  |          |
+|           ...                 |  |  |  |          |
++-------------------------------+<-+  |  |          |
+|   http module 1's main_conf   |     |  |          |
+|   (e.g, ngx_http_core_module) +-----------+       |
++-------------------------------+     |  |  |       |
+|   http module 2's main_conf   |     |  |  |       |
++-------------------------------+     |  |  |       |
+|           ...                 |     |  |  |       |
++-------------------------------+     |  |  |       |
+|   http module n's main_conf   |     |  |  |       |
++-------------------------------+     |  |  |       |
+|           ...                 |     |  |  |       |
++-------------------------------+<----+  |  |       |
+|   http module 1's srv_conf    |        |  |       |
+|   (e.g, ngx+http_core_module)------------------------------> cscf->ctx ---+
++-------------------------------+        |  |       |              
+|   http module 2's srv_conf    |        |  |       |              
++-------------------------------+        |  |       |              
+|           ...                 |        |  |       |              
++-------------------------------+        |  |       |              
+|   http module n's srv_conf    |        |  |       |              
++-------------------------------+        |  |       |              
+|           ...                 |        |  |       |              
++-------------------------------+<-------+  |       |              
+|   http module 1's loc_conf    |           |       |              
++-------------------------------+           |       |              
+|   http module 2's loc_conf    |           |       |              
++-------------------------------+           |       |              
+|           ...                 |           |       |              
++-------------------------------+           |       |              
+|   http module n's loc_conf    |           |       |              
++-------------------------------+           |       |              
+|           ...                 |           |       |              
++-------------------------------+<----------+       |              
+|   server[0] (_core_srv_conf_t)------------------------->ctx----------+
++-------------------------------+                   |                  |
+|   server[1] (_core_srv_conf_t)|                   |                  |
++-------------------------------+                   |                  |
+|   server[2] (_core_srv_conf_t)|                   |                  |
++-------------------------------+                   |                  |
+|   server[3] (_core_srv_conf_t)|                   |                  |
++-------------------------------+                   |                  |
+|           ...                 |                   |                  |
++-------------------------------+ (server block)    |                  |
+|   ctx (ngx_http_conf_ctx_t)  -----+---+---+       | <------------+<--+
++-------------------------------+<--+   |   |       |              |    
+|   main_conf                  ---------|---|-------+              |    
++-------------------------------+<------+   |       ^              |    
+|   srv_conf                   -------+     |       |              |    
++-------------------------------+<----|-----+        \             |    
+|   loc_conf                   -------|--+            \       cscf->ctx 
++-------------------------------+     |  |            |            |    
+|           ...                 |     |  |            |            |         
++-------------------------------+<----+ <------------------+       |      
+|   http module 1's srv_conf  -------------------------------------+ 
++-------------------------------+        |            |    |
+|   http module 2's srv_conf    |        |            |    |
++-------------------------------+        |            |    |
+|           ...                 |        |            |    |
++-------------------------------+        |            |    |
+|   http module n's srv_conf    |        |            |    |
++-------------------------------+        |            |    |
+|           ...                 |        |            |    |
++-------------------------------+<-------+            |    |
+|   http module 1's loc_conf    |                     |    |
++-------------------------------+                     |    |
+|   http module 2's loc_conf    |                     |    |
++-------------------------------+                     |    |
+|           ...                 |                     |    |
++-------------------------------+                     |    |
+|   http module n's loc_conf    |                     |    |
++-------------------------------+                     |    |
+|           ...                 |                     |    |
++-------------------------------+                     |    |
+|   ctx (ngx_http_conf_ctx_t)  -----+ (location block)|    |
++-------------------------------+<--+                 |    |
+|   main_conf                  -----------------------+    |
++-------------------------------+                          |
+|   srv_conf                   ----------------------------+
++-------------------------------+
+|   loc_conf                   -------+
++-------------------------------+     |
+|           ...                 |     |
++-------------------------------+<----+
+|   http module 1's loc_conf    |
++-------------------------------+
+|   http module 2's loc_conf    |
++-------------------------------+
+|           ...                 |
++-------------------------------+
+|   http module n's loc_conf    |
++-------------------------------+
+
+즉, ngx_http_merge_servers 는 각각 산발된 server, location 설정 값들은
+main <- server <- location 순으로 머지해나가는 것.
+최종적으로는 core 의 main 에서의 설정들이 각 server 로 merge 됩니다.
+참고로, 각 모듈별로만 merge 가 된다.
+http <-> server : ngx_http_merge_servers 함수에서 server 의 설정이 http 의 server 로 덮어씌어짐
+server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
+```
+
+## STREAM module init
+
+## EVENT module init
