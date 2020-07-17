@@ -66,6 +66,27 @@ returns `NGX_CONF_BLOCK_START` and no `cf->handler`. So, `ngx_conf_handler` is c
               having NULL value.
   - `rv = cmd->set(cf, cmd, conf)`
     - `cmd->set` is `ngx_http_block`
+  - NOTICE!
+    - the explanation of below code.
+```
+if (cmd->type & NGX_DIRECT_CONF) {
+    conf = ((void **) cf->ctx)[cf->cycle->modules[i]->index];   // (void**)cf->ctx ==> cf->ctx->main_conf
+
+} else if (cmd->type & NGX_MAIN_CONF) {
+    conf = &(((void **) cf->ctx)[cf->cycle->modules[i]->index]); // &(void**)cf->ctx ==> &cf->ctx->main_conf
+
+} else if (cf->ctx) {
+    confp = *(void **) ((char *) cf->ctx + cmd->conf);  //*(void **)((char *) cf->ctx + cmd->conf) 
+                                                            ==> cf->ctx + 8 (or 16 or 24).
+    if (confp) {
+        conf = confp[cf->cycle->modules[i]->ctx_index];
+    }
+}
+
+// enable func 실행
+rv = cmd->set(cf, cmd, conf);
+
+```
 2. _ngx_http_block_: allocate `ngx_http_conf_ctx_t`
   - `ctx = ngx_pcalloc(cf->pool, sizeof(ngx_http_conf_ctx_t))`
   - `*(ngx_http_conf_ctx_t **) conf = ctx;`
@@ -92,6 +113,8 @@ returns `NGX_CONF_BLOCK_START` and no `cf->handler`. So, `ngx_conf_handler` is c
       - if `module->create_loc_conf` is not NULL.
   - Run preconfiguration
     - call each module's `preconfiguration` fuction.
+  - Before Do `ngx_conf_parse`
+    - `cf->ctx = ctx`
   - Do `ngx_conf_parse`.
     - Find http directives in HTTP block and handle them.
     - HTTP core must have `server` directive. when parser meets it, add cmcf->servers
