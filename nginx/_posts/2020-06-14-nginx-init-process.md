@@ -55,19 +55,20 @@ This starts from `ngx_conf_parse` in _ngx_init_cycle_. when parser meets 'http {
 returns `NGX_CONF_BLOCK_START` and no `cf->handler`. So, `ngx_conf_handler` is called.
 
 1. _ngx_conf_handler_: Find module that has name 'http'.
-  - `for(i = 0; cf->cycle->modules[i]; i++)`
-    - Iterate all modules and get `cmd` (`cmd = cf->cycle->modules[i]->commands`)
-  - `ngx_strcmp(name->data, cmd->name.data) != 0)`
-  - `cf->cycle->modules[i]->type != NGX_CONF_MODULE && cf->cycle->modules[i]->type != cf->module_type`
-    - `http` module's type is CORE_MODULE not HTTP_MODULE.
-  - `conf = &(((void **) cf->ctx)[cf->cycle->modules[i]->index])`
-    - Notice: `cf->ctx = cycle->conf_ctx`, `cf->cycle = cycle`.
-    - Notice: `http` module doesn't do `create_conf` and `init_conf` so, `conf` has an address varaible
+  * `for(i = 0; cf->cycle->modules[i]; i++)`
+    * Iterate all modules and get `cmd` (`cmd = cf->cycle->modules[i]->commands`)
+  * `ngx_strcmp(name->data, cmd->name.data) != 0)`
+  * `cf->cycle->modules[i]->type != NGX_CONF_MODULE && cf->cycle->modules[i]->type != cf->module_type`
+    * `http` module's type is CORE_MODULE not HTTP_MODULE.
+  * `conf = &(((void **) cf->ctx)[cf->cycle->modules[i]->index])`
+    * Notice: `cf->ctx = cycle->conf_ctx`, `cf->cycle = cycle`.
+    * Notice: `http` module doesn't do `create_conf` and `init_conf` so, `conf` has an address varaible
               having NULL value.
-  - `rv = cmd->set(cf, cmd, conf)`
-    - `cmd->set` is `ngx_http_block`
-  - NOTICE!
-    - the explanation of below code.
+  * `rv = cmd->set(cf, cmd, conf)`
+    * `cmd->set` is `ngx_http_block`
+  * NOTICE!
+    * the explanation of below code.
+
 ```
 if (cmd->type & NGX_DIRECT_CONF) {
     conf = ((void **) cf->ctx)[cf->cycle->modules[i]->index];   // (void**)cf->ctx ==> cf->ctx->main_conf
@@ -87,39 +88,40 @@ if (cmd->type & NGX_DIRECT_CONF) {
 rv = cmd->set(cf, cmd, conf);
 
 ```
+
 2. _ngx_http_block_: allocate `ngx_http_conf_ctx_t`
-  - `ctx = ngx_pcalloc(cf->pool, sizeof(ngx_http_conf_ctx_t))`
-  - `*(ngx_http_conf_ctx_t **) conf = ctx;`
-    - `conf` had an address pointing variable having NULL.
-    - Now, `conf` has a new address pointing `ngx_http_conf_ctx_t` structure variable.
+  * `ctx = ngx_pcalloc(cf->pool, sizeof(ngx_http_conf_ctx_t))`
+  * `*(ngx_http_conf_ctx_t **) conf = ctx;`
+    * `conf` had an address pointing variable having NULL.
+    * Now, `conf` has a new address pointing `ngx_http_conf_ctx_t` structure variable.
 3. _ngx_http_block_: counting http modules
-  - `ngx_http_max_module = ngx_count_modules(cf->cycle, NGX_HTTP_MODULE)`
+  * `ngx_http_max_module = ngx_count_modules(cf->cycle, NGX_HTTP_MODULE)`
 4. _ngx_http_block_: allocate main_conf, srv_conf, loc_conf
-  - `ctx->main_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
-  - `ctx->srv_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
-  - `ctx->loc_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
+  * `ctx->main_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
+  * `ctx->srv_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
+  * `ctx->loc_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
 5. _ngx_http_block_: iterate http module and create main_conf, srv_conf, loc_conf.
-  - Allocate confs (main, srv, loc)
-    - `module = cf->cycle->modules[m]->ctx`
-      - Ex. *ngx_http_module_ctx*
-      - 'm' is module index.
-    - `mi = cf->cycle->modules[m]->ctx_index`
-    - `ctx->main_conf[mi] = module->create_main_conf(cf)`
-      - if `module->create_main_conf` is not NULL.
-      - It also creates http core module's main conf `cmcf`.
-        - In `ngx_http_core_create_main_conf`, Allocate `cmcf->servers`
-    - `ctx->srv_conf[mi] = module->create_srv_conf(cf)`
-      - if `module->create_srv_conf` is not NULL.
-    - `ctx->loc_conf[mi] = module->create_loc_conf(cf)`
-      - if `module->create_loc_conf` is not NULL.
-  - Run preconfiguration
-    - call each module's `preconfiguration` fuction.
-  - Before Do `ngx_conf_parse`
-    - `cf->ctx = ctx`
-  - Do `ngx_conf_parse`.
-    - Find http directives in HTTP block and handle them.
-    - HTTP core must have `server` directive. when parser meets it, add cmcf->servers
-  - Run module's **init_main_conf** and **ngx_http_merge_servers()**.
+  * Allocate confs (main, srv, loc)
+    * `module = cf->cycle->modules[m]->ctx`
+      * Ex. *ngx_http_module_ctx*
+      * 'm' is module index.
+    * `mi = cf->cycle->modules[m]->ctx_index`
+    * `ctx->main_conf[mi] = module->create_main_conf(cf)`
+      * if `module->create_main_conf` is not NULL.
+      * It also creates http core module's main conf `cmcf`.
+        * In `ngx_http_core_create_main_conf`, Allocate `cmcf->servers`
+    * `ctx->srv_conf[mi] = module->create_srv_conf(cf)`
+      * if `module->create_srv_conf` is not NULL.
+    * `ctx->loc_conf[mi] = module->create_loc_conf(cf)`
+      * if `module->create_loc_conf` is not NULL.
+  * Run preconfiguration
+    * call each module's `preconfiguration` fuction.
+  * Before Do `ngx_conf_parse`
+    * `cf->ctx = ctx`
+  * Do `ngx_conf_parse`.
+    * Find http directives in HTTP block and handle them.
+    * HTTP core must have `server` directive. when parser meets it, add cmcf->servers
+  * Run module's **init_main_conf** and **ngx_http_merge_servers()**.
 
 
 ```
