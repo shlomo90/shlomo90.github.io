@@ -101,6 +101,7 @@ rv = cmd->set(cf, cmd, conf);
 5. _ngx_http_block_: iterate http module and create main_conf, srv_conf, loc_conf.
   - Allocate confs (main, srv, loc)
     - `module = cf->cycle->modules[m]->ctx`
+      - Ex. *ngx_http_module_ctx*
       - 'm' is module index.
     - `mi = cf->cycle->modules[m]->ctx_index`
     - `ctx->main_conf[mi] = module->create_main_conf(cf)`
@@ -119,11 +120,9 @@ rv = cmd->set(cf, cmd, conf);
     - Find http directives in HTTP block and handle them.
     - HTTP core must have `server` directive. when parser meets it, add cmcf->servers
   - Run module's **init_main_conf** and **ngx_http_merge_servers()**.
-    - 
 
 
 ```
-
 +----+----+----+----+----+----+----+----+
 | M1 | M2 | M3 | M4 | M5 | M6 | .. | MN |
 +----+----+----+----+----+----+----+----+
@@ -239,7 +238,3 @@ main <- server <- location 순으로 머지해나가는 것.
 http <-> server : ngx_http_merge_servers 함수에서 server 의 설정이 http 의 server 로 덮어씌어짐
 server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
 ```
-
-## STREAM module init
-
-## EVENT module init
