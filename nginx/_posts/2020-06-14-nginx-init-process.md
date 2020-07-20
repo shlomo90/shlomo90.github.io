@@ -88,7 +88,6 @@ if (cmd->type & NGX_DIRECT_CONF) {
 rv = cmd->set(cf, cmd, conf);
 
 ```
-
 2. _ngx_http_block_: allocate `ngx_http_conf_ctx_t`
   * `ctx = ngx_pcalloc(cf->pool, sizeof(ngx_http_conf_ctx_t))`
   * `*(ngx_http_conf_ctx_t **) conf = ctx;`
