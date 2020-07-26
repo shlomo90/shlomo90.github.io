@@ -13,10 +13,11 @@ comments: true
 The APUE said,
 * Daemons are processes that live for a long time.
   * From the system is bootstrapped to the system is shutdown.
-  * They don't have a controlling terminal. (maybe it means they don't get input directly from users?)
+  * They don't have a **controlling terminal.**
+    (maybe it means they don't get input directly from users?)
     * Daemon reports errors some different ways. (logging, etc.)
     * Terminal is something to interact users and computer resources.
-    * It would be a printer (a teletype, TTY), monitor display and so on.
+      (It would be a printer (a teletype, TTY), monitor display and so on.)
 
 
 ## Many Kinds Of Daemon Processes
@@ -32,7 +33,7 @@ The APUE said,
     * to write dirty pages to disk slowly over time
   * *flush*
     * to flush dirty pages to disk when available memory reaches a configured minimum threshold.
-  * *nfsd, nfsiod, lockd, rpciod*
+  * *nfsd, nfsiod, lockd, rpciod,* etc.
 
 ## Daemon Process Requirements
 
@@ -50,7 +51,7 @@ The APUE said,
  447555  619541  619541  447555 ps
     ```
     * The program "python2.7" has session ID 44755 that is bash shell process. 
-    * TODO: need to dig in the Process group and Session.
+    * **TODO:** need to dig in the Process group and Session.
 * Most of the user-level daemons are process group leaders and session leaders, and are the only
   processes in their process group and session.
 * Most of the daemons run with superuser (root) privileges.
@@ -74,6 +75,9 @@ The APUE said,
 * *dup* to redirect `stdin`, `stdout`, `stderr` to `/dev/null`
   * To shut any input and output
   * Maybe you can use Unix error-logging facility `syslogd`.
+
+
+## Code example (C)
 
 
 ## References
