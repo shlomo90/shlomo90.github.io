@@ -239,3 +239,14 @@ main <- server <- location 순으로 머지해나가는 것.
 http <-> server : ngx_http_merge_servers 함수에서 server 의 설정이 http 의 server 로 덮어씌어짐
 server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
 ```
+
+
+## Merge
+
+http block 파싱 시 http_ctx 는 main_conf, srv_conf, loc_conf 를 가짐
+server block 파싱 시 ctx 가 새롭게 할당되고 이때 main_conf, srv_conf, loc_conf 도 다시 create_conf 작업을 수행
+그러면 당연하게도 http_core_module 의 srv_conf 도 새롭게 할당되고 cscf 에 새롭게 할당한 ctx 추가
+cscf 는 cmcf->server 에 리스트에 추가됨
+
+여기까지 진행되면 http_ctx 와 각 서버별 ctx 는 따로 메모리 영역에 있음으로 각 서버별 ctx 들은 부모 http_ctx 의
+설정을 상속 받아야한다. (단, 각 서버에 이미 설정되어있다면, 상속 받지 아니함 이미 있기에)
