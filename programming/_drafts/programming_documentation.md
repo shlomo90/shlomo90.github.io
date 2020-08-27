@@ -86,3 +86,16 @@ Go to [Link-3.Best Practives for Determining What to document](http://www.agilem
 * See also 
   * http://agilemodeling.com/practices.htm#ModelWithOthers
     * good practices
+
+
+## Practices
+
+
+* Single Source Information
+  * You should always be asking the questions "Do I need to retain this information permanently?
+    "If so, where is the best place to store this information?"
+    * Sometime, best place is agile document.
+* Depict Models Simply
+  * When you consider the potential diagrams that you could apply you quickly realize that the majority of the
+    time you only require a subset of the diagramming notation available to you
+  * Simple model shows the key features
