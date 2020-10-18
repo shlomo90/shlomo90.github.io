@@ -24,6 +24,9 @@
     * Document Section
         * underline
         * shown as lefted heading
+    * Special Characters
+        * Usually characters `=`, `-`, `~` used in hierarchy.
+        * repectively, section1, section1-1, section1-1-1.
 
 * Bulleted list
     * Use `* - +` in order.
