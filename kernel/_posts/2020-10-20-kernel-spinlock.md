@@ -1,14 +1,21 @@
+---
+layout: post
+tags: kernel lock rst spinlock
+comments: true
+---
+
 # Kernel Lock
 
-.
+* About kernel lock systems
 
-## Kernel spinlock
+## 1. Kernel spinlock
 
 * It's global lock.
-* Using more than one spinlock causes performance down (Use it when you know needs).
+* Using more than one spinlock causes performance down
+  (Use it when you know needs).
 * Spinlock protects the shared data structure everywhere they are used.
 
-```
+```c
 static DEFINE_SPINLOCK(xxx_lock);
 
   unsigned long flags;
@@ -18,7 +25,7 @@ static DEFINE_SPINLOCK(xxx_lock);
   spin_unlock_irqrestore(&xxx_lock, flags);
 ```
 
-## Kernel Reader-Writer-Lock
+## 2. Kernel Reader-Writer-Lock
 
 * Read Lock 
     * one thread requires the Read Lock to read some critical section. (e.g., linked list)
@@ -29,7 +36,7 @@ static DEFINE_SPINLOCK(xxx_lock);
     * All Read Lock requirements are blocked if current Write Lock is working.
 
 
-## Dead Lock
+## 3. Dead Lock
 
 * When spinlock revisited and lock-holder and lock-caller is on the same CPU. It could be deadlock.
     * That's why irq-version spinlock disables _local_ interrupt.
