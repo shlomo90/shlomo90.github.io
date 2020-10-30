@@ -5,7 +5,7 @@ comments: true
 ---
 
 
-# Declare incomplete structure and using `typedef`
+# [Declare incomplete structure and `typedef`]
 
 * Sometimes, we are exploring the Linux Kernel code, We see the many
   unfamilar things like declaring "incomplete structure" or `typedef`
