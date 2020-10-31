@@ -63,3 +63,15 @@
 * `ifeq (var1, var2)`
     * if var1 and var2 is same, do below code
     * var2 could be empty string like `ifeq (var1,)`
+
+
+## Special Prefix Characters
+
+* `@`
+    * Suppresses the normal 'echo' of the command that is executed.
+* `-`
+    * Ignore the exit status of the command that is executed
+    * Non-zero exit status would stop the part of the build.
+* `+`
+    * usually used in `-n`, `-q` mode. It actually executes the command that
+      has prefix `+`.
