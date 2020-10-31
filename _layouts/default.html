@@ -58,13 +58,14 @@
                 {% endif %}
                 {% if posts.size > 1 %}
                     <!-- <div class="lang-options"> -->
-                    <div class="container content">
-                        <em>Read this page in a different language:</em>
-                        <ul>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">LANG</button>
+                        <div class="dropdown-content">
                             {% for post in posts %}
-                                <li><a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }}" title="View in {{post.lang}}">{{ post.lang }}</a></li>
+                                <a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }}" title="View in {{post.lang}}">{{ post.lang }}</a>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                 {% endif %}
             {% endif %}
