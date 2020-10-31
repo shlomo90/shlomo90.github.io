@@ -39,6 +39,7 @@
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     </head>
     <body>
+
         <div class="wrapper">
             {% include navi.html %}
         </div>
@@ -46,6 +47,25 @@
         <div sytle="clear:both"></div>
             
         <hr>
+
+        <!-- Another language -->
+        {% if page.layout != 'index' %}
+            {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+            {% if posts.size == 0 %}
+                {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+                {% endif %}
+                {% if posts.size > 1 %}
+                <!-- <div class="lang-options"> -->
+                <div>
+                    <em>Read this page in a different language:</em>
+                    <ul>
+                        {% for post in posts %}
+                            <li><a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }}" title="View in {{post.lang}}">{{ post.lang }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endif %}
 
         {% if page.is_contact == true %}
             <div class="container content contact">

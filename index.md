@@ -1,10 +1,12 @@
 ---
 layout: post
+lang: en
+lang-ref: index
 title: JH's Hompage
 comments: false
 ---
 
-# JH's Page
+# Jaehwan's Page
 
 ---
 
