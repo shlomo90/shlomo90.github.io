@@ -50,7 +50,7 @@
 
         <!-- Another language -->
         {% if page.layout != 'index' %}
-            {% if page.lang != "" %}
+            {% if page.lang != nil %}
                 {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
                 {% if posts.size == 0 %}
                     {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
