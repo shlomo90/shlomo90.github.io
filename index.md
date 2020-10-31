@@ -10,13 +10,10 @@ comments: false
 
 ---
 
-Hello visitors? This is my first CS technical blog. This blog may have some network things and
-code analysis of Nginx, OPENSSL etc.
+Hello visitors? This is my first Conputer Science Tech Blog.
 
 
-This blog has also a special purpose that is quick searching what I've done before and refreshing.
-It's kind of my small library. Plus, I am trying to write posts in English because many people can access it.
-(Sadly, I am not good at English though)
+I'm interested in developing Nginx, OPENSSL, Linux Kernel. So, That's the main purpose of starting this blog. I hope other people who visit my blog would be helpful.
 
 
-Anyway, Welcome Everyone!
+Thank you everyone.
