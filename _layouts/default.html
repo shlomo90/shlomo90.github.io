@@ -50,6 +50,7 @@
 
         <!-- Another language -->
         {% if page.layout != 'index' %}
+            <!-- Language selector is shown if frontmatter "lang" is set. -->
             {% if page.lang != nil %}
                 {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
                 {% if posts.size == 0 %}
@@ -57,7 +58,7 @@
                 {% endif %}
                 {% if posts.size > 1 %}
                     <!-- <div class="lang-options"> -->
-                    <div>
+                    <div class="container content">
                         <em>Read this page in a different language:</em>
                         <ul>
                             {% for post in posts %}
