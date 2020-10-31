@@ -39,6 +39,9 @@ clean:
         * if `SUBDIRS` is set, the kernel is noticed that current build is external module
         * if `modules` set, do `make` build as a kernel module
 
+* `M=$$PWD`
+    * `$$PWD` is a current path. (ex: `pwd`)
+
 
 ### See also "Internal Kernel Makefile (module)"
 
@@ -90,6 +93,4 @@ modules: $(module-dirs)
 
 PHONY += modules_install
 modules_install: _emodinst_ _emodinst_post
-
-
 ```
