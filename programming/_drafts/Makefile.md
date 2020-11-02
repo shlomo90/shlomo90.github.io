@@ -75,3 +75,37 @@
 * `+`
     * usually used in `-n`, `-q` mode. It actually executes the command that
       has prefix `+`.
+
+
+## What is the PHONY?
+
+* Meaning
+    * It's a special target that is not a file name.
+      (The implicit rule search is skipped for .PHONY targets)
+    * PHONY doesn't consider the target as a file. (target always executed)
+* Why use?
+    * To avoid a conflict with a file of the same name.
+
+
+* See this Makefile
+
+```make
+clean:
+    rm *.o temp
+```
+
+* `clean` target has no prerequisite, and `rm` doesn't make "clean" file.
+* If there is a file named "clean" as a prerequisite, The target "clean" won't work well
+    * Because "clean" is always considered up to date.
+
+
+## Makefile Variables
+
+* `$@`
+    * The file name of target rule.
+* `$<`
+    * The name of first prerequisite.
+* `$?`
+    * The name of all prerequisites that are newer than the target.
+* `$%`
+    * The name of target member.
