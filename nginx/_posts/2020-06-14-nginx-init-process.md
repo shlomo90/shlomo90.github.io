@@ -1,13 +1,30 @@
 ---
 layout: post
 tags: nginx programming
-title: Nginx Module Initializtion
+title: Nginx Initializtion
 comments: true
 ---
 
-# Init Process
+# Init Nginx
+
+Nginx 가 초기화하면서 어떤 순서로 Configuration 설정이 읽어지고, 세팅되는지
+이해하도록 한다.
+먼저, 코드 흐름을 설명하고, 세부적인 내용으로 들어가 상세 설명하는 방식인 
+Top-Down 방식으로 진행한다.
+
 
 ---
+
+## Init Code Flow
+
+* 시간별 함수 수행
+    * `nginx.c`
+        * *ngx_get_options*
+            * `nginx` 바이너리 수행 시 넘어오는 Argument 옵션 확인
+        * *ngx_log_init*
+        * *ngx_ssl_init*
+        * *ngx_init_cycle*
+
 
 ## Core Module Initialization Steps
 
