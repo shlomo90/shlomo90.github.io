@@ -1,10 +1,10 @@
-
 ---
 layout: post
 tags: nginx programming
-title: Nginx Initializtion (module)
+title: Nginx Initializtion module
 comments: true
 ---
+
 
 # Init Nginx Module
 
