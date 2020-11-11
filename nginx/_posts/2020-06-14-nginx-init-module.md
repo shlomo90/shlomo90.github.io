@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: nginx programming
-title: Nginx Initializtion module (core)
+title: Nginx Initialization module (core)
 comments: true
 ---
 
