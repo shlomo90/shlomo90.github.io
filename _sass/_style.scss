@@ -4,6 +4,7 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    line-height: 1.7;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     background-color: #FDF6E3;
     overflow: auto;
 	margin: 0;
+    line-height: 1.7;
 }
 
 code.language-plaintext.highlighter-rouge {
@@ -287,7 +289,6 @@ The kinds of selector
 .container {
     max-width: $max-width;
     margin: auto;
-    line-height: 1.7;
 }
 .wrapper {
     min-height: 100%;
