@@ -29,6 +29,8 @@ comments: true
 
 ## core module
 
+.
+
 ### core conf 생성
 
 * core module 은 Nginx 에서 최상단에 위치하는 모듈이다. Nginx 프로세스 자체의 설정들에 대해

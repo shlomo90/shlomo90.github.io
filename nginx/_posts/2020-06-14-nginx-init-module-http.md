@@ -10,7 +10,7 @@ comments: true
 
 .
 
-### http block
+## http block
 
 
 * `ngx_init_cycle` 함수에서 아래 파싱 함수를 수행
@@ -152,7 +152,7 @@ server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
 ```
 
 
-#### Merge
+### Merge
 
 * http block 파싱 시 `http_ctx` 는 `main_conf`, `srv_conf`, `loc_conf` 를 가짐.
 * server block 파싱 시 ctx 가 새롭게 할당되고 이때 `main_conf`, `srv_conf`, `loc_conf` 도 다시 create_conf 작업을 수행
