@@ -29,33 +29,33 @@ comments: true
 
 아래 함수들은 `nginx.c` 의 main 문에서 순서대로 수행됩니다.
 
-*ngx_get_options*
+* *ngx_get_options*
     * `nginx` 바이너리 수행 시 넘어오는 Argument 옵션 확인
 
-*ngx_log_init*
+* *ngx_log_init*
     * Nginx 로그 구조체 초기화
 
-*ngx_ssl_init*
+* *ngx_ssl_init*
     * Openssl 에서 제공하는 API 를 이용하여 SSL 관련 Library 초기화
     * Openssl 은 SSL 내부 구조체에 외부 프로그램 데이터를 저장할수
       있도록 인터페이스를 제공한다.
     * 자세한건 링크 https://www.openssl.org/docs/man1.1.1/man3/SSL_set_ex_data.html
 
-*ngx_os_init*
+* *ngx_os_init*
     * 아래 OS 의존적인 전역 변수를 설정한다.
     * Page Size 
         * Slab Memory allocator 에서 사용
     * CPU Cacheline
     * Number of CPU
 
-*ngx_add_inherited_sockets*
+* *ngx_add_inherited_sockets*
     * ??
 
-*ngx_preinit_modules*
+* *ngx_preinit_modules*
     * compile 시점에서 생성된 모듈 이름을 실제 running 타임에서 사용할 구조체에
       할당한다.
 
-*ngx_init_cycle*
+* *ngx_init_cycle*
     * 각종 configuration 파일을 순회하면서 설정을 적용한다.
     * http, stream, engine, etc. 블럭들을 파싱
 
