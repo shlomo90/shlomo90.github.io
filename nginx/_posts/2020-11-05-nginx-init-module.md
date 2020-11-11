@@ -33,7 +33,7 @@ comments: true
 
 * core module 은 Nginx 에서 최상단에 위치하는 모듈이다. Nginx 프로세스 자체의 설정들에 대해
   설정이 가능한 Directive 들이 설정된다. (ex: worker_processes)
-  * log, event, regex, http, stream, mail 모듈들이 core module 형식으로 정의된다.
+    * log, event, regex, http, stream, mail 모듈들이 core module 형식으로 정의된다.
 * core module 형식을 가지는 모듈들은 *ngx_core_module_t* 구조체로된 *ctx* 를 가짐
     * 모듈 이름과 해당 모듈에서 사용할 "conf" 구조체를 생성 및 초기화하도록 하는 핸들러 선언
     * *create_conf*
@@ -54,77 +54,25 @@ typedef struct {
 ### http block
 
 
-This starts from `ngx_conf_parse` in _ngx_init_cycle_. when parser meets 'http {', `ngx_conf_read_token(cf)`
-returns `NGX_CONF_BLOCK_START` and no `cf->handler`. So, `ngx_conf_handler` is called.
+* `ngx_init_cycle` 함수에서 아래 파싱 함수를 수행
+    * `ngx_conf_param`
+        * `-g` 옵션으로 들어온 파라미터를 파싱하는 함수
+        * 내부적으로 `ngx_conf_parse` 함수를 호출하지만, 파일이름은 없음
+    * `ngx_conf_parse`
+        * nginx.conf 와 같은 파일을 읽어서 파싱하는 함수
 
-1. _ngx_conf_handler_: Find module that has name 'http'.
-  * `for(i = 0; cf->cycle->modules[i]; i++)`
-    * Iterate all modules and get `cmd` (`cmd = cf->cycle->modules[i]->commands`)
-  * `ngx_strcmp(name->data, cmd->name.data) != 0)`
-  * `cf->cycle->modules[i]->type != NGX_CONF_MODULE && cf->cycle->modules[i]->type != cf->module_type`
-    * `http` module's type is CORE_MODULE not HTTP_MODULE.
-  * `conf = &(((void **) cf->ctx)[cf->cycle->modules[i]->index])`
-    * Notice: `cf->ctx = cycle->conf_ctx`, `cf->cycle = cycle`.
-    * Notice: `http` module doesn't do `create_conf` and `init_conf` so, `conf` has an address varaible
-              having NULL value.
-  * `rv = cmd->set(cf, cmd, conf)`
-    * `cmd->set` is `ngx_http_block`
-  * NOTICE!
-    * the explanation of below code.
+* HTTP 블럭 파싱 시, `http {` 을 만나면, `http` 에 대한 이름에 대해 모듈의 command 의 순회하여 찾는다.
+    * `http` 를 찾기 위해선 현재 모듈이 NGX_CORE_MODULE 이고, command 의 타입이 NGX_MAIN_CONF 이어야 한다. (Flag 체크 수행)
+        * NGX_MAIN_CONF 의 뜻은 최 상단에서 conf 임을 나타내는듯.(확인 필요)
+        * 참고로, 파싱시 사용되는 `cf` 변수는 현재 문맥에 맞는 플래그를 가지고 있음.
+        * 예를 들어, 최상위 블럭인 core 에서 수행중일 때와 http 블럭 내 에서 수행 중일때 값이 변하면서 recursive 하게 수행
+* HTTP 에 대한 command 를 찾으면 해당 모듈의 `conf` 메모리 주소를 구하여 `cmd->set` 함수 파라미터로 넘겨서 수행한다.
+    * `conf` 값은 파싱 전에 CORE MODULE 에 대해서 미리 `create_conf` 작업을 수행합니다.
+    * 단, `http` 와 같이 block 시작 directive 는 **NULL 값을 가지는 변수의 주소를** 넘겨줍니다.
+    * 왜냐면, `http` 는 내부적으로 `ctx` (`main_conf, srv_conf, loc_conf` 를 가짐) 를 생성하고, HTTP 모듈에 대한 파싱 진행
 
-```
-if (cmd->type & NGX_DIRECT_CONF) {
-    conf = ((void **) cf->ctx)[cf->cycle->modules[i]->index];   // (void**)cf->ctx ==> cf->ctx->main_conf
 
-} else if (cmd->type & NGX_MAIN_CONF) {
-    conf = &(((void **) cf->ctx)[cf->cycle->modules[i]->index]); // &(void**)cf->ctx ==> &cf->ctx->main_conf
-
-} else if (cf->ctx) {
-    confp = *(void **) ((char *) cf->ctx + cmd->conf);  //*(void **)((char *) cf->ctx + cmd->conf) 
-                                                            ==> cf->ctx + 8 (or 16 or 24).
-    if (confp) {
-        conf = confp[cf->cycle->modules[i]->ctx_index];
-    }
-}
-
-// enable func 실행
-rv = cmd->set(cf, cmd, conf);
-
-```
-2. _ngx_http_block_: allocate `ngx_http_conf_ctx_t`
-  * `ctx = ngx_pcalloc(cf->pool, sizeof(ngx_http_conf_ctx_t))`
-  * `*(ngx_http_conf_ctx_t **) conf = ctx;`
-    * `conf` had an address pointing variable having NULL.
-    * Now, `conf` has a new address pointing `ngx_http_conf_ctx_t` structure variable.
-3. _ngx_http_block_: counting http modules
-  * `ngx_http_max_module = ngx_count_modules(cf->cycle, NGX_HTTP_MODULE)`
-4. _ngx_http_block_: allocate main_conf, srv_conf, loc_conf
-  * `ctx->main_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
-  * `ctx->srv_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
-  * `ctx->loc_conf = ngx_pcalloc(cf->pool, sizeof(void*) * ngx_http_max_module)`
-5. _ngx_http_block_: iterate http module and create main_conf, srv_conf, loc_conf.
-  * Allocate confs (main, srv, loc)
-    * `module = cf->cycle->modules[m]->ctx`
-      * Ex. *ngx_http_module_ctx*
-      * 'm' is module index.
-    * `mi = cf->cycle->modules[m]->ctx_index`
-    * `ctx->main_conf[mi] = module->create_main_conf(cf)`
-      * if `module->create_main_conf` is not NULL.
-      * It also creates http core module's main conf `cmcf`.
-        * In `ngx_http_core_create_main_conf`, Allocate `cmcf->servers`
-    * `ctx->srv_conf[mi] = module->create_srv_conf(cf)`
-      * if `module->create_srv_conf` is not NULL.
-    * `ctx->loc_conf[mi] = module->create_loc_conf(cf)`
-      * if `module->create_loc_conf` is not NULL.
-  * Run preconfiguration
-    * call each module's `preconfiguration` fuction.
-  * Before Do `ngx_conf_parse`
-    * `cf->ctx = ctx`
-  * Do `ngx_conf_parse`.
-    * Find http directives in HTTP block and handle them.
-    * HTTP core must have `server` directive. when parser meets it, add cmcf->servers
-  * Run module's **init_main_conf** and **ngx_http_merge_servers()**.
-
+* main_conf, srv_conf, loc_conf 메모리 구조
 
 ```
 +----+----+----+----+----+----+----+----+
@@ -241,10 +189,11 @@ main <- server <- location 순으로 머지해나가는 것.
 참고로, 각 모듈별로만 merge 가 된다.
 http <-> server : ngx_http_merge_servers 함수에서 server 의 설정이 http 의 server 로 덮어씌어짐
 server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
+
 ```
 
 
-## Merge
+#### Merge
 
 http block 파싱 시 http_ctx 는 main_conf, srv_conf, loc_conf 를 가짐
 server block 파싱 시 ctx 가 새롭게 할당되고 이때 main_conf, srv_conf, loc_conf 도 다시 create_conf 작업을 수행
@@ -254,3 +203,7 @@ cscf 는 cmcf->server 에 리스트에 추가됨
 여기까지 진행되면 http_ctx 와 각 서버별 ctx 는 따로 메모리 영역에 있음으로 각 서버별 ctx 들은 부모 http_ctx 의
 설정을 상속 받아야한다. (단, 각 서버에 이미 설정되어있다면, 상속 받지 아니함 이미 있기에)
 
+
+## Stream
+
+* Not ready to show
