@@ -70,7 +70,7 @@ comments: true
 
 * Nginx Cycle 에서 관리하는 것
     * Shared memory
-    * Conf file path
+    * Nginx Conf file path
         * 로그가 출력되는 파일들을 conf path 로 관리됨 (open_files)
     * Listening Sockets
         * listen directive 로 추가된 listening 소켓들을 관리
@@ -86,4 +86,4 @@ comments: true
 
 ## See also
 
-* [Nginx Initialization module (core)](https://shlomo90.github.io/nginx/2020/06/14/nginx-init-module.html)
+* [Nginx Initialization module (core)](https://shlomo90.github.io/nginx/2020/06/14/nginx-init-module-core.html)
