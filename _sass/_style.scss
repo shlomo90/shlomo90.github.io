@@ -1,5 +1,11 @@
 $max-width: 850px;
 
+@font-face {
+    font-family: 'Times New Roman', monospace;
+    unicode-range: U+0020-007E;
+    font-style: normal;
+}
+
 html {
     height: 100%;
     margin: 0;
@@ -10,7 +16,7 @@ html {
 body {
     padding:5px 5px 5px 5px;
     //font-family: 'Source Code Pro', monospace;
-    font-family: 'Times New Roman', monospace;
+    font-family: "NotoSansKR", monospace;
     background-color: #FDF6E3;
     overflow: auto;
 	margin: 0;
