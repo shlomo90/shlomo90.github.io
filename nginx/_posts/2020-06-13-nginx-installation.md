@@ -6,9 +6,13 @@ comments: true
 
 # Install Nginx
 
----
 
-## Process
+Nginx 서버를 설치하는 과정을 정리합니다. 많은 웹 페이지들을 참고하였고,
+나름의 방식으로 정리하였습니다.
+
+
+## Steps
+
 
 1. Clone the Nginx git repository from github "https://github.com/nginx/nginx.git"
     ```
@@ -32,7 +36,9 @@ comments: true
 6. Configure the `nginx.conf` file. (You can find the conf file in build summary file)
 7. Run `nginx`
 
+
 ## Nginx With PHP
+
 
 Nginx supports PHP. You can simple edit the config below.
 
