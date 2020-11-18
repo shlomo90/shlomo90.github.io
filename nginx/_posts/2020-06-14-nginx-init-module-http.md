@@ -5,13 +5,23 @@ title: Nginx Initialization module (http)
 comments: true
 ---
 
+#### Doc Update
+
+* 2020-11-18: Format change
+* 2020-06-14: init
+<br/>
+<br/>
 
 # HTTP Module Initialization
 
-.
+---
+
+<br/>
+<br/>
 
 ## http block
 
+---
 
 * `ngx_init_cycle` 함수에서 아래 파싱 함수를 수행
     * `ngx_conf_param`
@@ -150,9 +160,12 @@ http <-> server : ngx_http_merge_servers 함수에서 server 의 설정이 http 
 server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
 
 ```
-
+<br/>
+<br/>
 
 ### Merge
+
+---
 
 * http block 파싱 시 `http_ctx` 는 `main_conf`, `srv_conf`, `loc_conf` 를 가짐.
 * server block 파싱 시 ctx 가 새롭게 할당되고 이때 `main_conf`, `srv_conf`, `loc_conf` 도 다시 create_conf 작업을 수행

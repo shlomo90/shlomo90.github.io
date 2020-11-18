@@ -5,14 +5,27 @@ title: Nginx Buffer Structure
 comments: true
 ---
 
+#### Doc Update
+
+* 2020-11-18: Format change
+* 2020-06-15: init
+<br/>
+<br/>
+
 # Nginx Buffer System
 
 ---
 
+<br/>
+<br/>
+
 ## Buffer Meta Data
 
+---
 
-* `ngx_buf_t` Structure
+<details><summary>ngx_buf_t Structure</summary>
+<p>
+
 ```c
 struct ngx_buf_s {
     u_char          *pos;
@@ -52,6 +65,7 @@ struct ngx_buf_s {
     /* STUB */ int   num;
 };
 ```
+</p></details>
 
 * Nginx Buffer Concept
     * 데이터를 읽고, 소비하기까지의 Buffer 이다.

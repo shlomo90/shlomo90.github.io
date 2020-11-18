@@ -5,7 +5,7 @@ title: Nginx Initialization module (core)
 comments: true
 ---
 
-#### Update
+#### Doc Update
 
 * 2020-06-13 release
 * 2020-11-15 update module

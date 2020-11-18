@@ -5,29 +5,30 @@ title: Nginx Initialization Flow
 comments: true
 ---
 
+#### Doc
 
-#### Update Stamps
-
-* 2020-11-11 Reorganize categories and "See also"
-* 2020-11-05 Renewal (This article is separated)
-* 2020-06-14 First written
-
-
----
+* 2020-11-18: Format change
+* 2020-11-11: Reorganize categories and "See also"
+* 2020-11-05: Renewal (This article is separated)
+* 2020-06-14: First written
+<br/>
+<br/>
 
 # Init Nginx
 
-
-* 목표
-    * Nginx 초기화 순서를 이해한다.
-        * Nginx 코드 분석을 하되, Top-Down 방식으로 진행
-
 ---
 
+* 목표
+    * Nginx 초기화 순서를 이해
+    * Nginx 코드 분석 (Top-Down)
+<br/>
+<br/>
 
 ## Init Code Flow
 
-아래 함수들은 `nginx.c` 의 main 문에서 순서대로 수행됩니다.
+---
+
+아래 함수들은 `nginx.c` 의 main 문에서 순서대로 수행
 
 * *ngx_get_options*
     * `nginx` 바이너리 수행 시 넘어오는 Argument 옵션 확인
@@ -58,9 +59,12 @@ comments: true
 * *ngx_init_cycle*
     * 각종 configuration 파일을 순회하면서 설정을 적용한다.
     * http, stream, engine, etc. 블럭들을 파싱
-
+<br/>
+<br/>
 
 ## Init cycle
+
+---
 
 * Nginx Cycle 의미
     * Nginx 는 프로그램이 시작되고, 종료될때 까지를 하나의 cycle
@@ -82,8 +86,11 @@ comments: true
 * 초기화
     * Nginx reload 경우, 기존 cycle 의 정보를 그대로 상속 받는다.
     * Nginx 최초 실행 시, `ngx_cycle` 변수하에 모두 메모리 할당.
-
+<br/>
+<br/>
 
 ## See also
+
+---
 
 * [Nginx Initialization module (core)](https://shlomo90.github.io/nginx/2020/06/14/nginx-init-module-core.html)

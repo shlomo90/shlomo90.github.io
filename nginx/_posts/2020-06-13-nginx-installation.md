@@ -4,11 +4,19 @@ tags: nginx programming
 comments: true
 ---
 
+#### Doc Update
+
+* 2020-11-18: Format change
+* 2020-06-13: init
+<br/>
+<br/>
+
 # Install Nginx
 
+---
 
-Nginx 서버를 설치하는 과정을 정리합니다. 많은 웹 페이지들을 참고하였고,
-나름의 방식으로 정리하였습니다.
+Nginx 서버를 설치하는 과정을 나름의 방식으로 정리.   
+많은 웹 페이지들을 참고.
 <br/>
 <br/>
 
