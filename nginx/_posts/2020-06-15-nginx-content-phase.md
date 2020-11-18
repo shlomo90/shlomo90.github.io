@@ -14,9 +14,6 @@ comments: true
 
 ---
 
-<br/>
-<br/>
-
 ## HTTP Phases
 
 ---
