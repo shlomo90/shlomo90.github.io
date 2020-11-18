@@ -38,8 +38,7 @@ comments: true
     * 왜냐면, `http` 는 내부적으로 `ctx` (`main_conf, srv_conf, loc_conf` 를 가짐) 를 생성하고, HTTP 모듈에 대한 파싱 진행
 
 
-<details><summary>main_conf, srv_conf, loc_conf 메모리 구조</summary>
-
+* main_conf, srv_conf, loc_conf 메모리 구조
 ```
 +----+----+----+----+----+----+----+----+
 | M1 | M2 | M3 | M4 | M5 | M6 | .. | MN |
@@ -155,9 +154,7 @@ main <- server <- location 순으로 머지해나가는 것.
 참고로, 각 모듈별로만 merge 가 된다.
 http <-> server : ngx_http_merge_servers 함수에서 server 의 설정이 http 의 server 로 덮어씌어짐
 server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
-
 ```
-</details>
 <br/>
 <br/>
 

@@ -20,9 +20,7 @@ comments: true
 
 ---
 
-<details><summary>ngx_buf_t Structure</summary>
-<p>
-
+* `ngx_buf_t` structure
 ```c
 struct ngx_buf_s {
     u_char          *pos;
@@ -62,8 +60,6 @@ struct ngx_buf_s {
     /* STUB */ int   num;
 };
 ```
-
-</p></details>
 
 * Nginx Buffer Concept
     * 데이터를 읽고, 소비하기까지의 Buffer 이다.

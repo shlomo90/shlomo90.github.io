@@ -4,16 +4,24 @@ tags: nginx programing
 comments: true
 ---
 
+#### Doc Update
+
+* 2020-11-18: Format Change
+* 2020-06-15: init
+
 # Stream module's peer init
 
 ---
 
-
 ## A. Configuration time
 
 Nginx's configuration time has two periods (Directive parsing time, Initialization time)
+<br/>
+<br/>
 
 ### 1. Directive parsing time
+
+---
 
 1. When a nginx parser meets "upstream" directive, it makes a new upstream block by running `ngx_stream_upstream_add` function.
   * `ngx_stream_upstream_add` does:
@@ -22,9 +30,13 @@ Nginx's configuration time has two periods (Directive parsing time, Initializati
 2. upstream 블럭에 'persist' directive 가 있으면, `ngx_stream_upstream_persist_srv_conf_t` 의 `original_init_upstream`
    에다가 기존 `uscf->peer.init_upstream` 을 저장
 3. `uscf->peer.init_upstream` 에다가는 `ngx_stream_upstream_init_persist` 로 교체
+<br/>
+<br/>
 
 
 ### 2. Initialization Time (After Directive parsing time)
+
+---
 
 1. `ngx_stream_upstream_init_main_conf` 수행시, `uscf->peer.init_upstream` 을 수행 (`ngx_stream_upstream_init_persist`)
 2. 기존 저장된 `ngx_stream_upstream_persist_srv_conf_t` 의 `original_init_upstream` 에 저장된 함수를 호출
@@ -120,9 +132,12 @@ alloc    peer * n
     - 각 모듈에서 원하는 동작을 하기 위해 hook 포인트 제공.
 5. ngx_stream_upstream_init_main_conf 끝
 	- (init_main_conf 는 ngx_stream_block 함수에서 수행됩니다.
-
+<br/>
+<br/>
 
 ## B. Running Time
+
+---
 
 The "Running Time" means the time when a packet comes from client and nginx processes the request
 
