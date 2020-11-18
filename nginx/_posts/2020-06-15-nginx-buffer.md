@@ -16,9 +16,6 @@ comments: true
 
 ---
 
-<br/>
-<br/>
-
 ## Buffer Meta Data
 
 ---
@@ -65,6 +62,7 @@ struct ngx_buf_s {
     /* STUB */ int   num;
 };
 ```
+
 </p></details>
 
 * Nginx Buffer Concept

@@ -3,11 +3,23 @@ layout: post
 comments: true
 ---
 
+#### Doc Update
+
+* 2020-11-18: Format change
+* 2020-06-15: init
+<br/>
+<br/>
+
 # Nginx Content Phase
 
 ---
 
+<br/>
+<br/>
+
 ## HTTP Phases
+
+---
 
 * 12 types http content phases
     1. NGX_HTTP_POST_READ_PHASE
@@ -31,9 +43,12 @@ comments: true
     5. NGX_STREAM_PREREAD_PHASE
     6. NGX_STREAM_CONTENT_PHASE
     7. NGX_STREAM_LOG_PHASE
- 
+<br/>
+<br/>
 
 ### *ngx_http_init_phases* function.
+
+---
 
 * *ngx_http_init_phases* Call trace
 
@@ -63,8 +78,12 @@ ngx_http_block()
         * Each *INDEX* is defined enumeration *ngx_http_phases*.
         * *handler* variable type is *ngx_array_t*.
     * That is, Array init Nginx array.
+<br/>
+<br/>
 
 ### *ngx_http_init_phase_handlers* function.
+
+---
 
 * *ngx_http_init_phase_handlers* Call trace
 
@@ -121,8 +140,12 @@ cmcf->phases[x].handlers     +-----------------------------+
     1. The zero index of 'ph' has *NGX_HTTP_SERVER_REWRITE_PHASE*'s handler.
        Because there is no *NGX_HTTP_POST_READ_PHASE*'s handlers.
     2. *cmcf->phases[NGX_HTTP_SERVER_REWRITE_PHASE].handlers* is *ngx_http_rewrite_handler*.
+<br/>
+<br/>
 
 ### Usage of *cmcf->phase_engine.handlers*
+
+---
 
 When a request comes, *ngx_http_process_request_line* function is called.
 It's the start entry of parsing client's request.
@@ -206,10 +229,19 @@ ngx_http_core_rewrite_phase(ngx_http_request_t *r, ngx_http_phase_handler_t *ph)
 ```
 
 * As you can see this code, After one phase handler finished, do next phase handler.
+<br/>
+<br/>
 
 ## Extra
 
+---
+
+<br/>
+<br/>
+
 ### Usage of Each PHASE
+
+---
 
 * NGX_STREAM_POST_ACCEPT_PHASE
     * ngx_stream_realip_module.c

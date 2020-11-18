@@ -16,9 +16,6 @@ comments: true
 
 ---
 
-<br/>
-<br/>
-
 ## http block
 
 ---
@@ -41,7 +38,8 @@ comments: true
     * 왜냐면, `http` 는 내부적으로 `ctx` (`main_conf, srv_conf, loc_conf` 를 가짐) 를 생성하고, HTTP 모듈에 대한 파싱 진행
 
 
-* main_conf, srv_conf, loc_conf 메모리 구조
+<details><summary>main_conf, srv_conf, loc_conf 메모리 구조</summary>
+<p>
 
 ```
 +----+----+----+----+----+----+----+----+
@@ -160,6 +158,8 @@ http <-> server : ngx_http_merge_servers 함수에서 server 의 설정이 http 
 server <-> locaion : location 블럭에서 파싱한 location 에 대해서...
 
 ```
+</p>
+</details>
 <br/>
 <br/>
 
