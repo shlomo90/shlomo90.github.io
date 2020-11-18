@@ -9,10 +9,8 @@ comments: true
 
 Nginx 서버를 설치하는 과정을 정리합니다. 많은 웹 페이지들을 참고하였고,
 나름의 방식으로 정리하였습니다.
-
-
-&nsbsp
-
+  
+  
 
 ## Steps
 
@@ -39,15 +37,12 @@ Nginx 서버를 설치하는 과정을 정리합니다. 많은 웹 페이지들�
 5. Run `make install`
 6. Configure the `nginx.conf` file. (You can find the conf file in build summary file)
 7. Run `nginx`
-
-
-
-
+  
+  
 
 ## Nginx With PHP
 
 ---
-
 
 Nginx supports PHP. You can simple edit the config below.
 
@@ -81,8 +76,8 @@ $ php -v
 ```
 $ _SERVER=/workspace/html && php -S 127.0.0.1:9000 &
 ```
-`_SERVER` is an environment variable having php server root path. Make sure the root directory path should be 
-same with nginx root directory path.
+* `_SERVER` environ variable
+    * It's a mandatory setting for "php server root path".
 7. nginx reload and check it works
 ```
 $ ./nginx -s reload
