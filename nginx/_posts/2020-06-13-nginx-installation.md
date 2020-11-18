@@ -38,8 +38,8 @@ Nginx 서버를 설치하는 과정을 정리합니다. 많은 웹 페이지들�
 5. Run `make install`
 6. Configure the `nginx.conf` file. (You can find the conf file in build summary file)
 7. Run `nginx`
-  
-  
+<br/>
+<br/>
 
 ## Nginx With PHP
 
