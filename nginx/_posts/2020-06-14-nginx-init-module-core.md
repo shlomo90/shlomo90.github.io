@@ -7,8 +7,8 @@ comments: true
 
 #### Doc Update
 
-* 2020-06-13 release
 * 2020-11-15 update module
+* 2020-06-13 release
 <br/>
 <br/>
 
@@ -45,16 +45,14 @@ comments: true
 
 ---
 
-Nginx Module 은 기능에 대해서 탈부착이 가능하도록 되어있다. 기능을 사용하기 위해선
-Nginx Build 시점에서 `Path` 설정이 필요합니다. `path` 설정 이후에는 빌드과정에서
-`ngx_modules.c` 파일을 생성하는데, 이 파일에는 `extern` 형식을 각 모듈의 이름이
-`ngx_module_t` 구조체 형식으로 선언만 되어있다. 각 모듈에 대한 정의는 모듈 파일에
-정의됩니다.
+* Nginx Module 은 Build 시점에 추가
+    * `--add-module=/path/to/module` 식으로 등록
+    * `ngx_modules.c` 파일에 `extern ngx_module_t module_name` 으로 자동 추가됨
 
 
-Nginx Module 은 Hierarchy 를 가집니다. Nginx 가 초기 수행시에 `core` 모듈을
-시작으로, 하부 모듈들을 초기화하기 시작합니다. 초기화 과정은 Nginx Configuration
-파싱을 수행하면서 초기화하게 됩니다.
+* Nginx Module Hierarchy
+    * `core` 모듈이 최상단
+    * `http`, `stream` 등 하부 모듈 위치
 <br/>
 <br/>
 
@@ -62,8 +60,7 @@ Nginx Module 은 Hierarchy 를 가집니다. Nginx 가 초기 수행시에 `core
 
 ---
 
-Nginx Configuration 을 아래와 같은 Block 단위로 구성이 됩니다.
-
+* Nginx Configuration 을 아래와 같은 Block 단위로 구성
 ```
 # 초기 core 모듈 영역
 
@@ -84,15 +81,10 @@ stream {
     }
 }
 ```
+    * `stream` 모듈은 `http` 모듈과 다르게 location 을 가지지 않음
+    * `stream` 모듈은 L4 layer 에서 구동되기에 L7 영역인 Location 이 필요 없습니다.
 
-
-`stream` 모듈은 `http` 모듈과 다르게 location 을 가지지 않습니다. 추측컨대,
-`stream` 모듈은 L4 layer 에서 구동되기에 L7 영역인 Location 이 필요 없습니다.
-
-
-Nginx 는 Nginx Configuration 파일을 파싱하기 전에 `core` 모듈을 먼저 초기화
-하는 작업을 진행하고, 이후, 각각의 `http`, `stream` 블럭을 만나게 될 경우
-해당 모듈에 대해서 초기화 하는 작업을 수행합니다.
+* Nginx Configuration 에서 `{` 파싱 시, 내부적으로 `ctx` 를 생성하여 내부 모듈 초기화
 <br/>
 <br/>
 
