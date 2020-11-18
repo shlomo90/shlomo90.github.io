@@ -9,11 +9,12 @@ comments: true
 
 * 2020-06-13 release
 * 2020-11-15 update module
-
----
-
+<br/>
+<br/>
 
 # Init Nginx Module
+
+---
 
 "Nginx Initialization (process)" 에서 이미 Init Cycle 과정까지 분석했고,
 이번 과정에서는 Nginx 모듈이 어떻게 초기화되고 사용되는지 알아본다.
@@ -25,16 +26,24 @@ comments: true
     * stream
     * engine
     * mail (여기서 다루지 않음)
+<br/>
+<br/>
 
 
 ## Parsing Configuration File
 
+---
+
 * Nginx Configuration 파싱은 *ngx_init_cycle* 내 *ngx_conf_param* 함수로부터 시작
 * 이 글에서는 http, stream 모듈이 어떤식으로 초기화되는지에 대해서 알아본다.
 * 파싱 로직은 이 글에서 다루지 않고, 후속 글에서 다룬다.
+<br/>
+<br/>
 
 
 ## Nginx Module
+
+---
 
 Nginx Module 은 기능에 대해서 탈부착이 가능하도록 되어있다. 기능을 사용하기 위해선
 Nginx Build 시점에서 `Path` 설정이 필요합니다. `path` 설정 이후에는 빌드과정에서
@@ -46,10 +55,12 @@ Nginx Build 시점에서 `Path` 설정이 필요합니다. `path` 설정 이후�
 Nginx Module 은 Hierarchy 를 가집니다. Nginx 가 초기 수행시에 `core` 모듈을
 시작으로, 하부 모듈들을 초기화하기 시작합니다. 초기화 과정은 Nginx Configuration
 파싱을 수행하면서 초기화하게 됩니다.
-
-
+<br/>
+<br/>
 
 ### Nginx Configuration Structure
+
+---
 
 Nginx Configuration 을 아래와 같은 Block 단위로 구성이 됩니다.
 
@@ -82,15 +93,21 @@ stream {
 Nginx 는 Nginx Configuration 파일을 파싱하기 전에 `core` 모듈을 먼저 초기화
 하는 작업을 진행하고, 이후, 각각의 `http`, `stream` 블럭을 만나게 될 경우
 해당 모듈에 대해서 초기화 하는 작업을 수행합니다.
-
+<br/>
+<br/>
 
 ### ngx_modules.c 파일
 
+---
+
 앞서 설명과 같이, 빌드 시점에서 생성되는 `ngx_modules.c` 파일은 사용되는
 모듈들의 구조체를 `ngx_modules` 라는 `ngx_module_t` 구조체 배열로 관리합니다.
-
+<br/>
+<br/>
 
 ### ngx_module_t 구조체
+
+---
 
 구조체 정의는 아래와 같습니다.
 
@@ -145,16 +162,22 @@ struct ngx_module_s {
     * 해당 모듈에서 쓰이는 conf, name 이 명시됩니다.
 * `command`
     * 해당 모듈에서 쓰이는 Directive 들이 명시
-
-
+<br/>
+<br/>
 
 ### core module
+
+---
 
 `core` module 은 Nginx 에서 가장 최 상단에 위치하는 모듈이다. `core` 모듈에서
 파생된 모듈들 (`http`, `stream`, etc.) 을 관리하며, Nginx 서버 운용에 필요한
 것들을 담고 있다.
+<br/>
+<br/>
 
 ### core conf 생성
+
+---
 
 기본적으로 모듈을 
 core module 형식을 가지는 모듈 (`http`, `stream`, etc.) 들은
