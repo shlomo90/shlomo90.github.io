@@ -43,9 +43,9 @@ comments: true
     * the works of William Shakespeare, Ludwig van Beethoven, and Georges Méliès 
 * License
     * Unlicense
-        * [!Alt Text](https://en.wikipedia.org/wiki/File:PD-icon-black.svg)
+        * ![Alt Text](https://upload.wikimedia.org/wikipedia/commons/e/eb/PD-icon-black.svg)
     * CC0
-        * [!Alt Text](https://en.wikipedia.org/wiki/File:Cc-zero.svg)
+        * ![Alt Text](https://upload.wikimedia.org/wikipedia/commons/5/52/Cc-zero.svg)
 <br/>
 <br/>
 
